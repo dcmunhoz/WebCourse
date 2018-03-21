@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS - Fontes &amp; Cores</title>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+            #conteudo{
+                border: 1px solid black;
+                padding: 5px;
+                width: 900px;
+                background-color: #efefef;
+
+            }
+
+            .internal{
+                font-family: "Trebuchet MS"
+            }
+
+            .alert{
+                font-size: 20px;
+                color:red;
+            }
+
+
+            /* Realizando a importação da fonte */
+            @font-face{
+                font-family: Roboto;
+                src: url('fonts/Roboto.ttf');
+            }
+
+            /* Aplicando a fonte */
+            #external{
+                font-family: Roboto;
+
+            }
+
+            /* FONT COLOR*/
+            .nome-cor{
+                color:red;
+            }
+
+            .hexa-cor{
+                color: #0a00ff;
+            }
+
+            .rgb-cor{
+                color: rgb(0, 183, 49);
+            }
+
+            .rgba-cor{
+                color: rgba(255, 73, 0, .5);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="conteudo">
+            <h1>CSS - Fontes e Cores</h1>
+
+            <p>
+                Podemos utilizar fontes diferentes em nossa pagina, essas fontes podem ser escolhides de dois tipos. Fontes presentes no proprio S.O. , e fontes externas.<br>
+                Utilizando as fontes do proprio S.O., a pagina ira procurar no proprio computador a fonte da pagina.<br>
+                Utilizando as fontes externas, é feito um download automatico das fontes para serem utilizadas na pagina.
+            </p>
+
+
+
+            <div class="internal">
+                <h4>
+                    Utilizando fontes do Sitema Operacional
+                </h4>
+
+                <p>
+                    Para utilizar fontes do S.O., vamos utilizar a seginte sintaxe:<br> font-family: [NomeFonte1], [NomeFonte2], [NomeFonte3];
+                </p>
+                <p>
+                    Note que é possivel colocar mais de 1 nome de fonte, pois caso a pagina não encontre a primeira fonte no sistema operacional, ela ira procurar a segunda, e assim por diente.<br>
+
+                    Neste <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp" target="_blank">link</a> podemos ver uma variedade de combinações seguras que podem ser utilizadas na sua pagina web. Combinações seguras são fontes que todos os sistemas operacionais possuem.
+                </p>
+            </div>
+
+            <div id="external">
+                <h4>Utilizando fontes externas</h4>
+                <p>
+                    Utilizar fontes externas é um passo mais complicado.<br>
+                    <br>
+                    Primeiro de tudo, vamos precisar ter a fonte baixada e colocada em alguma pasta do nosso projeto.<br>
+                    Depois, no css devemos utilizar uma função chamada '<strong>@font-face{...}</strong>'. <br>
+                    <br>
+                    Dentro do font-face vamos colocar os seguintes atributos:
+                </p>
+                <dl>
+                    <dt>font-family:[nome]</dt>
+                    <dd>Nome da fonte externa que sera usada como referencia</dd>
+
+                    <dt>src:[path]</dt>
+                    <dd>Caminho de onde se encontra a fonte presente na pasta do nosso projeto.</dd>
+                </dl>
+
+                <P>
+                    Como exemplo vou utilizar uma fonte do site <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>. Um repositórios de fontes gratis disponibilizado pela Google.
+
+                </P>
+                <span class="alert">** Verificar o fonte desta pagina para ver a importação da fonte **</span><!-- #FONT - Comentario de apoio -->
+            </div>
+
+            <hr>
+            <p>
+                Para aplicar Cores nas fontes, precisamos apenas colocar o atributo 'color:[value]' no seletor, onde [value] é o nome da cor, podemos tambem utilizar codigos hexadecimais ou RGB. Existe tambem o RGBA que é utilizado para deixar uma fonte mais transparende ou solida.
+            </p>
+
+            <p class="cor">
+                <span class="nome-cor">Deserunt fugiat sunt cupidatat dolore. Eiusmod velit multos ut ipsum in quo ad</span>
+                philosophari, cernantur dolore dolore ullamco cillum, ab cernantur o mandaremus.
+
+                <span class="hexa-cor">Cernantur dolor vidisse admodum de magna qui ita lorem consequat, senserit se </span>
+                legam occaecat, deserunt despicationes ad occaecat. <span class="rgb-cor">Appellat se anim litteris, </span>
+                officia quis laboris nescius. Sed aute quis de cupidatat aut anim cernantur ne
+                nescius. <span class="rgba-cor">Varias te admodum est quorum ab expetendis ubi ullamco sed malis </span>
+                nostrud de elit culpa iis deserunt an elit. Qui veniam e aute.
+            </p>
+
+            <p class="alert">** Verificar fonte para ver a implementação **</p>
+        </div>
+    </body>
+</html>
