@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS - Seletores</title>
+        <meta charset="utf-8">
+
+        <!-- #INTERNAL - Criação da tag style -->
+        <style type="text/css">
+            /* #SELETOR - Editando as tags P */
+            p {
+                /* Deixando todas as tag P com a letra vermelha e borda vermelha. */
+                color:red;
+                border: 1px solid red;
+
+            }
+
+            h1{
+                font-size: 80px;
+            }
+
+            #primeira{
+                color: black;
+                border: 1px solid blue;
+            }
+
+            .segunda{
+                color: #0026c4;
+                border: 1px solid orange;
+            }
+
+        </style>
+
+
+    </head>
+
+    <body>
+        <h1>CSS - Seletores</h1>
+
+        <p>
+            A utilização de seletores no CSS é muito importante, pois com ela podemos dar uma 'identidade' a um determinado elemento.<br>
+            Isso tambem nos permite utilizar arquivos externos de css, o que é a forma mais pratica e eficiente de utiliza-lo.<br>
+            Existem dois tipos de seletores, os <strong>IDS</strong> e as <strong>CLASSES</strong>. IDS são elementos UNICOS, ele não pode ser repetido em outra tag, por outro lado, o seletor CLASS pode ser usado em mais de um elemento ao mesmo tempo, fazendo com quem sua edição sejá realizada em todos os elementos que possuem essa class.<br>
+
+            Para utilizar os seletores, é necessário adicionar um atributo ' <strong>id="[nome]" </strong>' ou ' <strong>class="[nome]"</strong> ' no atributo desejado, onde <em>[nome]</em> é o identificador daquele elemento.<br>
+            <br>
+            Para referenciar um seletor no css, é necessário utilizar as formas de estilo internal ou external. Para utilização da forma interna, dentro da tag HEAD é necessário abrir uma nova tag STYLE com o atributo '<strong>type=text/css</strong>'<br>
+            para dizer que aquele estilo é um estilo css.<!-- #INTERNAL - Comentario de referência -->
+            <br>
+            <br>
+            Neste formato, não necessáriamente deve-se utilizar somente seletores id e class, você tambem pode usar a tag como seletor, apenas informando o nome dela, porem, ao utilizar o nome da tag, caso tenha mais que 1 no arquivo html, todas elas serão aplicadas o efeito.
+            <!-- #SELETOR - Comentario de referência -->
+            <br>
+            <br>
+
+            Para selecionar um id no css, devemos utilizar #[nome], onde nome é o identificador colocado no atributo. Para as classes deve-se utilizar .[nome].
+        </p>
+
+        <p id="primeira">
+            Primeira tag P:
+
+            Do ita concursionibus, malis ingeniis de magna lorem ne mentitum eram tempor do
+            probant sint anim iudicem illum, officia ea elit mentitum, quamquam ab litteris
+            de quae ubi occaecat in fugiat, varias voluptate praesentibus. Cupidatat
+            domesticarum o offendit, minim cupidatat a officia do do quis domesticarum,
+            possumus lorem malis cupidatat quae. Ullamco sint quae cupidatat culpa ab se
+            fore probant adipisicing eu mentitum summis appellat probant, summis occaecat id
+            reprehenderit. Laboris fore offendit, sed esse ita irure. Non ipsum nisi tamen
+            laborum. Quem an nostrud. Consequat anim voluptate.
+        </p>
+
+        <p class="segunda">
+            Segunda tag P:
+
+            Aliqua ad commodo, tamen incurreret an cohaerescant, de ut philosophari iis
+            vidisse dolore fugiat expetendis ipsum, irure tractavissent offendit minim
+            deserunt, est anim nostrud consectetur, incurreret ad nisi non tempor magna
+            voluptate. Eu fore incididunt despicationes ita quid laboris do ingeniis iis an
+            legam eram in mandaremus, quem sempiternum expetendis summis admodum id an
+            quorum exercitation, minim quamquam voluptate o ex proident a ingeniis, ea aute
+            aute de pariatur. A ne efflorescere. Culpa reprehenderit senserit duis admodum,
+            ubi dolor praetermissum. Occaecat legam offendit quamquam si si eu legam dolor
+            irure, arbitror illum noster admodum malis ab se tempor distinguantur. Ut dolor
+            legam te ullamco si vidisse quem arbitror, expetendis quis incididunt ne laboris
+            velit appellat appellat, malis deserunt graviterque et nam occaecat se proident
+            ea velit ullamco instituendarum, magna laborum expetendis. Eiusmod minim admodum
+            ab occaecat o iudicem.
+        </p>
+
+    </body>
+
+</html>

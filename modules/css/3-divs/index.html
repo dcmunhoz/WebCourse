@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS - DIV'S</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            #conteudo{
+                background-color: black;
+                color: #fff;
+            }
+
+            #conteudo2{
+                background-color: red;
+                width: 500px;
+                height: 500x;
+            }
+            #conteudo3{
+                border: 1px solid black;
+                padding: 5px;
+                width: 500px;
+            }
+
+            .editado{
+                color:green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>CSS - Div's</h1>
+        <p>
+            Div's são elementos que servem para separar os conteudos do site, div vem de DIVISION e são elementos BLOCO.
+        </p>
+
+        <p>
+            Para abrir uma div, é necessário abrir e fechar a tag div, você pode identificar essa div utilizando ids ou classes, por exemplo:
+        </p>
+
+        <p>Uma DIV com ID = 'CONTEUDO', que faz referencia ao conteudo da pagina.</p>
+
+        <div id="conteudo">
+            <p>
+                Possumus illum quid nostrud irure, ab de velit offendit ea cillum te voluptate,
+                incurreret irure quo cupidatat concursionibus. Laborum nisi quae ad cillum,
+                lorem quibusdam ea pariatur, quae arbitrantur singulis enim mentitum, de ne
+                labore mentitum. Ea legam ingeniis instituendarum. Ne malis domesticarum. Quo
+                elit appellat, summis comprehenderit fabulas nulla laboris, labore proident ut
+                quibusdam est do proident ea proident. Eu ne coniunctione id minim iis ad multos
+                pariatur et senserit non labore, se multos magna de mentitum. Nulla possumus
+                cohaerescant. Doctrina e dolor, noster de se lorem aliquip te possumus elit eu
+                proident praetermissum iis et quae eram in vidisse, tamen do mandaremus, id
+                pariatur tractavissent, deserunt ad amet non eu aut legam culpa sint.
+            </p>
+        </div>
+
+        <p>
+            As divs podem ter seu tamanho alterado para se encaixarem melhor no site. Abaixo esta uma div com largura e altura de 500px;
+        </p>
+
+        <div id="conteudo2">
+            <p>
+                Possumus illum quid nostrud irure, ab de velit offendit ea cillum te voluptate,
+                incurreret irure quo cupidatat concursionibus. Laborum nisi quae ad cillum,
+                lorem quibusdam ea pariatur, quae arbitrantur singulis enim mentitum, de ne
+                labore mentitum. Ea legam ingeniis instituendarum. Ne malis domesticarum. Quo
+                elit appellat, summis comprehenderit fabulas nulla laboris, labore proident ut
+                quibusdam est do proident ea proident. Eu ne coniunctione id minim iis ad multos
+                pariatur et senserit non labore, se multos magna de mentitum. Nulla possumus
+                cohaerescant. Doctrina e dolor, noster de se lorem aliquip te possumus elit eu
+                proident praetermissum iis et quae eram in vidisse, tamen do mandaremus, id
+                pariatur tractavissent, deserunt ad amet non eu aut legam culpa sint.
+            </p>
+        </div>
+
+        <p>
+            As divs por serem elementos block, sempre terão uma quebra de linha, como se existisse um BR antes e um BR depois da abertura e fechamento da TAG.<br>
+            Vamos supor que você tenha um texto em uma div, e um pedaçõ desse texto você quer fazer uma formatação diferente, se você utiliza-se uma div entre os textos, iria ser feito uma quebrea de linha.<br>
+            Para isso não ocorrer, utilizamos a tag SPAN.
+        </p>
+
+        <h4>Utilizando DIV:</h4>
+        <div id="conteudo3">
+            Aute tempor hic irure cillum non quem ex laboris an eram, iudicem summis laboris
+            te enim vidisse do legam noster, possumus quis incurreret an incididunt quid
+            voluptate se ad nam nisi dolore multos, varias de excepteur in tamen. Noster de
+            ad minim deserunt, dolore commodo voluptatibus, dolor cernantur qui
+            tractavissent, an velit quamquam adipisicing, aute ne de dolor commodo in multos
+            ita <div class="editado">eiusmod ubi esse, incididunt quis fore singulis lorem</div>, nostrud hic eram
+            singulis. E ex exquisitaque, aut consequat arbitrantur. De se tamen sunt esse eu
+            se quem iudicem, an illum senserit fidelissimae, sunt pariatur se offendit. Esse
+            senserit voluptatibus, hic minim aliqua magna officia. Probant dolore esse
+            excepteur quorum e culpa laboris philosophari, duis graviterque officia velit
+            laborum hic ingeniis summis litteris ullamco non minim arbitrantur mentitum sunt
+            eiusmod si mentitum de quorum laborum, fugiat fabulas ad noster dolor hic ne qui
+            tamen ipsum nulla.
+        </div>
+
+        <h4>Utilizando SPAN:</h4>
+        <div id="conteudo3">
+            Aute tempor hic irure cillum non quem ex laboris an eram, iudicem summis laboris
+            te enim vidisse do legam noster, possumus quis incurreret an incididunt quid
+            voluptate se ad nam nisi dolore multos, varias de excepteur in tamen. Noster de
+            ad minim deserunt, dolore commodo voluptatibus, dolor cernantur qui
+            tractavissent, an velit quamquam adipisicing, aute ne de dolor commodo in multos
+            ita <span class="editado">eiusmod ubi esse, incididunt quis fore singulis lorem</span>, nostrud hic eram
+            singulis. E ex exquisitaque, aut consequat arbitrantur. De se tamen sunt esse eu
+            se quem iudicem, an illum senserit fidelissimae, sunt pariatur se offendit. Esse
+            senserit voluptatibus, hic minim aliqua magna officia. Probant dolore esse
+            excepteur quorum e culpa laboris philosophari, duis graviterque officia velit
+            laborum hic ingeniis summis litteris ullamco non minim arbitrantur mentitum sunt
+            eiusmod si mentitum de quorum laborum, fugiat fabulas ad noster dolor hic ne qui
+            tamen ipsum nulla.
+        </div>
+
+    </body>
+</html>
