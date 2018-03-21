@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS - Bordas</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .red{
+                color:red;
+            }
+
+            .blue{
+                color:blue;
+            }
+
+            .green{
+                color:green;
+            }
+
+            .solid{border: 4px solid black;}
+            .dotted{border: 4px dotted black;}
+            .dashed{border: 4px dashed black;}
+            .double{border: 4px double black;}
+            .groove{border: 4px groove black;}
+
+            #content{
+                border: 1px solid black;
+                padding: 5px;
+            }
+
+            dl dd{margin-bottom: 5px;}
+
+            #tabela{
+                border: 1px solid black;
+            }
+
+            .borda-diferente{
+                border-width: 10px 5px 3px 8px;
+                border-style: solid dotted dashed groove;
+                border-color: red blue green yellow;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <h1> CSS - Bordas</h1>
+            <hr>
+
+            <p>
+                Anteriormente já utilizamos bordas, porem vamos ter uma noção melhor de como elas funcionam.
+            </p>
+
+            <p>
+                Ao escolhermos em qual elemento vamos utilizar a borda, devemos colocar a seguinte sintaxe para o estilo alterado:
+                <br>
+                <strong>border: <span class="red">1px</span> <span class="blue">solid</span> <span class="green">red;</span></strong>
+            </p>
+
+            <p class="red">
+                O primeiro valor, é a densidade da borda, quantos pixeis de expessura ela terá. Quanto maior o valor, mais grossa será a borda.
+            </p>
+
+            <p class="blue">
+                O segundo valor, é o formato da borda, no exemplo foi utilizado a borda SOLID, porem existem varios outros formatos, como nos exemplos abaixo:
+            </p>
+
+            <dl>
+                <dd><div class="solid">Solid</div></dd>
+                <dd><div class="dotted">Dotted</div></dd>
+                <dd><div class="dashed">Dashed</div></dd>
+                <dd><div class="double">Double</div></dd>
+                <dd><div class="groove">Groove</div></dd>
+            </dl>
+            <p class="blue">
+                Esses são apenas alguns exemplos, neste <a href="https://www.w3schools.com/css/css_border.asp" target="_blank">link</a> podemos ver muitos outros tipos de bordas.
+            </p>
+
+            <p class="green">
+                E o terceiro valor, é a cor da borda.
+            </p>
+
+
+
+            <p>
+                É possivel também, escolher qual a cor, espessura e tipo de borda de cada lado, direita, esquerda, superior e inferior.<br>
+                Para isso, devemos utilizar as propriedades especificas da borda.<br>
+                <br>
+                Para cor: border-color;<br>
+                Para espessura: border-width;<br>
+                Para tipo: border-style;<br>
+            </p>
+
+            <div class="tabela-bordas">
+                <p>
+                    Para entender melhor como definir os valores para especificos lados, vizualise a tabela:
+                </p>
+
+                <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Superior</th>
+                            <th>Direita</th>
+                            <th>Inferior</th>
+                            <th>Esquerda</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>border-color:</td>
+                            <td>red</td>
+                            <td>blue</td>
+                            <td>green</td>
+                            <td>yellow</td>
+                        </tr>
+
+                        <tr>
+                            <td>border-width:</td>
+                            <td>10px</td>
+                            <td>5px</td>
+                            <td>3px</td>
+                            <td>8px</td>
+                        </tr>
+
+                        <tr>
+                            <td>border-style:</td>
+                            <td>solid</td>
+                            <td>dotted</td>
+                            <td>dashed</td>
+                            <td>groove</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                Utilizando a edição acima em um seletor, a borda tera o seguinte formato:
+            </p>
+
+            <div class="borda-diferente">
+                Lorem Ipsum
+            </div>
+
+        </div>
+    </body>
+</html>
