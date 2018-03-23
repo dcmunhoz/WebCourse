@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Intermediario - Modelo de caixa</title>
+
+        <meta charset="utf-8">
+        <style type="text/css">
+            .clear{
+                clear:both;
+            }
+
+            .alert{
+                font-size:20px;
+                font-weight:bolder;
+                color:red;
+            }
+
+            body{
+                font-family: "Trebuchet MS"
+            }
+            .box-exemple{
+                border: 5px solid orange;
+                width: 240px;
+                padding:10px 0 10px 80px;
+                margin-right: 100px;
+                float: left;
+            }
+
+            .box-exemple p{
+                border: 2px dotted gray;
+                font-size: 40px;
+                font-weight: bolder;
+                width: 200px;
+                margin: 0px;
+                padding: 30px 10px;
+
+            }
+
+            .box-exemple2{
+                float: left;
+                border: 5px solid orange;
+                width: 150px;
+                height: 130px;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <div id="conteudo">
+            <h1>CSS Intermediario - Modelo de caixa</h1>
+            <p>
+                Todas as tags aprendidas até o momento tem algo em comum no css. Quando vamos formatar essas tags, elas se comportam como caixas.
+            </p>
+
+            <div class="box-exemple">
+                <p>Conteudo</p>
+            </div>
+
+            <div class="box-exemple2">
+
+            </div>
+
+            <div class="clear"></div>
+            <br>
+
+            <p>
+                Olhando o exemplo a cima, podemos ver como a div se comporta, parecendo como uma caixa. <br>
+                Podemos notar varias coisas nas 2 divs de exemplo. <br>
+                1 - A borda laranja esta em volta de toda a div, então tudo que esta dentro das bordas laranja é o conteudo da div.
+                <br>
+                2 - Podemos notar 2 espaçamentos diferentes nas divs, um dentro da caixa 1 e outro entre as 2 caixas. O espaçamento de dentro da primeira caixa é um espaçamento interno ao elemento<br> este espaçamento pode ser realizado utilizando o atributo 'padding'. Já o espaçamento entre as 2 caixas, é feito pela propriedade 'margin'. As edições de espaçamentos foram feitas na primeira caixa.<br>
+                3 - Podemos ver que a tag que envolve o 'Conteudo' tambem funciona como uma caixa. Nessa caixa temos uma borda diferenciada para exemplificar melhor seu funcionamento.
+            </p>
+
+            <p class="alert">
+                ** Verificar codigo fonte para ver as edições css e html **
+            </p>
+
+
+        </div>
+    </body>
+</html>
