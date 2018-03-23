@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>CSS Intermediario - Elementos Flutuantes</title>
+
+        <meta charset="utf-8">
+
+        <style type="text/css">
+            body{
+                font-family: "Trebuchet MS";
+            }
+
+            h1, h2 {
+                margin: 0px;
+            }
+
+            #resumo-noticia{
+                border: 1px solid gray;
+                width: 300px;
+                padding: 10px;
+                float: left;
+                margin: 10px;
+            }
+
+
+            .exp-float{
+                color: red;
+                text-decoration: underline;
+            }
+
+            .direitos{
+                clear:both;
+            }
+
+            #titulo{
+                border: 1px solid gray;
+                padding: 15px;
+                text-align: center;
+            }
+
+            #explicacao{
+                border: 1px solid gray;
+                padding: 10px;
+            }
+
+            #aula{
+                border: 1px solid gray;
+                padding: 10px;
+            }
+
+            #conteudo div{
+                margin-bottom: 5px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div id="conteudo">
+            <div id="titulo">
+                <h1>CSS Intermediario - Elementos Flutuantes</h1>
+            </div>
+
+            <div id="explicacao">
+                <p>
+                    Vamos aprender a como utilizar a propriedade <strong>Float</strong> em nossas div's(caixas).
+                </p>
+
+                <p>
+                    Para utilizar o float, basta colocarmos da seguinte forma no seletor: 'float:[position];' onde [position] é a posição que ele ira flutuar, Exemplo:<br>
+                    <span class="exp-float">
+                        float:left;<br>
+                        float:right;
+                    </span>
+                </p>
+
+                <p>
+                    Quando vamos criando mais elementos com o atributo float, um fluxo vai sendo criado, vamos perceber que quando não houver mais espaço na tela o proximo elemento do fluxo ira cair para a linha de baixo. Porem, existe um problema. <br>
+                    Apos todos os elementos floats terminarem, o fluxo ainda continuara na espera de um elemento float, sendo assim, o proximo elemento irá estar a direita do ultimo elemento, isso causa uma quebra de armonia no layout da pagina. Para isso, existe uma propriedade chamada <strong>CLEAR</strong>. Essa pripriedade serve para quebrar o fluxo deixado pelo float, o clear deve ser sempre utilizado no proximo elemento depois do float ou então pode ser uma div que não possua conteudo, porem a classe desta div precisa estar com a propriedado clear. Como utilizar:<br>
+                    <span class="exp-float">clear: both;</span>
+                    <br>
+                    O valor 'both' significa ambos os lados.
+
+                </p>
+
+                <p>
+                    Exercicio: <a href="galeria.html" target="_blank">Galeria de imagens</a>.
+                </p>
+            </div>
+
+            <div id="aula">
+
+                <div id="resumo-noticia">
+                    <h2>Elementos Flutuantes</h2>
+                    <p>
+                        Excepteur si fabulas, expetendis quid ad probant eruditionem e cillum mandaremus
+                        do aliqua dolor, nulla arbitror ita varias quae. De dolore tamen esse incididunt
+                        ut se anim litteris, se probant qui senserit sed veniam ullamco occaecat. Sed
+                        aute fabulas, pariatur e culpa, nisi se quo ipsum mandaremus id minim eu
+                        cernantur in quid, hic et anim legam fugiat ad summis quo ex varias offendit et
+                        irure ne ne tamen singulis, iis quem incididunt. Quae admodum id quae quid,
+                        ullamco ita arbitror, aut lorem probant, sunt incididunt a dolore quis. Litteris
+                        aliqua amet mandaremus quae. In cillum commodo occaecat. Ad legam commodo
+                        adipisicing, sint proident excepteur. Ullamco fugiat tempor incididunt o quid
+                        sed expetendis ad offendit quo cernantur, hic quis familiaritatem, et fore
+                        voluptate, elit eu a ipsum nostrud iis cernantur varias ad quamquam
+                        distinguantur a multos admodum despicationes.
+                    </p>
+                </div>
+
+                <div id="resumo-noticia">
+                    <h2>Elementos Flutuantes</h2>
+                    <p>
+                        Excepteur si fabulas, expetendis quid ad probant eruditionem e cillum mandaremus
+                        do aliqua dolor, nulla arbitror ita varias quae. De dolore tamen esse incididunt
+                        ut se anim litteris, se probant qui senserit sed veniam ullamco occaecat. Sed
+                        aute fabulas, pariatur e culpa, nisi se quo ipsum mandaremus id minim eu
+                        cernantur in quid, hic et anim legam fugiat ad summis quo ex varias offendit et
+                        irure ne ne tamen singulis, iis quem incididunt. Quae admodum id quae quid,
+                        ullamco ita arbitror, aut lorem probant, sunt incididunt a dolore quis. Litteris
+                        aliqua amet mandaremus quae. In cillum commodo occaecat. Ad legam commodo
+                        adipisicing, sint proident excepteur. Ullamco fugiat tempor incididunt o quid
+                        sed expetendis ad offendit quo cernantur, hic quis familiaritatem, et fore
+                        voluptate, elit eu a ipsum nostrud iis cernantur varias ad quamquam
+                        distinguantur a multos admodum despicationes.
+                    </p>
+                </div>
+
+                <div id="resumo-noticia">
+                    <h2>Elementos Flutuantes</h2>
+                    <p>
+                        Excepteur si fabulas, expetendis quid ad probant eruditionem e cillum mandaremus
+                        do aliqua dolor, nulla arbitror ita varias quae. De dolore tamen esse incididunt
+                        ut se anim litteris, se probant qui senserit sed veniam ullamco occaecat. Sed
+                        aute fabulas, pariatur e culpa, nisi se quo ipsum mandaremus id minim eu
+                        cernantur in quid, hic et anim legam fugiat ad summis quo ex varias offendit et
+                        irure ne ne tamen singulis, iis quem incididunt. Quae admodum id quae quid,
+                        ullamco ita arbitror, aut lorem probant, sunt incididunt a dolore quis. Litteris
+                        aliqua amet mandaremus quae. In cillum commodo occaecat. Ad legam commodo
+                        adipisicing, sint proident excepteur. Ullamco fugiat tempor incididunt o quid
+                        sed expetendis ad offendit quo cernantur, hic quis familiaritatem, et fore
+                        voluptate, elit eu a ipsum nostrud iis cernantur varias ad quamquam
+                        distinguantur a multos admodum despicationes.
+                    </p>
+                </div>
+
+                <div class="direitos">
+                    <p>todos os direitos reservados.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>
