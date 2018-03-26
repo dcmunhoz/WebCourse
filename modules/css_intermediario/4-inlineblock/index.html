@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Intermediario - Inline, Block</title>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+            body{
+                background-color: #2d6eff;
+                font-family: "Trebuchet MS";
+                padding:10px;
+            }
+
+            #main-content{
+                background-color: #FFF;
+                padding: 10px;
+                width: 900px;
+                margin: 0 auto;
+            }
+
+            .elements{
+                border: 1px solid gray;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .elements h1, h2, h3, h4 ,h5 ,h6{
+                margin: 0;
+                padding: 0;
+            }
+
+            .block{
+                background-color: #2d6eff;
+
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .inline{
+                background-color: #2d6eff;
+            }
+
+            .inline-block{
+                background-color:#2d6eff;
+                font-size: 30px;
+                font-weight:bold;
+                display: inline-block;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="main-content"> <!-- Inicio div #MAIN-CONTENT -->
+            <div id="header"> <!-- Inicio div #HEADER -->
+                <h1>
+                    CSS Intermediário - Elementos Inline, Block, Inline-Block
+                </h1>
+            </div><!-- Final div #HEADER -->
+            <hr>
+            <div id="content"> <!-- Inicio div #CONTENT -->
+                <div id="explain"> <!-- Inicio div #EXPLAIN -->
+                    <p>
+                        Os elementos do HTML podem ser dividios em 2 dipos, elementos <strong>Inline</strong> e elementos <strong>Block</strong>.
+                    </p>
+                    <p>
+                        Os elementos inline são elementos que quando colocados em sequencia, continuam na mesma linha, pois preenchem na tela apens o tamanho do proprio conteudo.
+                    </p>
+
+                    <p>
+                        Já os elementos block, quando colocados em sequencia, quebram a linha para um abaixo do outro. Isso ocorre porque os elementos Block, independente do seu conteudo, sempre vão ocupar todo o espaço de vizulização, baseado no elemento pai.
+                    </p>
+                </div> <!-- Final div #EXPLAIN -->
+
+                <div id="exemple"> <!-- Inicio div #EXPLAIN-->
+                    <div class="elements">
+                        <h4>Elementos Block</h4>
+                        <p>
+                            Temos os seguintes exemplos de elementos block:
+                        </p>
+                        <ul>
+                            <li>&lt;h1&gt; - Cabeçalhos</li>
+                            <li>&lt;p&gt; - Paragrafos</li>
+                            <li>&lt;div&gt; - Divisão</li>
+                        </ul>
+                        <p>Exemplos praticos:</p>
+                        <h1 class="block">Cabeçalho</h1>
+                        <p class="block">Paragrafo</p>
+                        <div class="block">Divisão</div>
+
+                        <p>
+                            Podemos ver que os elementos são diferentes de si, porem tem a propriedade display como block, fazendo com que quebram a linha em elementos em sequencia.
+                        </p>
+                    </div>
+
+                    <div class="elements">
+                        <h4>Elementos Inline</h4>
+                        <p>
+                            Temos os seguintes exemplos de elementos inline:
+                        </p>
+                        <ul>
+                            <li>&lt;a&gt; - Links</li>
+                            <li>&lt;span&gt; - Span</li>
+                            <li>&lt;img&gt; - Imagens</li>
+                        </ul>
+                        <p>Exemplos praticos:</p>
+                        <a href="#" class="inline">Link</a>
+                        <span class="inline">Span</span>
+                        <img href="no.jpg" alt="imagem"class="img">
+
+                        <p>
+                            Como podemos ver, os elementos inline ocupam somente o espaço do conteudo. Assim, o proximo elemento sempre ira para sua frente.
+                        </p>
+
+                    </div>
+
+                    <div class="elements">
+                        <h4>Elementos Inline-Block</h4>
+                        <p>
+                            Existem tambem um elementos hibrido, chamado <strong>inline-block</strong>. Nós podemos definir elementos com esse tipo, mudando a propriedade "display" para inline-block no CSS.
+                        </p>
+
+                        <p>
+                            Exemplo praticos:
+                        </p>
+
+                        <div class="inline-block">Divisão</div>
+                        <h1 class="inline-block">Header</h1>
+
+                    </div>
+                </div> <!-- Final div #EXPLAIN -->
+            </div> <!-- Final div #CONTENT -->
+        </div><!-- Final div #MAIN-CONTENT -->
+    </body>
+</html>
