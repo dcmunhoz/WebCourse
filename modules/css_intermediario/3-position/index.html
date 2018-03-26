@@ -15,10 +15,79 @@
                 background-color: #FFF;
                 padding: 10px;
                 width: 600px;
-                margin: 0 auto;
-
+                height: 2000px;
+                margin: 60px auto;
             }
 
+            .caixa{
+                background-color: #1e6f44;
+                width: 100px;
+                height: 100px;
+                color: white;
+                padding: 10px;
+                text-align: center;
+            }
+
+
+
+            .caixa p{
+                margin:0;
+                padding: 0;
+            }
+
+            #exemplos .exemplo-position{
+                border: 1px solid gray;
+                padding: 10px;
+                margin-bottom:10px;
+            }
+
+            #exemplos .exemplo-position h1, h2, h3, h4, h5, h6{
+                margin: 0 0 10px 0;
+                padding: 0;
+            }
+
+            #exemplos .exemplo-position .explicacao-position p{
+                text-indent: 10px;
+                margin: 0;
+            }
+
+            #relative{
+                position: relative;
+                left: 30px;
+                top:30px;
+                margin: 0 0 50px 0 ;
+            }
+
+            #relative2{
+                position: relative;
+                left: -30px;
+                top: 0;
+                width: 620px;
+            }
+
+            #absolute{
+                position: absolute;
+                right: 30px;
+                bottom: 0;
+            }
+
+            #absolute2{
+                position: absolute;
+
+                left: 0;
+                top: 200px;
+                width: 50px;
+                height: 200px;
+            }
+
+            #fixed{
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 50px;
+                width: 100%;
+                background-color: rgba(30, 111, 68, .9);
+            }
 
 
         </style>
@@ -33,15 +102,134 @@
             <hr>
 
             <div id="aula">
-                <p>
-                    Como trabalhar com posições.
-                </p>
+                <div id="explicacao">
+                    <h3>Trabalhando com posicionamento.</h3>
+                    <p>
+                        Existem varios valores para posicionamento, porem iremos trabalhar com os 3 principais e mais utilizados. <strong>Relative</strong>, <strong>Absolute</strong>,<strong>Fixed</strong>.
+
+                        <br>
+                        Para utilizar a propriedade de posição, no seletor desejado colocamos a pripriedade <strong>position</strong>, seguida de um dos três valores citados acima.
 
 
-            </div>
+                    </p>
+
+                    <div id="exemplos">
+                        <div class="exemplo-position">
+                            <h4> Posição - Relative</h4>
+                            <div class="explicacao-position">
+                                <p>
+                                    Ao utilizar a posição relativa, você consegue alinhar a div com base nela mesmo.
+                                </p>
+
+                                <p>
+                                    Ao utilizar o position relative, podemos utilizar 4 novas propriedades na nossa div, são elas: <strong>left</strong>, <strong>top</strong>, <strong>right</strong> e <strong>bottom</strong>.
+                                </p>
+
+                                <p>
+                                     Como exemplo, utilizamos "<strong>left:30px;</strong>" e "<strong>top:30px;</strong>" isso faz com que nossa div se mova 30px para a direita e 30px para baixo com base nela mesma.
+                                </p>
+
+                                <p>
+                                    Conclusão: Ao utilizarmos o valor relativa, conseguir MOVIMENTAR a div com base na sua posição inicial.
+                                </p>
+                            </div>
+                            <div class="caixa" id="relative">
+                                <p>
+                                    relative
+                                </p>
+                            </div>
+
+                            <p>
+                                Neste segundo exemplo, utilizamos os valores -30px para left e top 0, e aumentamos sua largura para 620px. podemos ver que fizemos um efeito muito interessante, como se fosse um menu sobreposto na nossa pagina
+                            </p>
+
+                            <div class="caixa" id="relative2">
+                                <p>
+                                    relative
+                                </p>
+                            </div>
+                        </div><!-- Final da div EXEMPLO RELATIVE -->
+
+                        <div class="exemplo-position">
+                            <h4> Posição - Absolute</h4>
+                            <div class="explicacao-position">
+                                <p>
+                                    Ao utilizarmos o position absolute, podemos perceber que o nosso elemento quebra completamente o fluxo da pagina, não respeitando o elemento pai. Digamos que nós "removemos" o elemento de dentro da div pai, comportando-se como se não estivesse mais dentro dela. Com isso, o nosso elemento passa a ter relação de posição com base no elemento mais proximo que tenha uma posição.
+                                </p>
+
+                                <p>
+                                    Como antes do nosso elemento não temos nenhum outro com uma posição definida, a nossa div absoluta tomara como referencia o elemento body, pois já possui uma possition pré-definida.
+                                </p>
+                                <p>Caso a div com id "conteudo-principa" possuisse uma position, nosso elemento ficaria absoluto baseado nessa div.</p>
+
+                                <p>
+                                    Ao utilizarmos position absolute, podemos tambem utilizar as propriedades top, left etc...
+                                </p>
+
+                                <p>
+                                    Vamos utilizar as propriedades bottom 0 e right. Com isso podemos perceber que nosso elemento desceu até o final da pagina posicionado a 30px da direita, pois como haviamos comentado, ele não respeita mais o fluxo dos outros elementos. ele passa a ser um elemento independente.
+                                </p>
+
+                                <p>
+                                    Utilizando a position absolute, podemos criar muitos efeitos interessantes, como por exemplo, uma barra lateral levando até as midias sociais.
+                                </p>
 
 
+                            </div>
+                            <div class="caixa" id="absolute">
+                                <p>
+                                    absolute
+                                </p>
+                            </div>
 
-        </div>
+                            <div class="caixa" id="absolute2">
+                                <p>
+                                    social
+                                </p>
+                            </div>
+                        </div><!-- Final da div EXEMPLO ABSOLUTE -->
+
+                        <div class="exemplo-position">
+                            <h4> Posição - Fixed</h4>
+                            <div class="explicacao-position">
+                                <p>
+                                    O position fixed pode ser parecido com o absolute, porem os 2 são diferentes. O fixed, fica referenciado ao nosos ViewPort. O que é isso? É toda a nossa area do monitor.
+                                </p>
+                                <p>
+                                    Sendo assim, o fixed não toma como base nenhuma tag, mas sim toda a area do nosso monitor.
+                                </p>
+
+                                <p>
+                                    O fixed é bastante utilizado quando queremos deixar algum elemento sempre em exibição na nossa dela, independente da rolagem da pagina. Um exemplo são os menus fixos no topo da pagina, que iremos replicar um agora.
+                                </p>
+
+                                <p>
+                                    No nosso elemento fixed, aplicamos as propriedades:
+
+                                </p>
+                                <ul>
+                                    <li>left:0;</li>
+                                    <li>top:0;</li>
+                                    <li>width:100%;</li>
+                                    <li>height: 50px;</li>
+                                    <li>background: rgba(30, 111, 68, .9);  para conseguirmos um efeito de transparencia.</li>
+                                </ul>
+
+                                <p>
+                                    Porem no elemento "conteudo-principal" tivemes que aumentar o margin-top em 60px;
+                                </p>
+                            </div>
+                            <div class="caixa" id="fixed">
+                                <p>
+                                    fixed
+                                </p>
+                            </div>
+                        </div> <!-- Final da div EXEMPLO FIXED -->
+
+
+                    </div> <!-- Final da div EXEMPLOS -->
+                </div> <!-- Final div EXPLICAÇÃO -->
+            </div> <!-- Final da div AULA -->
+        </div> <!-- Final da div HEADER -->
     </body>
 </html>
