@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Intermediario - CSS Externo</title>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+<!--
+
+        <style type="text/css">
+            body{
+                background-color: #29cb74;
+                font-family: "Trebuchet MS";
+            }
+
+            h1, h2, h3, h4,h5,h6{
+                margin: 0;
+                padding: 0;
+            }
+
+            #main{
+                width: 900px;
+                background-color: #FFF;
+                padding: 10px;
+            }
+
+            .html-tag{
+                color: red;
+            }
+
+            .prop{
+                color:green;
+            }
+
+            .value{
+                color: orange;
+            }
+
+        </style>
+
+-->
+    </head>
+
+    <body>
+        <div id="main">
+            <h1>CSS Intermediario - CSS Externo</h1>
+            <p>
+                Para aplicarmos um css externo, dentro do nosso projeto, vamos criar uma pasta chamada "css" e dentro dela vamos dar o nome de style.css.
+            </p>
+            <p>
+                Dentro desse arquivo, vamos colocar todo nosso codigo CSS.
+            </p>
+
+            <p>
+                Feito isso, na nossa pagina html que queremos utilizar aquele arquivo CSS, entre as tags HEAD, vamos criar um link para aquele arquivo da seguinte forma:
+            </p>
+            <p>
+                <span class="html-tag">&lt;link</span> <span class="prop">rel</span>=<span class="value">"stylesheet"</span> <span class="prop">type</span>=<span class="value">"text/css"</span> <span class="prop">href</span>=<span class="value">"css/style.css"</span> <span class="html-tag">/&gt;</span>
+            </p>
+
+            <p>
+                Nos devemos abrir a tag link, e refinir o <span class=prop>rel</span> como <span class="value">"stylesheet"</span>, rel vem de relationship, traduzindo, relação. Em seguida devemos definir o <span class="prop">type</span> da relação, no nosso caso será <span class="value">"text/css"</span>. E por final como já aprendemo, temos que definr o <span class="prop">href</span> que é o link de referencia do nosso arquivo html. Como nosso arquivo é interno do projeto, vamos definir como <span class="value">"css/style.css"</span>, se fosse para um arquivo externo da Web, poderiamos colocar o link para tal.
+            </p>
+        </div>
+    </body>
+</html>
