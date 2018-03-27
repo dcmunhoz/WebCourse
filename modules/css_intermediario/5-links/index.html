@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Intermediario - Links</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                background-color: #ff2a2a;
+                font-family: "Trebuchet MS";
+            }
+
+            h1,h3,h4,h5,h6,h2{
+                margin: 0;
+                padding: 0;
+            }
+
+            #main{
+                background-color: #FFF;
+                width:900px;
+                margin: auto;
+            }
+            #header{
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid gray;
+            }
+            #content{
+                padding: 10px;
+            }
+
+            .links{
+                border: 1px solid #cccccc;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .links h4{
+                margin: 0 0 10px 0;
+            }
+
+            /* EDIÇÃO ESTADO NORMAL */
+            .links a{
+                text-decoration: none;
+                color: blue;
+            }
+
+
+            #normal-link a{
+                color: green;
+            }
+
+            /* EDIÇÃO ESTADO ACTIVE */
+
+            #active-link a:active{
+                color:green;
+            }
+
+            /* EDIÇÃO ESTADO VISITED */
+            #visited-link a:visited{
+                color: #ff8000;
+            }
+
+            /* EDIÇÃO ESTADO HOVER*/
+            #hover-link a:hover{
+                color: pink;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main"> <!-- Inicio div #MAIN -->
+            <div id="header"> <!-- Inicio div #HEADER -->
+                <h1>CSS Intermediario - Formatando Links</h1>
+            </div> <!-- Final div #HEADER -->
+            <div id="content">  <!-- Inicio div #CONTENT -->
+                <div id="explain"> <!-- Inicio div #EXPLAIN -->
+                    <p>
+                        Os links tem sua edição no CSS diferente dos outros elementos, pois a tag do link possui estados diferentes. O que é isso? <br>
+                    </p>
+                    <p>
+                        Isso significa que podemos edidar os dipos de estados diferentes do link. Os estados são esses:
+                    </p>
+                    <ul>
+                        <li>Normal - Estado em que o link se encontra assim que criado</li>
+                        <li>Active - Quando precionamos o mouse sobre o link</li>
+                        <li>Visited - Quando já visitamos aquele link, geralmente possui uma cor diferente dos outros links</li>
+                        <li>Hover - Quando o mouse esta em cima do link</li>
+                    </ul>
+                    <p>
+                        Estes são os estados mais comuns e mais utilizados de um link.<br>
+                        Vamos ao exemplo pratico:
+                    </p>
+                </div> <!-- Final div #EXPLAIN -->
+                <div id="exemple"> <!-- Inicio div #EXEMPLE -->
+                    <div class="links" id="normal-link">
+                        <h4>Estado Normal</h4>
+                        <p>
+                            Para editarmos o estado normal, basta fazer como os outros elementos do html,<br>utilizando o seletor a{[proriedade]:[valor];...}
+                        </p>
+                        <a href="https://google.com" target="_blank">Google</a>|
+                        <a href="http://facebook.com" target="_blank">Facebook</a>
+                    </div>
+
+                    <div class="links" id="active-link">
+                        <h4>Estado Active</h4>
+                        <p>
+                            Para editarmos o estado active, apos colocarmos o seletor a{}, em frente o a, devemos colocar :active.<br>
+                            Exemplo: <em>#active-link a:active{[propriedade]:[valor];...}</em>
+                        </p>
+                        <a href="https://google.com" target="_blank">Google</a>|
+                        <a href="http://facebook.com" target="_blank">Facebook</a>
+                    </div>
+
+                    <div class="links" id="visited-link">
+                        <h4>Estado Visited</h4>
+                        <p>
+                            Para formatarmos o estado Visited, utilizamos :visited.
+                        </p>
+                        <a href="https://google.com" target="_blank">Google</a>|
+                        <a href="http://facebook.com" target="_blank">Facebook</a> |
+                        <a href="http://youtube.com" target="_blank">Youtube</a>
+
+                        <p>
+                            Podemos ver que quando um link já foi visitado, sua cor ficou com um tom alaranjado, diferente do link não visitado.
+                        </p>
+                    </div>
+                    <div class="links" id="hover-link">
+                        <h4>Estado Hover</h4>
+                        <p>
+                            Para editarmos o hover, utilizamos :hover
+                        </p>
+                        <a href="https://google.com" target="_blank">Google</a>|
+                        <a href="http://facebook.com" target="_blank">Facebook</a>
+                        <p>
+                            Ao passarmos com o mouse em cima do link, percebemos que sua cor é alterada.
+                        </p>
+                    </div>
+                </div> <!-- Final div #EXEMPLE -->
+
+            </div> <!-- Final div #CONTENT -->
+        </div> <!-- Final div #MAIN -->
+    </body>
+</html>
