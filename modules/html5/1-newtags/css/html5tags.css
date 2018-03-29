@@ -1,3 +1,79 @@
+
 body{
-    background-color: aquamarine;
+    background-color: #ffff7d;
+    font-family: "Trebuchet MS";
+    padding: 0px;
+    margin: 0;
+}
+
+.clear{
+    clear: both;
+}
+.tags{
+    text-align: center;
+    border: 0px solid #fd4e4e;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.tagName{
+    color: black;
+    font-weight: bold;
+
+}
+
+main{
+    margin: 0 auto;
+    width: 95%;
+    background-color: #00ff62;
+}
+
+header{
+    background-color: #ff5d5d;
+}
+
+nav{
+    background-color: #5050ff;
+}
+
+aside{
+    background-color: #00ecff;
+    width: 30%;
+    height: 500px;
+    float: left;
+}
+
+aside nav{
+    height: 305px;
+}
+
+footer{
+    background-color: #ff8d2a;
+}
+
+article{
+    width: 66%;
+    background-color: #ff6bf9;
+    float: right;
+    height: 500px;
+}
+
+section{
+    background-color:#2cffa6;
+}
+
+section aside{
+    float: right;
+    height: 305px;
+}
+
+section aside section{
+    height: 180px;
+}
+
+article section div{
+    width: 65%;
+    background-color: #ffff00;
+    height: 305px;
 }
