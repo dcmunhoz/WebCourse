@@ -24,3 +24,60 @@ main header{
     border-bottom: 1px solid #0089ff;
     padding-bottom: 10px;
 }
+
+.inputExp{
+    border: 1px solid #cbcbcb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.inputExp h1, h2, h3, h4, h5, h6, .inputExp p{
+    margin: 0;
+}
+
+.inputExp h4{
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+    padding: 0 0 5px 10px;
+}
+
+.inputExp p{
+    margin: 5px 0;
+    text-indent: 15px;
+}
+
+.inputExp .input{
+    margin: 5px 10px;
+
+}
+
+.inputExp .input label{
+    display: block;
+    font-size: 18px;
+}
+
+
+
+/* Edição visual dos inputs */
+.campos{
+    border: 1px solid #a2a2a2;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.btn{
+    border: 2px solid #0089ff;
+    border-radius: 10px;
+    background-color: #FFF;
+    color: #0089ff;
+    font-size: 18px;
+    padding: 5px 20px;
+}
+
+.btn:hover{
+    background-color: #0089ff;
+    color: white;
+
+}

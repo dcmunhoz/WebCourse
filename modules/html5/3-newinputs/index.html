@@ -15,7 +15,7 @@
             </header>
 
             <article> <!-- Inicio tag ARTICLE-->
-                <div class="explain">
+                <div class="explain"> <!-- Inicio div .EXPLAIN -->
                     <p>
                         Foram adicionadas novos types de INPUT no HTML5, como por exemplo:
                     </p>
@@ -30,7 +30,90 @@
                     <p>
                         Entre outros que vamos verificar no exemplo a seguir:
                     </p>
-                </div>
+                </div> <!-- Final div .EXPLAIN -->
+
+                <div id="examples"> <!-- Inicio div #EXEMPLES -->
+                    <!-- Inico dos exemplos de INPUT html5 -->
+                    <form action="#">
+                        <div class="inputExp" id="iSearch">
+                            <h4>Search</h4>
+                            <p>
+                                Como descrito acima, search é um novo tipo de input do html5. Sua utilização é em formulários de pesquisa.
+                            </p>
+                            <div class="input">
+                                <label for="txtSearch">Search:</label>
+                                <input type="search" placeholder="Campo Pesquisa" name="txtSearch" id="txtSearch" class="campos"/>
+                            </div>
+                        </div>
+
+
+                        <div class="inputExp" id="iEmail">
+                            <h4>
+                                E-mail
+                            </h4>
+                            <p>
+                                O tipo E-mail, pelo próprio nome já sabemos do que se trata, serve para informarmos um endereço de email.
+                            </p>
+                            <div class="input">
+                                <label for="txtEmail">E-mail</label>
+                                <input type="email" placeholder="Email@exemplo.com" id="txtEmail" name="txtEmail" class="campos" />
+                            </div>
+                        </div>
+
+                        <div class="inputExp">
+                            <h4>URL</h4>
+                            <p>
+                                O tipo url serve para informar um endereço web, neste endereço é necessário conter http://www.[site].com para ser uma url valida.
+                            </p>
+                            <div class="input">
+                                <label for="txtUrl">URL</label>
+                                <input type="url" placeholder="http://example.com" id="txtUrl" name="txtUrl" class="campos" />
+                            </div>
+                        </div>
+
+                        <div class="inputExp">
+                            <h4>TEL</h4>
+                            <p>O tipo TEL é usado quando queremos informar algum telefone. Celulares com IOS e Android já reconhecem este tipo de input em seus navegadores, com isso automaticamente conseguem mudar o teclado para um tipo somente numerico</p>
+                            <div class="input">
+                                <label for="txtTel">TEL</label>
+                                <input type="tel" placeholder="(00) 9 9999-9999" id="txtTel" name="txtTel" class="campos"/>
+                            </div>
+                        </div>
+
+                        <div class="inputExp">
+                            <h4>Number</h4>
+                            <p>
+                                O tipo number, serve para informarmos valores numericos, podemos notar que este tipo é renderizado diferente pelos navegadores. O tipo number possui 2 botões que servem para aumentar ou diminuir o numero selecionado.
+                            </p>
+                            <p>
+                                Podemos tambem definir um valor minimo e um maximo utilizando as propriedades que podem ser vistar olhando o código fonte.
+                            </p>
+                            <div class="input">
+                                <label for="txtNumber">Numer</label>
+                                <input type="number" id="txtNumber" name="txtNumber" min="5" max="100" value="7" class="campos"/>
+                            </div>
+                        </div>
+
+                        <div class="inputExp">
+                            <h4>Date</h4>
+                            <p>
+                                Este novo tipe nos permite selecionar uma data. Ao clicar no campo um calendario é aberto para podermos selecionar a data desejáda.
+                            </p>
+                            <div class="input">
+                                <label for="txtDate">Date</label>
+                                <input type="date" id="txtDate" name="txtDate" />
+                            </div>
+                        </div>
+
+                        <div class="inputExp">
+                            <p>Podemos ver outros exemplos de inputs do HTML5 <a href="http://html5doctor.com/html5-forms-input-types/#input-range" target="_blank">neste link</a>.</p>
+                        </div>
+
+
+                        <input type="submit" value="Enviar" id="btnEnviar" name="btnEnviar" class="btn"/>
+                    </form>
+                    <!-- Final dos exemplos de INPUT -->
+                </div> <!-- Final div #EXAMPLES -->
             </article> <!-- Final tag ARTICLE-->
         </main> <!-- Final da tag MAIN -->
     </body>
