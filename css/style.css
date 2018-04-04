@@ -70,13 +70,16 @@ body{
     border-bottom: 1px solid #8b8b8b;
     padding: 5px;
 }
+
 #courses-modules .module ul{
     margin: 5px 0;
 }
+
 #courses-modules .module ul li{
     margin: 0 10px;
     padding: 0px 0px;
 }
+
 #courses-modules .module ul li a{
     display: block;
     padding: 5px 10px;
@@ -85,7 +88,6 @@ body{
     border-bottom: 1px solid #FFF;
     color:black;
     margin-bottom: 2px;
-    border-radius: 5px;
 }
 
 #courses-modules .module ul li a:hover{

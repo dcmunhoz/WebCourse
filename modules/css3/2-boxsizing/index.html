@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 - Box Sizing &amp; Border Radius</title>
+        <meta charset="utf-8" />
+
+        <!-- Importar as folhas de estilo -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+
+        <!-- Importar html5shiv -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+
+    </head>
+
+    <body>
+        <main>
+            <header> <!-- Inicio tag HEADER -->
+            <h1>CSS - Box Sizing &amp; Border Radius</h1>
+            </header> <!-- Final tag HEADER -->
+
+            <article> <!-- Inicio tag ARTICLE -->
+                <div id="explain"> <!-- Inicio div #EXPLAIN -->
+                    <p>
+                        Vamos ver nesta pagina como trabalhar com border-radius e box-sizing.
+                    </p>
+                    <p>
+                        A pripriedade <strong>border-radius</strong> serve para criar um 'arredondamento' das bordas em um elemento, enquanto a propriedade <strong>box-sizing</strong> serve para controlar o tamanho do elemento. Vamos ver os exemplos a seguir
+
+                    </p>
+                </div> <!-- Final div #EXPLAIN -->
+                <div id="examples-body"> <!-- Inicio div #EXAMPLES-BODY -->
+                    <H2>EXEMPLOS</H2>
+                    <div class="examples" id="radius">
+                        <h2>border-radius</h2>
+                        <div id="expRadius" class="boxExamples">
+                            <h3>Titulo 2</h3>
+                            <p>
+                                Hic cillum ex sint, labore consequat qui exquisitaque. Sed ab culpa laboris a
+                                ita esse magna tamen voluptate e sunt tempor ne exercitation si est non multos
+                                lorem sint. Laborum labore cillum doctrina tamen quo nam labore consequat
+                                exercitation ubi an quae iis legam, culpa tempor te firmissimum.
+                            </p>
+                        </div>
+                        <div class="exp-explain">
+                            <p>
+                                Para colocarmos arredondamentos nas bordas, utilizamos a propriedade border-radius seguida do valor do arredondamento, este valor pode ser colocado em pixeis, quanto maior o valor, maior o arredondamento
+                            </p>
+
+                            <p>
+                                Neste exemplo vamos utilizar border-radius de 5px.
+                            </p>
+                            <p>
+                                Fazendo isso podemos ver como os cantos da nossa div ficaram mais arredondados.
+                            </p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="examples" id="sizing">
+                        <h2>box-sizing</h2>
+                        <div class="boxExamples" id="expSizing">
+                            <h3>Titulo 2</h3>
+                            <p>
+                                Et singulis aut consequat e quo esse doctrina imitarentur, o ne summis veniam
+                                nulla, varias iis an noster officia. Esse ex ex sunt iudicem, legam illustriora
+                                laborum veniam fabulas id fore ad hic magna expetendis o admodum noster
+                                singulis.
+                            </p>
+
+
+
+                        </div>
+
+                        <div class="exp-explain">
+                            <p>
+                                O box-sizing é muito utilizado, pois com ele podemos deixar o tamanho de um elemento, de acordo com o definido. No nosso caso o elemento tem uma altura e largura de 250px.
+                            </p>
+
+                            <p>
+                                Se nos colocarmos um padding de 15px, teremos 30px a mais na altura e na largura, totalizando 280px.
+                            </p>
+
+                            <p>
+                                Para forçarmos um elemento a utilizar o tamanho definido, independente do padding, utilizamos o valor <strong>border-box</strong> na nossa pripriedade
+                            </p>
+                        </div>
+                        <div class="clear"></div>
+
+                        <p>
+                            Se compararmos o titulo 1 com o titulo 2, os mesmo são identicos, porem no titulo 2 foi aplicado o box-sizing. Com isso podemos ver que o elemento passa a respeitar o tamanho definido por nós, mesmo com um padding de 15px aplicado, o tamanho continua o mesmo.
+
+                        </p>
+                    </div>
+                </div> <!-- Final div #EXAMPLES-BODY -->
+            </article> <!-- Final tag ARTICLE -->
+        </main>
+    </body>
+</html>

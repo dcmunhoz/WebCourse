@@ -1,0 +1,63 @@
+body{
+    font-family: 'Trebuchet MS';
+}
+
+.clear{
+    clear: both;
+}
+
+main{
+    width: 95%;
+    margin: 0 auto;
+    border: 2px solid gray;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+main header{
+    text-align: center;
+    border-bottom: 1px solid #bebebe;
+    margin: 0 10px;
+
+}
+
+article{
+    padding: 0 10px;
+}
+
+.examples{
+    border: 1px solid #bebebe;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#expRadius{
+    background-color: orange;
+    padding: 15px;
+}
+
+#expSizing{
+    background-color: #0080ff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+.boxExamples{
+    width: 300px;
+    height: 250px;
+    float: left;
+    border-radius: 10px;
+    margin: 0 10px 5px 0;
+
+}
+
+.boxExamples h1{
+    margin: 5px;
+    padding: 0;
+}
+
+.boxExamples p{
+
+}
