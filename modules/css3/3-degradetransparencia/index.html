@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> CSS3 - Degrade &amp; Transparencia</title>
-        <meta charset="utf-8" />
+  <head>
+      <title> CSS3 - Degrade &amp; Transparencia</title>
+      <meta charset="utf-8" />
 
-        <!-- Importar css -->
-        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <!-- Importar css -->
+      <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-        <!-- HTML5Shiv -->
-        <!--[if lt IE 9]>
-            <script src="js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
+      <!-- HTML5Shiv -->
+      <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
 
-    <body>
-        <main>
-            <header>
-                <h1>CSS3 - Degrade &amp; Transparencia</h1>
-            </header>
+  <body>
+      <main>
+          <header>
+              <h1>CSS3 - Degrade &amp; Transparencia</h1>
+          </header>
 
-            <article>
+          <article> <!-- Inicio div ARTICLE -->
+              <div class="explain"> <!-- Inicio div #EXPLAIN -->
+                  <p>
+                      Vamos aprender a como usar fundo Degrade e cores Transparentes.
+                  </p>
 
-            </article>
-        </main>
-    </body>
+                  <p>
+                      Para fazermos um fundo degrade, na propriedade '<em>background:</em>' devemos colocar seu valor como o seguinte:
+                      <strong>[gradient type]-gradient([gradient position], [color1], [color2], [colorn],....);</strong>
+                  </p>
+
+                  <p>
+                    Onde [grandient-type] é o tipo de gradiente que queremos, caso sejá um em linha reta, devemos utilizar <em>linear-gradient</em> caso
+                    seja esferico, vamos utilizar <em>radial-gradient</em>. <br/>
+                    [color1] é como o proprio nome diz, vamos escolher as cores do nosso gradient. Podemos utilizar mais que uma cor
+                    e seus valores podem ser colocados em rgb, hexadecimal e pelo nome.
+                  </p>
+
+                  <p>
+                      Para utilizarmos a transparencia, já vimos em uma aula anterior. O que devemos fazer é colocar o valor da cor no formato RGBA
+                      onde o A é de ALPHA, e com ele podemos definir a opacidade.<br/>
+                      Poemos definir opacidade para os elementos tambem, basta utilizarmos a propriedade '<em>opacity:</em>'
+                  </p>
+              </div> <!-- Final div #EXPLAIN -->
+
+              <div class="examples-body"> <!-- Inicio div #EXAMPLES-BODY -->
+                  <div class="example"> <!-- Inicio div #EXAMPLE (GRADIENT) -->
+                    <h2>Gradient</h2>
+                    <div class="box" id="gradient">
+                        <h3>Title</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+
+                    <p>
+                        Para utilizarmos o gradient, no background vamos colocar o seguinte valor: <strong> linear-gradient(to right, #007BFF, #FF8400); </strong>
+                    </p>
+
+
+                    <div class="clear"></div>
+                  </div> <!-- Final div #EXAMPLE (GRADIENT) -->
+
+                  <div class="example"> <!-- Inicio div #EXAMPLE (TRANSPARENCIA) -->
+                    <h2>Transparencia</h2>
+                    <div class="box" id="alpha">
+                        <h3>Title2</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+
+                    <p>
+                        Para utilizarmos a transparencia, neste caso vamos utilizar o valor em rgba com a cor que queremos, e definir o alpha como .5 .
+                    </p>
+
+
+                    <div class="clear"></div>
+                  </div> <!-- Final div #EXAMPLE (TRANSPARENCIA) -->
+
+
+
+
+              </div> <!-- Final div #EXAMPLES-BODY -->
+          </article> <!-- Final div ARTICLE -->
+      </main>
+  </body>
 </html>

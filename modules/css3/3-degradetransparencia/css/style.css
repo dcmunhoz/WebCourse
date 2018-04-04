@@ -1,0 +1,84 @@
+body{
+    font-family: 'Trebuchet MS';
+    padding: 10px;
+    background-color: #009688 ;
+}
+
+main{
+    background-color: #fff;
+    padding: 10px;
+    width: 760px;
+    margin: 0 auto;
+
+}
+
+header h1{
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
+}
+
+.clear{
+  clear:both;
+}
+
+.example{
+    border: 1px solid #bebebe;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.example h2{
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #bebebe;
+}
+
+/* Configuração box de exemlo */
+#gradient{
+  background: linear-gradient(to right, #007BFF, #FF8400);
+}
+
+#alpha{
+  background: url("../img/camera.png") no-repeat 100% 100%;
+}
+
+#alpha p{
+   color: #FFF;
+   font-weight: bold;
+   padding:50px 20px;
+}
+
+#alpha:hover p{
+  background: rgba(190, 190, 190, .3);
+  transition: .2s;
+}
+
+/* Configuração padrão da BOX de example */
+
+.box{
+  background-color: #E91E63;
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin: 0 10px 5px 0;
+}
+
+.box p{
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.box h3{
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(190,190,190,.5);
+}
