@@ -59,8 +59,16 @@ body{
 }
 
 @keyframes right-bar {
-  0%{top: 500px;}
-  100%{top:0px;}
+  0%{top: 0px;}
+  100%{top:500px;}
+}
+
+@keyframes ball{
+  0%{top: 200px; left: 20px;}
+  25%{top: 0px; left: 650px;}
+  50%{top: 200px; left: 20px;}
+  75%{top: 500px; left:650px;}
+  100%{top: 200px; left: 20px;}
 }
 
 /* Aplicando animações */
@@ -117,20 +125,24 @@ position: relative;
 float: left;
 
 animation-name: left-bar;
-animation-duration: 2s;
+animation-duration: .99s;
 animation-iteration-count: infinite;;
 animation-direction: alternate;
+
+animation-timing-function: ease-in;
 }
 
 #right-bar{
   position: relative;
   float: right;
-  top: 500px;
+  top: 0px;
 
   animation-name: right-bar;
-  animation-duration: 2s;
+  animation-duration: .99s;
   animation-iteration-count: infinite;;
   animation-direction: alternate;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
 
 }
 
@@ -140,4 +152,19 @@ animation-direction: alternate;
   width: 100px;
   height: 100px;
   border-radius: 100px;
+  left: 20px;
+  top:200px;
+
+
+  animation-name: ball;
+  animation-duration: 2.001s;
+  animation-iteration-count: infinite;;
+  /* animation-direction: alternate; */
+  animation-timing-function: linear;
+  animation-delay: .3s;
+}
+
+main{
+  width: 765px;
+  margin: 0 auto;
 }
