@@ -1,0 +1,49 @@
+body{
+  background-color: #512DA8;
+  font-family: 'Trebuchet MS';
+  padding: 10px;
+  margin: 0;
+}
+
+main{
+  background-color: #FFF;
+  margin: 0;
+  padding: 10px;
+}
+
+main header h1{
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 5px;
+
+
+}
+
+.explain{
+  border: 1px solid #bebebe;
+  padding: 10px;
+  margin-bottom:10px;
+}
+
+.examples{
+  border: 1px solid #bebebe;
+}
+.examples ul{
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.examples ul li a{
+  border-left: 5px solid #512DA8;
+  display: block;
+  padding: 3px 10px;
+  margin-bottom: 5px;
+  color: black;
+  text-decoration: none;
+}
+
+.examples ul li a:hover{
+  background-color: #512DA8;
+  color: #FFF;
+}

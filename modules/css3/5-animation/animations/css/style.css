@@ -1,0 +1,143 @@
+/* Configuração padrão do documento */
+.box{
+  padding: 40px;
+  box-sizing:border-box;
+  font-size: 40px;
+  color: red;
+  width: 300px;
+  height: 300px;
+  background-color: #FFF;
+  position: relative;
+  top:0;
+  left: 0;
+}
+
+body{
+  background-color: gray;
+}
+
+
+/* Criando animações */
+@keyframes animation01 {
+  0%{}
+  100%{ background-color: red; color: #FFF;}
+}
+
+@keyframes animation02{
+  0%{}
+  100%{top: 300px; left: 300px;}
+}
+
+@keyframes animation03 {
+  0%{}
+  25%{top:0px; left: 300px;}
+  50%{top:300px; left: 300px;}
+  75%{top:300px; left: 0px;}
+  100%{top:0px; left: 0px;}
+}
+
+@keyframes animation04 {
+  0%{}
+  25%{top:0px; left: 300px; background-color: #0D47A1;}
+  50%{top:300px; left: 300px; background-color: #A10D91;}
+  75%{top:300px; left: 0px; background-color: #A1670D;}
+  100%{top:0px; left: 0px; background-color: #0DA11D;}
+}
+
+@keyframes animation05 {
+  0%{}
+  25%{top:0px; left: 300px; background-color: #0D47A1; border-radius: 300px 0px 0px 0px;}
+  50%{top:300px; left: 300px; background-color: #A10D91; border-radius: 300px 300px 0px 0px;}
+  75%{top:300px; left: 0px; background-color: #A1670D;  border-radius: 300px 300px 300px 0px;}
+  100%{top:0px; left: 0px; background-color: #0DA11D;  border-radius: 300px 300px 300px 300px}
+}
+
+
+@keyframes left-bar{
+  0%{top: 0;}
+  100%{top:500px;}
+}
+
+@keyframes right-bar {
+  0%{top: 500px;}
+  100%{top:0px;}
+}
+
+/* Aplicando animações */
+
+#animation01{
+  animation-name: animation01;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#animation02{
+  animation-name: animation02;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#animation03{
+  animation-name: animation03;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#animation04{
+  animation-name: animation04;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#animation05{
+  animation-name: animation05;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.clear{
+  clear: both;
+}
+.bar{
+  background-color: #fff;
+  width: 20px;
+  height: 200px;
+}
+
+#left-bar{
+position: relative;
+float: left;
+
+animation-name: left-bar;
+animation-duration: 2s;
+animation-iteration-count: infinite;;
+animation-direction: alternate;
+}
+
+#right-bar{
+  position: relative;
+  float: right;
+  top: 500px;
+
+  animation-name: right-bar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;;
+  animation-direction: alternate;
+
+}
+
+.ball{
+  position: relative;
+  background-color: #FFF;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}

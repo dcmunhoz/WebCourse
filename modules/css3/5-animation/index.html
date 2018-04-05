@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS3 - Animação</title>
+
+    <!-- Importar CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+    <!-- Importar HTML5Shiv -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>CSS3 - Animações</h1>
+      </header>
+
+      <article>
+        <div class="explain">
+          <p>
+            Vamos trabalhar com animações CSS3. Antes fazermos animações, precisavamos utilizar Javascrip ou Jquery
+            , porem com o CSS3 podemos trabalhar com animações sem precisar desta outra linguagem.
+          </p>
+          <p>
+            Para fazermos uma animação, precisar abrir um parametro no CSS como se fossemos modificar um seletor, utilizando
+            @keyframe [nome-animação]{}.<br>
+            Dentro deste keyframe, vamos colocar qual é a animação que queremos, para isso devemos especificar em qual TEMPO sera feito essa animação. Podemos utilizar os seletores de animação como 0%{} até 100%{}
+            , onde 0% é o inicio da animação e 100% é o final da animação.<br>
+            E dentro desses seletores vamos colocar qual a animação. Por exemplo, movimentar o elemento 100px para a direita.<br>
+            No 0%{} que é o inicio, colocamos da seguinte forma: <strong>0%{left:0px;}</strong><br>
+            E no 100%{} que é o final, colocamos da seguinte forma: <strong>100%{left:100px;}</strong><br>
+          </p>
+
+          <p>
+            Apos criarmos a animação, devemos aplicar esta animação em algum elemento. Para isso, dentro do seletor do elemento que queremos que sejá animado vamos utilizar algumas propriedades de animação chamada '<strong>animation</strong>'.
+            <br>
+            São elas:
+          </p>
+          <ul>
+            <li> <strong> <em>animation</em></strong> - pode ser utilizada para colocar todas as propriedades da animação.</li>
+            <li> <strong> <em>animation-delay</em></strong> - especifica o tempo de espera até começar a animação, deve ser colocado em segundos. </li>
+              <ul>
+                <li><em>animation-delay: 2s;</em> - Inicia a animação apos 2 segundos. </li>
+              </ul>
+            <li> <strong> <em> animation-direction </em></strong> - especifica a direção que será executada a animação. </li>
+              <ul>
+                <li><em> animation-direction: normal; </em> - Valor padrão, a animação é feita para frente </li>
+                <li><em> animation-direction: reverse; </em> - A animação é feita de tras para frente </li>
+                <li><em> animation-direction: alternate; </em> - A animação vai para frente, depois volta </li>
+                <li><em> animation-direction: alternate-reverse; </em> - A animação vai para tras, depois para frente </li>
+              </ul>
+            <li> <strong> <em> animation-duration </em> </strong> - Especifica a duração da animacação, deve ser colocado em segundos. </li>
+              <ul>
+                <li> <em> animation-duration: 5s; </em> - A animação toda vai acontecer em 5 segundos. </li>
+              </ul>
+            <li> <strong>animation-interation-count</strong> - Informa a quantidade de vezes que a animação irá ocorrer. </li>
+              <ul>
+                <li> <em>animation-interation-count: 3;</em> - Repete a animação 3 vezes. </li>
+                <li> <em> animation-interation-count: infinite; </em> </li>
+              </ul>
+            <li> <strong> <em> animation-name </em> </strong> - Especifica o nome da @keyframe a ser utilizado </li>
+              <ul>
+                <li> <em>animation-name: myanimation</em> - Irá executar a animação myanimation </li>
+              </ul>
+
+
+          </ul>
+
+
+
+
+        </div>
+
+        <div class="examples">
+          <ul>
+            <li> <a href="animations/01">Animação 1</a> </li>
+            <li> <a href="animations/02">Animação 2</a> </li>
+            <li> <a href="animations/03">Animação 3</a> </li>
+            <li> <a href="animations/04">Animação 4</a> </li>
+            <li> <a href="animations/05">Animação 5</a> </li>
+          </ul>
+        </div>
+
+
+      </article>
+    </main>
+  </body>
+</html>
