@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS3 - Sombras em textos e box</title>
+
+        <!-- Importar CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+        <!-- Importar HTML5Shiv -->
+        <!--[if lt IE 9]>
+        	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>CSS3 - Sombras em textos e box</h1>
+            </header>
+
+            <article>
+              <div class="explain"> <!-- Inicio div #EXPLAIN -->
+                  <p>
+                      Podemos utilizar bordas em 2 tipos de elementos diferentes. Nos textos e nos elementos box.
+                  </p>
+
+                  <p>
+                    Para utilizarmos sombras nos textos, utilizamos a propriedade <em>'text-shadow'</em> no seletor desejado.<br/>
+                    O valor a ser inserido na propriedade segue o seguinte formato: <strong>text-shadow: [h-shadow] [v-shadow] [blur] [color]</strong>
+                  </p>
+                  <p>
+                    Onde [h-shadow] é a posição HORIZONTAL da sombra em px. <br>
+                    [v-shadow] é a posição VERTICAL da sombra em px.<br>
+                    [blur] é o o quanto a sombra sera nitida ou desfocada, tambem em px.<br>
+                    [color] é a cor da sombra.
+                  </p>
+
+                  <hr>
+
+                  <p>
+                    Para utilizarmos sombras nos elementos BOX, devemos utilizar a propriedade <em>'box-shadow'</em> no seletor desejádo.<br>
+                    O valor a ser inserido na propriedade deve seguir a seguinte forma: <strong>box-shadow: [h-position] [v-position] [blur] [spread] [color]</strong>
+                  </p>
+
+                  <p>
+                    Os 4 primeiros itens tem o mesmo significado de text-shadow, porem agora temos mais 1 opção para colocar, o [spread] significa o espaçamento que esta sombra ocupara.
+                  </p>
+
+                  <p>
+                    Vamos ver o exemplo a seguir:
+                  </p>
+
+              </div>  <!-- Final div #EXPLAIN -->
+
+              <div class="example">
+                <div class="box-example">
+                  <h1>Titulo</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+
+                <p>
+                  No exemplo acima, utilizamos os seguintes valores:<br>
+                  <strong>box-shadow: 10px 10px 2px black, -10px -10px 2px red ;</strong><br>
+                  <strong>text-shadow: 5px 5px 2px black;</strong>
+                </p>
+
+                <p>
+                  Podemos notar que no box temos 2 sombra, isso foi feito para mostrar que podemos ter mais de 1 sombra no elemento, basta apenas separar os valores por virgula.
+                </p>
+              </div>
+
+
+            </article>
+        </main>
+    </body>
+</html>

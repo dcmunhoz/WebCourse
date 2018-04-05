@@ -1,0 +1,56 @@
+/* Configuração do body e elementos */
+body{
+    font-family: 'Trebuchet MS';
+    background-color: #673AB7;
+    padding: 10px;
+}
+
+main{
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 3px;
+  width: 760px;
+  margin: 0 auto;
+}
+
+main header h1{
+  text-align:center;
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 10px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+  /* background-color: red; */
+}
+
+/* Configuração do exemplo */
+.example{
+  border: 1px solid #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.example .box-example{
+  background-color: #3AB767;
+  padding: 50px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  margin: 30px auto;
+
+  /* Aplicando Sombra */
+  box-shadow: 10px 10px 2px black, -10px -10px 2px #B73A4C ;
+
+}
+
+.example .box-example h1{
+  margin: 0;
+  padding: 0px;
+  font-size: 50px;
+  color: #FFF;
+
+  /* Aplicando Sombra */
+  text-shadow: 5px 5px 2px black;
+}
