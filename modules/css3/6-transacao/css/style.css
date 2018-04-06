@@ -1,0 +1,52 @@
+body{
+  background-color: #3F51B5;
+  padding: 10px;
+  font-family: 'Lucida Sans';
+
+}
+
+main{
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+main h1{
+  text-align: center;
+}
+
+main h1::after{
+  content: '';
+  display: block;
+  border: 1px solid #3FB568;
+  margin-top: 10px;
+}
+
+.examples{
+  border: 1px solid gray;
+  padding: 10px;
+
+}
+
+.examples ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.examples ul li{
+}
+
+.examples ul li a{
+  border-left: 5px solid #3FB568;
+  text-decoration: none;
+  display: block;
+  margin: 5px;
+  padding: 5px 10px;
+  color: #111;
+  transition: background-color 300ms ease-in-out;
+}
+
+.examples ul li a:hover{
+  background-color: #3FB568;
+}

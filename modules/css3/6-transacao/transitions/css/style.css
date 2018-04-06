@@ -1,0 +1,54 @@
+/* padrão paginas */
+body{
+  background-color: #FFF;
+}
+
+.box{
+  background-color: #FF82EC;
+  width: 150px;
+  height: 150px;
+}
+
+.inner-box{
+  width: 150px;
+  height: 150px;
+}
+
+/* Transição 01  */
+#transition01{
+
+    transition: background-color 1s ease-in-out 0ms ;
+}
+
+#transition01:hover{
+  background-color: #FFD482;
+}
+
+/* Transição 02 */
+#transition02{
+  transition: all 500ms easeinoutback;
+}
+
+#transition02:hover{
+  width: 300px;
+  height: 300px;
+}
+
+/* Transição 03 */
+
+#transition03{
+  background-color: #bebebe;
+  border: 10px solid gray;
+
+}
+
+#transition03 .inner-box{
+  background-color: #FF82EC;
+  position: relative;
+  transition: all 1s ease-in-out 0s;
+}
+
+#transition03 .inner-box:hover{
+  background-color: blue;
+  top: 100px;
+}

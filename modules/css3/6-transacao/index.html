@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS3 - Transições</title>
+
+    <!-- Carregar CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+    <!-- Carregar HTML5Shiv -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+
+  </head>
+  <body>
+    <main> <!-- Inicio tag MAIN -->
+      <header>
+        <h1>CSS3 - Transições</h1>
+      </header>
+
+      <article> <!-- Inicio tag ARTICLE -->
+        <div class="explain">
+          <p>
+            As tramsições são bem parecidas com as animações, com um diferencial que precisamos de um "gatilho"
+            para fazer essas transições serem visiveis. Geralmente essas transições são usadas tendo como gatilho a pseudo classe :hover
+
+          </p>
+
+          <p>
+            As transições funcionam da seguinte forma:<br>
+            No seletor do elemento que você deseja aplicar esta transição, você define o estado dele atual, então você cria um seletor utilizando
+            :hover deste mesmo elemento, e dentro deste seletor você diz qual vai ser a forma que determinado elemento precisa ter ao ter o foco,
+            logo em seguida você utiliza a propriedade '<strong>transition:</strong>' no seletor sem o :hover.
+          </p>
+
+          <p>
+            A propriedade '<em>transition</em>' como a '<em>animation</em>' pode ser escrita em uma unica linha, porem possui propriedades separadas, como essas:
+          </p>
+
+          <ul>
+            <li> <em> <strong> transition </strong> </em> - Forma abreviada de escrever todas as propriedades em uma unica linha. </li>
+            <li> <em> <strong> transition-delay </strong> </em> - Tempo de espera até iniciar o efeito de transação apos o gatilho ser acionado. </li>
+              <ul>
+                <li> <em> transition-delay: 1s; </em> - Inicia a transição apos 1 segundo </li>
+              </ul>
+            <li> <em> <strong> transition-duration </strong> </em> - Tempo que leva para a transição ser concluida </li>
+              <ul>
+                <li> <em>transition-duration: 2s;</em> apos 2 segundos a transição chega ao fim </li>
+
+              </ul>
+            <li> <em> <strong> transition-property </strong> </em> - Nome da propriedade que irá receber os efeitos </li>
+              <ul>
+                <li> <em>  transition-property: background-color; </em> - Aplica a transação no background color </li>
+              </ul>
+            <li> <em> <strong> transition-timing-function </strong> </em> - Especifica o tempo das curvas da transação</li>
+              <ul>
+                <li>Podemos ver todas as velocidades de curva neste <a href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp" target="_blank">link</a>. </li>
+              </ul>
+          </ul>
+        </div>
+
+        <div class="examples">
+          <ul>
+            <li> <a href="transitions/01/"> Transição 01</a> </li>
+            <li> <a href="transitions/02/"> Transição 02</a> </li>
+            <li> <a href="transitions/03/"> Transição 03</a> </li>
+
+          </ul>
+        </div>
+
+      </article> <!-- Final tag ARTICLE -->
+    </main> <!-- Final tag MAIN -->
+  </body>
+</html>
