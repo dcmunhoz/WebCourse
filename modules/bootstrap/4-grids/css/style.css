@@ -1,0 +1,19 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  padding: 10px;
+}
+
+header{
+  text-align: center;
+}
+
+.explain{
+  border: 1px solid #bebebe;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
