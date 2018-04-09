@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Tags necessárias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Importar CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Bootstrap - Grids</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Bootstrap - Grids</h1>
+      </header>
+
+      <article class="explain">
+        <div class="explain-content">
+          <p>
+            Ao utilizar o Bootstrap, todo o layout passa a se comportar em um sistema de Grids.<br>
+            A partir disso, vamos utilizar grids de até 12 colunas no total para montar nosso layout
+          </p>
+
+          <p>
+            Para definirmos nossas grids, no nosso elemento vamos definir uma classe chamada "<strong>col-n</strong>" onde N é o numero de grids que o elemento irá ocupar.<br>
+            Podemos controlar quantas grids cada elemento vai possuir dependento do dispositivo/resolução que esta sendo visualizado.
+          </p>
+
+          <ul>
+            <li> <strong> <em> .col-n </em> </strong> Para dispositivos <em> super pequenos </em>, menores que 576px</li>
+            <li> <strong> <em> .col-sm-n </em> </strong> Para dispositivos <em>pequenos</em>, maiores ou iguais a 576px </li>
+            <li> <strong> <em> .col-md-n </em> </strong> Para dispositivos <em>médios</em>, maiores ou iguais a 768px  </li>
+            <li> <strong> <em> .col-lg-n </em> </strong> Para dispositivos <em>largos</em>, maiores ou iguais a 992px </li>
+            <li> <strong> <em> .col-xl-n </em> </strong> Para dispositivos <em>super largos</em>, maiores ou iguais a 1200px </li>
+          </ul>
+
+          <p>
+            Vamos supor que no nosso layout teremos 2 elementosm, na visão desktop queremos que o elemento 1 ocupe 4 grids, então utilizamos a classe <em>.col-lg-4</em> e no segundo elemento, utilizamos
+            .col-lg-8, pois <em>12-4(quantidade utilizada no primeiro elemento) = 8</em>
+          </p>
+        </div>
+      </article>
+
+    </main>
+    <!-- Scripts necessários -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
