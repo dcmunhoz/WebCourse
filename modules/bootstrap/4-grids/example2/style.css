@@ -1,0 +1,11 @@
+main{
+  background-color: #f48484;
+  height: 500px;
+  border: 1px solid red;
+}
+
+.row div{
+  background-color: #8496f4;
+  border: 1px solid blue;
+  height: 100px;
+}

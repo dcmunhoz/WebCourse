@@ -31,3 +31,11 @@ main{
   border: 1px solid black;
   border-radius: 2px
 }
+
+.example3{
+  background-color: blue;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+  color: #FFF;
+}
