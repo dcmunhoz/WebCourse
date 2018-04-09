@@ -1,0 +1,38 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS";
+}
+
+main{
+  background-color: #FFF;
+  padding: 10px;
+  color: #303030;
+}
+
+
+.explain{
+  margin: 0 auto;
+  background-color: #FFF;
+  width: 90%;
+  border: 1px solid #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+.links a{
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  color: #000;
+  border-left:5px solid #303030;
+  border-bottom: 1px solid #303030;
+  margin: 5px 0;
+  transition: all 100ms ease-in-out;
+}
+
+.links a:hover{
+  background-color: #303030;
+  color: #FFF;
+}
