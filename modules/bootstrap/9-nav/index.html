@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Tags necessárias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Importar CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Bootstrap - Tabelas</title>
+  </head>
+  <body>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+      <!-- Logo da nav -->
+      <a href="#" class="navbar-brand">NavBar</a>
+
+      <!-- Botão para abrir os menus -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra-navegacao" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Itens da nav -->
+      <div class="collapse navbar-collapse" id="barra-navegacao">
+
+        <!-- Lista com os itens da nav -->
+        <ul class="navbar-nav ml-auto">
+
+          <!-- Formulários de pesquisa -->
+          <form class="form-inline">
+
+            <div class="input-group">
+              <input class="form-control" placeholder="Search" type="search" name="" value="">
+              <div class="input-group-prepend">
+                <button type="button" class="btn btn-success" name="button">
+                  <img src="search.svg" class="" alt="">
+                </button>
+              </div>
+            </div>
+
+            <!-- <button type="button" class="btn btn-outline-success" name="button">Pesquisar</button> -->
+          </form>
+
+          <!-- Itens  -->
+          <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Empresa</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Clientes</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#">Produtos</a> </li>
+
+          <!-- Item da lista como botão dropdown -->
+          <li class="nav-item dropdown ">
+            <!-- Botão -->
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Minha conta
+            </a>
+
+            <!-- Div com intens do dropdown -->
+            <div class="dropdown-menu mr-5" aria-labelledby="navbarDropdownMenuLink">
+              <!-- Itens do botão dropdown -->
+              <a class="dropdown-item" href="#">Detalhes</a>
+              <a class="dropdown-item" href="#">Perfil</a>
+              <a class="dropdown-item" href="#">Sair</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="page-header border-bottom py-2 my-2 ">
+        <h1>Bootstrap - Barra de navegação</h1>
+      </header>
+
+    </main>
+    <!-- Scripts necessários -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
