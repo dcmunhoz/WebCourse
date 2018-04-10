@@ -7,6 +7,16 @@ main{
   height: 1000px;
 }
 
+.carrosel{
+  background-color: red;
+  position: relative;
+
+}
+
+.carousel-edit-icon:hover{
+  box-shadow: inset -5px 0px 10px 0px red;
+}
+
 
 
 @media (max-width: 575.98px) {
