@@ -1,0 +1,31 @@
+body{
+  background-color: #bebebe;
+}
+
+main{
+  background-color: #fff;
+  height: 1000px;
+}
+
+
+
+@media (max-width: 575.98px) {
+  .mt-sm{
+    margin-top: 5px;
+  }
+
+ .d-sm-block{
+    width: 99%;
+  }
+
+
+
+
+
+}
+
+@media (max-width: 767.98px){
+  .mb-md{
+    margin-bottom: 5px;
+  }
+}

@@ -11,6 +11,8 @@
 
         <!-- Importar CSS -->
         <link rel="stylesheet" type="text/css"  href="css/style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
         <!-- Importar HTML5Shiv -->
         <!--[if lt IE 9]>
@@ -24,27 +26,94 @@
     <body>
         <!-- Navbar responsiva -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <!-- Inicio da .NAVBAR -->
-            <!-- Logo Nav -->
-            <div class="navbar-logo">
-                <a href="#" class="navbar-brand">Meu Site</a>
-            </div>
+            <div class="container">
+              <!-- Logo Nav -->
+              <div class="navbar-logo">
+                  <a href="#" class="navbar-brand">Meu Site</a>
+              </div>
 
-            <!-- Botão DropDown Navbar -->
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarListItems">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+              <!-- Botão DropDown Navbar -->
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarListItems">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
 
-            <!-- Itens da Nav -->
-            <div class="collapse navbar-collapse" id="navbarListItems">
-                <ul class="navbar-nav" >
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Quem Somos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
-                </ul>
+              <!-- Itens da Nav -->
+              <div class="collapse navbar-collapse" id="navbarListItems">
+                  <div class="pags">
+                    <ul class="navbar-nav" >
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Quem Somos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Botão de Login -->
+                  <div class="login ml-auto">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <button type="button" name="button" class="btn btn-primary mb-md mr-1 d-sm-block" data-toggle="modal" data-target="#loginModal">
+                          Login
+                        </button>
+
+                        <!-- Modal Window -->
+                        <div class="modal fade" id="loginModal" tabindex="1" role="dialog" aria-labelledby="JanelaLogin" aria-hidden="true">
+                          <form class="modal-dialog modal-lg">
+
+                            <!-- Conteudo do Modal Window -->
+                            <div class="modal-content" role="document">
+
+                              <!-- Header da janela -->
+                              <div class="modal-header">
+                                <h3 class="modal-title" id="JanelaLogin">Janela de Login</h3>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Sair">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+
+                              <!-- Body -->
+                              <div class="modal-body">
+                                <!-- Usuário -->
+                                <div class="form-group">
+                                  <label for="login">Usuário</label>
+                                  <input type="text" class="form-control" name="login" id="login" placeholder="E-mail">
+                                </div>
+
+                                <!-- Senha -->
+                                <div class="form-group">
+                                  <label for="pass">Senha</label>
+                                  <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+                                </div>
+                              </div>
+
+                              <!-- Footer -->
+                              <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" name="btnlogin" id="btnlogin">Entrar</button>
+                                <button type="button" class="btn btn-danger" name="btnSair" id="btnSair" data-dismiss="modal">Sair</button>
+                              </div>
+                            </div>
+
+                          </form>
+                        </div>
+
+                      </li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline">
+                    <input type="search" aria-label="Pesquisar" placeholder="Pesquisar" name="pesquisar" id="pesquisar" class="form-control mr-1">
+                    <button class=" btn btn-info mt-sm d-sm-block"  type="submit" name="button">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </form>
+              </div>
             </div>
 
         </nav> <!-- Final da .NAVBAR -->
 
+        <!-- Corpor principal da pagina -->
+        <main class="container container-centered">
+
+        </main>
 
         <!-- Javascrip necessário Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
