@@ -6,10 +6,11 @@ body{
 }
 
 #main{
-/*    margin: 5px auto;*/
+    margin: 5px auto;
 /*    width: 900px;*/
 /*    box-shadow: 0px 0px 5px black;*/
     background-color: #FFF;
+
 }
 
 #main h1{
@@ -38,13 +39,12 @@ body{
     margin: 0;
 }
 
-.course-header{
-    padding: 10px 10px 10px 0;
+.content-header{
+    padding: 10px 10px 5px 0;
     border-bottom: 1px solid gray;
-    margin-bottom: 10px;
 }
 
-.course-header h1, h2, h3, h4, h5, h6{
+.content-header h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
 }
