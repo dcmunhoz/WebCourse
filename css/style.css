@@ -1,11 +1,11 @@
 body{
 
 /*    font-family: 'Trebuchet MS';*/
-    background-color: #0080ff;
+    background-color: #bebebe;
 }
 
 
-.container{
+.container-fluid{
   padding: 0;
 }
 
@@ -17,22 +17,30 @@ body{
     background-color: #FFF;
 }
 
-#main h1{
-    text-align: center;
-}
-
 #header{
     padding: 10px;
 /*    width: 880px;*/
-    background-color: #efefef;
+    background: url("../misc/imgs/header-image.JPG");
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+}
 
+.page-header{
+  text-align: center;
+  text-shadow: 2px 2px 5px #000;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .course-content{
-    padding: 10px;
+    /* padding: 10px; */
 }
 
-.content-body #courses-modules{
+.courses-body #courses-modules{
     padding: 0;
 }
 
@@ -44,17 +52,17 @@ body{
 }
 
 .course-header{
-    padding: 10px 10px 10px 0;
     border-bottom: 1px solid gray;
+    padding: 10px 10px 10px 0;
     margin-bottom: 10px;
 }
 
 .course-header h1, h2, h3, h4, h5, h6{
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 
-.content-body ul{
+.courses-body ul{
     list-style: none;
 }
 
@@ -63,8 +71,8 @@ body{
 }
 
 .module{
-    border: 1px solid #8b8b8b;
-    border-radius: 5px;
+    /* border: 1px solid #8b8b8b; */
+    /* border-radius: 5px; */
     margin-bottom: 5px;
 }
 
@@ -74,6 +82,7 @@ body{
     padding-bottom: 5px;
     border-bottom: 1px solid #8b8b8b;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 #courses-modules .module ul{
@@ -83,6 +92,7 @@ body{
 #courses-modules .module ul li{
     margin: 0 10px;
     padding: 0px 0px;
+    box-sizing: border-box;
 }
 
 #courses-modules .module ul li a{
@@ -100,4 +110,26 @@ body{
     background-color: #d4d4d4;
     border-bottom: 1px solid black;
     border-color: black;
+}
+
+/* BOOTSTRAP EDIT */
+
+.row{
+  padding: 0;
+  margin: 0;
+}
+
+/* Small */
+@media (max-width: 575.98px){
+  .page-header h1{
+    font-size: 2em;
+  }
+}
+
+/* Medium */
+@media (min-width: 767.98px){
+  .module{
+    border-right: 1px solid #bebebe;
+
+  }
 }
