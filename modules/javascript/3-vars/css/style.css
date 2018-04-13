@@ -1,0 +1,38 @@
+body{
+  background-color: orange;
+}
+
+.container{
+  background-color: #FFF;
+  height: 1000px;
+}
+
+.header-title{
+  color: orange;
+  text-align: center;
+  margin: 5px 0;
+  border-bottom: #bebebe;
+  padding-bottom: 5px;:
+}
+
+.header-content .topicos .topico-titulo{
+  color: #000;
+  font-weight: 600;
+}
+
+.header-content .topicos li{
+  margin: 10px 0;
+}
+
+.topico-desc{
+  color: #3B3B3B;
+}
+
+.header-content .topicos ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ======= Media ======== */
