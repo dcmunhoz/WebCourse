@@ -15,10 +15,10 @@
     <!-- Importar JS -->
     <script src="js/script.js"></script>
 
-    <title>Javascript - Eventos Teclado</title>
+    <title>Javascript - Eventos Janela</title>
   </head>
 
-  <body>
+  <body onload="olEvent()" onresize="orEvent()">
     <!-- Container -->
     <main class="container">
       <!-- Page Header -->
@@ -28,46 +28,32 @@
           <div class="col-12">
             <!-- Header Title -->
             <div class="header-title">
-              <h1>Eventos Teclado Javascript</h1>
+              <h1>Eventos Janela Javascript</h1>
             </div>
             <!-- Header Content -->
             <div class="header-content">
               <ul class="topicos">
 
-                <!-- On Key Down -->
+                <!-- onload -->
                 <li>
-                  <span class="event-name">onkeydown</span>
-                  <p class="event-desc">Acionado quando uma tecla for precionada (Soltando ou não a tecla).</p>
+                  <span class="event-name">onload</span>
+                  <p class="event-desc">
+                    Acionado assim que a pagina é totalmente carregada. O gatilho que despara o evento do onload deve ser informado no <strong>body</strong> ou em algum elemento que você queira que seja disparada a função assim que for carregado.
+                  </p>
                   <ul>
                     <li>
-                      <input type="text" onkeydown="okdEvent()" class="input-event" name="" value="">
+
                     </li>
                   </ul>
                 </li>
 
-                <!-- On Key Press -->
+                <!-- onresize -->
                 <li>
-                  <span class="event-name">onkeypress</span>
-                  <p class="event-desc">Acionado quando uma tecla for precionada (Soltando ou não a tecla), porem não captura todas as teclas, como exemplo: alt, ctrl, esc, shift.</p>
-                  <ul>
-                    <li>
-                      <input type="text" onkeydown="okpEvent()" class="input-event" name="" value="">
-                    </li>
-                  </ul>
+                  <span class="event-name">onresize</span>
+                  <p class="event-desc">
+                    Acionado assim que a pagina é redimensionada. Assim como o onload, gatilho deve ser colocado no body. <br>
+                    Utilizar o console para entender melhor
                 </li>
-
-                <!-- On Key Up -->
-                <li>
-                  <span class="event-name">onkeyup</span>
-                  <p class="event-desc">Acionado quando uma tecla for solta</p>
-                  <ul>
-                    <li>
-                      <input type="text" onkeydown="okuEvent()" class="input-event" name="" value="">
-                    </li>
-                  </ul>
-                </li>
-
-
 
               </ul>
             </div> <!-- / Header Content -->

@@ -88,7 +88,7 @@ body{
   padding: 5px 10px;
 }
 
-input[type="text"]{
+input[type="text"], .event-control{
   border: 1px solid #bebebe;
   border-radius: 10px;
   padding: 5px 10px;
@@ -96,7 +96,11 @@ input[type="text"]{
   margin: 5px 0;
 }
 
-input[type="text"]:focus{
+.event-control option{
+
+}
+
+input[type="text"]:focus, .event-control:focus{
   box-shadow: 0px 0px 5px 2px #21B845;
   border: 1px solid #21B845;
   outline: 0;

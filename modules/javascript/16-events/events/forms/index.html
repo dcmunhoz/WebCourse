@@ -15,7 +15,7 @@
     <!-- Importar JS -->
     <script src="js/script.js"></script>
 
-    <title>Javascript - Eventos Teclado</title>
+    <title>Javascript - Eventos Formulários</title>
   </head>
 
   <body>
@@ -28,45 +28,53 @@
           <div class="col-12">
             <!-- Header Title -->
             <div class="header-title">
-              <h1>Eventos Teclado Javascript</h1>
+              <h1>Eventos Formulário Javascript</h1>
             </div>
             <!-- Header Content -->
             <div class="header-content">
               <ul class="topicos">
 
-                <!-- On Key Down -->
+                <!-- onfocus -->
                 <li>
-                  <span class="event-name">onkeydown</span>
-                  <p class="event-desc">Acionado quando uma tecla for precionada (Soltando ou não a tecla).</p>
+                  <span class="event-name">onfocus</span>
+                  <p class="event-desc">
+                    Acionado quando o elemento recebe o foco do cursos.
+                  </p>
                   <ul>
                     <li>
-                      <input type="text" onkeydown="okdEvent()" class="input-event" name="" value="">
+                      <input type="text" onfocus="ofEvent()" name="" value="">
                     </li>
                   </ul>
                 </li>
 
-                <!-- On Key Press -->
+                <!-- onblur -->
                 <li>
-                  <span class="event-name">onkeypress</span>
-                  <p class="event-desc">Acionado quando uma tecla for precionada (Soltando ou não a tecla), porem não captura todas as teclas, como exemplo: alt, ctrl, esc, shift.</p>
+                  <span class="event-name">onblur</span>
+                  <p class="event-desc">
+                    Acionado quando o elemento perde o foco do cursos.
+                  </p>
                   <ul>
                     <li>
-                      <input type="text" onkeydown="okpEvent()" class="input-event" name="" value="">
+                      <input type="text" onblur="obEvent()" name="" value="">
                     </li>
                   </ul>
                 </li>
 
-                <!-- On Key Up -->
+                <!-- onchange -->
                 <li>
-                  <span class="event-name">onkeyup</span>
-                  <p class="event-desc">Acionado quando uma tecla for solta</p>
+                  <span class="event-name">onchange</span>
+                  <p class="event-desc">
+                    Acionado quando o estado do elemento é modificado
+                  </p>
                   <ul>
                     <li>
-                      <input type="text" onkeydown="okuEvent()" class="input-event" name="" value="">
+                      <select class="event-control" onchange="ocEvent()" name="">
+                        <option  value="1">Primeira Opção</option>
+                        <option  value="2">Segunda Opção</option>
+                      </select>
                     </li>
                   </ul>
                 </li>
-
 
 
               </ul>
