@@ -88,4 +88,24 @@ body{
   padding: 5px 10px;
 }
 
+
+
+.topicos .event-button{
+
+  background-color: #FFF;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px black;
+  transition: all 150ms;
+  width: 300px;
+}
+
+.topicos ul li:hover .event-button{
+  transform: translate(-1px, -1px);
+  box-shadow: 1px 1px 3px black;
+}
+.topicos .event-button:hover{
+
+}
+
 /* ======= Media ======== */
