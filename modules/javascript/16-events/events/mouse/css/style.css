@@ -1,0 +1,111 @@
+body{
+  background-color: orange;
+}
+
+.container{
+  background-color: #FFF;
+  height: 1000px;
+}
+
+.header-title{
+  color: orange;
+  text-align: center;
+  margin: 5px 0;
+  border-bottom: #bebebe;
+  padding-bottom: 5px;:
+}
+
+.header-content .topicos .topico-titulo{
+  color: #000;
+  font-weight: 600;
+}
+
+.header-content .topicos li{
+  margin: 10px 0;
+}
+
+.topico-desc{
+  color: #3B3B3B;
+}
+
+.header-content .topicos ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+#tabela-exemplo{
+
+}
+
+.tabela{
+  width: 100%;
+}
+
+.tabela th{
+  text-align: center;
+  padding: 15px 0;
+  background-color: #2A2A2A;
+  /* background-color: #37CF45; */
+  color: #FFF;
+}
+
+.tabela tr{
+  border-bottom: 1px solid #A4A4A4;
+}
+
+.tabela tr:hover{
+  background-color: #BCBCBC !important;
+}
+
+.tabela tr:nth-child(even){
+  background-color: #D0D0D0;
+}
+
+.tabela td{
+  padding: 10px;
+}
+
+.topicos{
+  font-size: 20px;
+}
+.topicos .event-name{
+  font-weight: bolder;
+}
+
+.topicos .event-name::after{
+  content: " - ";
+}
+
+.topicos .event-desc{
+  display: inline;
+  color: #222222;
+}
+
+.topicos ul li{
+  display: inline;
+  padding: 5px 10px;
+}
+
+
+
+.topicos .event-button{
+
+  background-color: #FFF;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px black;
+  transition: all 150ms;
+  width: 300px;
+}
+
+.topicos ul li:hover .event-button{
+  transform: translate(-1px, -1px);
+  box-shadow: 1px 1px 3px black;
+}
+.topicos .event-button:hover{
+
+}
+
+/* ======= Media ======== */
