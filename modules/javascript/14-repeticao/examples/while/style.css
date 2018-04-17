@@ -1,0 +1,13 @@
+.valor{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: 'Trebuchet MS';
+  font-size: 40px;
+  font-weight: bold;
+  color: #FF5733;
+}
+
+body{
+  background-color: #1D1D1D;
+}
