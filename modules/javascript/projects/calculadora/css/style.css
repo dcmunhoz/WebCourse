@@ -144,13 +144,22 @@ color:#FFF;
     width: 95% !important;
     margin: 5px 0;
   }
-  .values .form input,
-  .values .form select{
 
+  .values .form select{
+    width: 100% !important;
   }
 
   .calc{
-    float: left;
+    float: left !important;
+    width: 95%;
+    margin: auto !important;
+
+  }
+
+  .btn{
+    margin: 0;
+    width: 100%;
+
   }
 
   .content{

@@ -39,8 +39,8 @@
                 <p class="error" id="error">Verifique se todos os campos estão preenchidos</p>
               </div> <!-- / Erro -->
 
-              <input type="text" class="form-control" id="primeiroValor" name="primeiroValor" placeholder="Primeiro Valor">
-              <select class="form-control" name="opcao" id="opcao">
+              <input type="text" class="form-control" id="primeiroValor" name="primeiroValor" placeholder="Primeiro Valor" onblur="verificaPrimeiro()">
+              <select class="form-control" name="opcao" id="opcao" onblur="verificaOpcao()">
                 <option value="0"> -- Selecione uma opção</option>
                 <option value="1">Adição</option>
                 <option value="2">Subtração</option>
@@ -48,7 +48,7 @@
                 <option value="4">Divisão</option>
                 <option value="5">Modulo</option>
               </select>
-              <input type="text" class="form-control" id="segundoValor" name="segundoValor" placeholder="Segundo Valor">
+              <input type="text" class="form-control" id="segundoValor" name="segundoValor" placeholder="Segundo Valor" onblur="verificaSegundo()">
             </div> <!-- / Inputs -->
 
             <!-- Botão para calcular -->

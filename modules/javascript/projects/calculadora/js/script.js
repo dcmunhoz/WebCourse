@@ -3,19 +3,25 @@ var num1;
 var num2;
 var opcao;
 var error;
+var contadorErros = 0;
+var countUm    = 0;
+var countDois  = 0;
+var countTres  = 0;
 
 // Função para calcular os valores
 function calcular(){
   verificaCampos();
+
+  if (contadorErros > 0){
+    document.getElementById('error').style.display = 'block';
+    return false;
+  }
 
   num1 = parseFloat(document.getElementById('primeiroValor').value);
   num2 = parseFloat(document.getElementById('segundoValor').value);
   opcao = document.getElementById('opcao').value;
   var resposta = document.getElementById('resposta');
   var res;
-
-
-
 
   switch (opcao){
     case '1': // Adição
@@ -42,25 +48,81 @@ function calcular(){
 
 // Função para verificar os campos
 function verificaCampos(){
+
+  verificaPrimeiro();
+  verificaSegundo();
+  verificaOpcao();
+
+}
+
+// Verificar campos separadamente
+function verificaPrimeiro(){
   num1 = document.getElementById('primeiroValor');
-  num2 = document.getElementById('segundoValor');
-  error = document.getElementById('error');
-  opcao = document.getElementById('opcao');
-
-  if(num1.value == ''){
+  if (isNaN(parseFloat(num1.value))){
     num1.classList.add('alert');
+    adicionaErro('primeiro');
+  }else{
+    num1.classList.remove('alert');
+    removeErro('primeiro');
   }
+}
 
-  if(num2.value == ''){
+function verificaSegundo(){
+  num2 = document.getElementById('segundoValor');
+  if (isNaN(parseFloat(num2.value))){
     num2.classList.add('alert');
+    adicionaErro('segundo');
+  }else{
+    num2.classList.remove('alert');
+    removeErro('segundo');
   }
+}
 
-  if( opcao.value == 0){
+function verificaOpcao(){
+  opcao = document.getElementById('opcao');
+  if(opcao.value == '0'){
     opcao.classList.add('alert');
+    adicionaErro('opcao');
+  }else{
+    opcao.classList.remove('alert');
+    removeErro('opcao');
+  }
+}
+
+// Adicionar contador de Erros
+function adicionaErro(opcao){
+  if (opcao == 'primeiro' && countUm < 1){
+    contadorErros += 1;
+    countUm++;
   }
 
-  if ( num1.value == '' || num2.value == '' || opcao.value == 0 ){
-    error.style.display = 'block';
+  if (opcao == 'segundo' && countDois < 1){
+    contadorErros += 1;
+    countDois++;
+  }
+
+  if (opcao == 'opcao' && countTres < 1){
+    contadorErros += 1;
+    countTres++;
+  }
+
+}
+
+// Adicionar contador de Erros
+function removeErro(opcao){
+  if (opcao == 'primeiro' && countUm > 0){
+    contadorErros -= 1;
+    countUm--;
+  }
+
+  if (opcao == 'segundo' && countDois > 0){
+    contadorErros -= 1;
+    countDois--;
+  }
+
+  if (opcao == 'opcao' && countTres > 0){
+    contadorErros -= 1;
+    countTres--;
   }
 
 }
