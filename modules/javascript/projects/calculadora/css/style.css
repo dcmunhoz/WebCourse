@@ -133,4 +133,9 @@ color:#FFF;
   border: 1px solid #FF5151;
 }
 
-/* ========= Tipografia ========= */
+/* ========= media ========= */
+@media screen and (max-width: 575.98px){
+  .container{
+    width: 100%;
+  }
+}
