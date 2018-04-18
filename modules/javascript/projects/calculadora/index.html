@@ -31,17 +31,17 @@
 
           <!-- Valores -->
           <div class="values">
-
-            <!-- Div Informação Erro -->
-            <div class="error">
-              aa
-            </div> <!-- / Erro -->
-
             <!-- Inputs -->
             <div class="form">
+
+              <!-- Div Informação Erro -->
+              <div >
+                <p class="error" id="error">Verifique se todos os campos estão preenchidos</p>
+              </div> <!-- / Erro -->
+
               <input type="text" class="form-control" id="primeiroValor" name="primeiroValor" placeholder="Primeiro Valor">
-              <select class="form-control" name="">
-                <option value=""> -- Selecione uma opção</option>
+              <select class="form-control" name="opcao" id="opcao">
+                <option value="0"> -- Selecione uma opção</option>
                 <option value="1">Adição</option>
                 <option value="2">Subtração</option>
                 <option value="3">Multiplicação</option>
@@ -53,7 +53,7 @@
 
             <!-- Botão para calcular -->
             <div class="calc">
-              <button type="button" class="btn " id="btn-calc" name="btn-calc">Calcular</button>
+              <button type="button" class="btn " id="btn-calc" name="btn-calc" onclick="calcular()">Calcular</button>
             </div> <!-- Botão -->
 
             <div style="clear:both;"></div>
@@ -62,7 +62,7 @@
 
           <!-- Resposta -->
           <div class="resp">
-            <input type="text" name="resposta" id="resposta" class="form-control" placeholder="Resposta">
+            <input type="text" name="resposta" disabled="disabled" id="resposta" class="form-control disabled" placeholder="Resposta">
           </div>
         </div> <!-- / Content -->
       </div> <!-- / Container -->

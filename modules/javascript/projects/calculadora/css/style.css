@@ -42,7 +42,8 @@ h1, h2, h3, h4, h5, h6{
   padding: 30px 0;
   text-align: center;
   font-size: 30px;
-  background-color: #bebebe ;
+  background-color: #222222 ;
+  color: #FFF;
 }
 
 .content{
@@ -72,6 +73,10 @@ h1, h2, h3, h4, h5, h6{
   text-align: center;
 }
 
+.disabled:hover{
+  cursor: not-allowed;
+}
+
 input{
   width: 95%;
 }
@@ -82,24 +87,50 @@ input, select{
   border-radius: 5px;
   font-size: 16px;
   outline: 0;
+  transition: all 150ms;
+}
+
+.form-control:focus{
+
+  box-shadow: 0px 0px 5px 3px #26CA5A;
+  border: 1px solid #26CA5A;
 }
 
 .btn{
   padding: 10px 20px;
   background-color: #fff;
-  border: 1px solid red;
+  border: 1px solid #266ECA;
+  border-radius: 10px;
+  color:#266ECA;
   outline:0;
   font-size: 16px;
+
+  transition:all 300ms;
+}
+
+.btn:hover{
+background-color: #266ECA;
+color:#FFF;
 }
 
 .error{
-  background-color: red;
-  width: 80%;
+  border: 1px solid #FF5151;
+  border-radius: 10px;
+  width: 95%;
   margin: auto;
+  font-size: 16px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 1px #FF5151;
+  display: none;
+
+  background-color: #FFD7D7;
+
+
 }
 
-.values{
-  background-color: blue;
+.alert{
+  box-shadow: 0px 0px 5px 1px #FF5151;
+  border: 1px solid #FF5151;
 }
 
 /* ========= Tipografia ========= */
