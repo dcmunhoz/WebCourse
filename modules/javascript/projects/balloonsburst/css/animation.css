@@ -11,25 +11,42 @@
   }
 }
 
-@keyframes level-hover{
+@keyframes level-fadein{
   0%{
     opacity: 0;
   }
   100%{
     opacity: 1;
-    display: inline-block;
   }
 }
 
-@keyframes teste{
+@keyframes level-fadeout{
  0%{
-   background-color: #FFF;
+   opacity: 1;
+ }
+ 30%{
+   /* top: 46%; */
  }
  100%{
-   background-color: red;
+   opacity: 0;
+   top: 70%;
  }
 }
 
+@keyframes game-load {
+  0%{
+    width: 0%;
+    height: 0%;
+  }
+  50%{
+    width:1000px;
+    height: 0px;
+  }
+  100%{
+    width: 1000px;
+    height: 700px;
+  }
+}
 
 /* ========== Aplicar Animação ========== */
 #game-logo{
@@ -38,7 +55,7 @@
 }
 
 #game-level{
-  animation: level-hover 3000ms ease-in-out 0ms forwards;
+  animation: level-fadein 3000ms ease-in-out 0ms forwards;
 
 }
 
