@@ -1,0 +1,50 @@
+/* ========== Criando Animação ========== */
+@keyframes logo-load{
+  0%, 10%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes level-hover{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+@keyframes teste{
+ 0%{
+   background-color: #FFF;
+ }
+ 100%{
+   background-color: red;
+ }
+}
+
+
+/* ========== Aplicar Animação ========== */
+#game-logo{
+  animation: logo-load 4000ms ease-in-out;
+
+}
+
+#game-level{
+  animation: level-hover 3000ms ease-in-out 0ms forwards;
+
+}
+
+
+/* ========== Aplicar Transação ========== */
+#game-level .btn-play:hover{
+  text-shadow: 3px 2px 5px #373737;
+  cursor: pointer;
+ }

@@ -8,15 +8,45 @@
     <!-- Importar CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css" >
     <link rel="stylesheet" type="text/css" href="css/media.css" >
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Importar Javascript -->
     <script src="js/script.js"></script>
+    <script src="js/animation.js"></script>
 
     <!-- Titulo -->
     <title>Balloons Burst</title>
   </head>
 
-  <body>
-    <h1> Hi ! </h1>
+  <body onload="loader()">
+    <!-- Main -->
+    <main class="container">
+
+      <!-- Game Logo -->
+      <div id="game-logo" style="display:none;" >
+        <h1>Ballons Burst</h1>
+      </div> <!-- / Game Logo -->
+
+      <!-- Game Level -->
+      <div id="game-level">
+        <!-- Level Header -->
+        <div class="header">
+          <span class="header-title">Selecione o nivel</span>
+          <select class="form-control" name="level-select" id="level-select">
+            <option value="1">Facil</option>
+            <option value="2">Medio</option>
+            <option value="3">Dificil</option>
+          </select>
+        </div> <!-- / Level Header -->
+        <div class="play-button">
+          <i class="material-icons btn-play" onclick="startGame()">play_arrow</i>
+        </div>
+      </div> <!-- / Game Level -->
+
+
+    </main> <!-- / Main -->
   </body>
 </html>
