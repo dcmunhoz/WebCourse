@@ -119,6 +119,8 @@ main{
   box-sizing: border-box;
   background-color: #fff;
   box-shadow: 0px 0px 2px 1px black;
+  visibility: hidden;
+  opacity: 1;
 }
 
 /* Pontuação Lateral */
@@ -192,6 +194,25 @@ main{
 }
 
 
+/* Contagem regressiva */
+#count{
+  position: absolute;
+  /* background-color: rgba(0, 0, 0, .8); */
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  display: table;
+  text-align: center;
+}
+
+#counter{
+  font-size: 500px;
+  font-weight: bolder;
+  display: table-cell;
+  vertical-align: middle;
+  color:rgba(255, 147, 0, 1);
+}
 
 /* ============ Tipografia ============ */
 body{

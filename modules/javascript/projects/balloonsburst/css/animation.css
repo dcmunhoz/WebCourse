@@ -53,6 +53,24 @@
   }
 }
 
+@keyframes game-fadein {
+  0%{
+    opacity: 0;
+  }100%{
+    opacity: 1;
+  }
+
+}
+
+@keyframes counter {
+  0%{
+    text-shadow: 0px 0px 0px #000;
+  }
+  100%{
+    text-shadow: 0px 0px 100px 10px #000;
+  }
+}
+
 /* ========== Aplicar Animação ========== */
 #game-logo{
   animation: logo-load 4000ms ease-in-out;
@@ -63,6 +81,12 @@
   animation: level-fadein 0ms ease-in-out 0ms forwards;
 
 }
+
+
+#counter{
+  animation: counter 1000ms ease-in-out 0ms infinite;
+}
+
 
 
 /* ========== Aplicar Transação ========== */
