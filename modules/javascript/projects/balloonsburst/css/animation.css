@@ -62,12 +62,16 @@
 
 }
 
-@keyframes counter {
+@keyframes pulse {
   0%{
-    text-shadow: 0px 0px 0px #000;
+    font-size: 500px;
+    color:rgba(255, 147, 0, 1);
+    text-shadow: 0px 0px 0px rgba(255, 147, 0, 1);
   }
   100%{
-    text-shadow: 0px 0px 100px 10px #000;
+    font-size: 800px;
+    color:rgba(255, 147, 0, 0);
+    text-shadow: 0px 0px 100px rgba(255, 147, 0, 0);
   }
 }
 
@@ -83,8 +87,9 @@
 }
 
 
-#counter{
-  animation: counter 1000ms ease-in-out 0ms infinite;
+.pulse{
+  animation: pulse 1000ms ease-in-out 0ms infinite;
+  color: blue;
 }
 
 
