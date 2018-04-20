@@ -18,6 +18,10 @@ html, body, main{
   height: 100%;
 }
 
+.border{
+  border: 1px solid red;
+}
+
 /* Cor de fundo */
 main{
   background-color: #202020;
@@ -35,7 +39,7 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #FF570B;
+  border: 5px solid #006CFF;
   border-radius: 100px 10px;
   opacity: 0;
 }
@@ -52,7 +56,7 @@ main{
   width: 400px;
   font-size: 50px;
   position: absolute;
-  border: 5px solid #FF570B;
+  border: 5px solid #006CFF;
   border-radius: 30px;
   top: 50%;
   left: 50%;
@@ -95,7 +99,7 @@ main{
 
 /* Game Screen */
 #game-container{
-  border: 5px solid #FFF;
+  border: 5px solid #006CFF;
   border-radius: 5px;
   height: 0px;
   width: 0px;
@@ -104,7 +108,90 @@ main{
   left: 50%;
   transform: translate(-50%, -50%);
   visibility: hidden;
+  padding: 5px;
+  box-sizing: border-box;
 }
+
+#game{
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 1px black;
+}
+
+/* Pontuação Lateral */
+#score{
+  height: 100%;
+  width: 150px;
+  float: left;
+  font-size: 40px;
+}
+
+.balloon{
+  height: 90px;
+  width: 70px;
+  display: inline-block;
+  float: left;
+}
+
+.b-alive{
+  background: url('../imgs/balao_azul_grande.png') no-repeat;
+}
+
+.b-death{
+  background: url('../imgs/balao_azul_grande_estourado.png') no-repeat;
+}
+
+.ballons-live{
+
+}
+
+.alive, .death{
+  width: 74px;
+  height: 90px;
+  float: left;
+  display: table;
+  text-align: center;
+}
+
+#value-alive{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#value-death{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Timer */
+.timer{
+  width: 140px;
+  height: 132px;
+  background: url('../imgs/cronometro.png');
+  display: table;
+  text-align: center;
+  color: #FF1D1D;
+}
+
+.timer #timer-tick{
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+/* Game Inner */
+#game-inner{
+  width: 810px;
+  height: 100%;
+  float: right;
+  background: url('../imgs/cenario.png');
+  background-size: cover;
+}
+
+
 
 /* ============ Tipografia ============ */
 body{

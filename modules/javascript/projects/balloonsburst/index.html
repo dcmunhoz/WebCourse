@@ -26,7 +26,7 @@
     <main class="container">
 
       <!-- Game Logo -->
-      <div id="game-logo" style="display:none;">
+      <div id="game-logo" style="display: none;">
         <h1>Ballons Burst</h1>
       </div> <!-- / Game Logo -->
 
@@ -42,14 +42,42 @@
           </select>
         </div> <!-- / Level Header -->
         <div class="play-button">
-          <i class="material-icons btn-play" onclick="startGame()">play_arrow</i>
+          <i class="material-icons btn-play" onclick="gameContainer()">play_arrow</i>
         </div>
       </div> <!-- / Game Level -->
 
-      <!-- Game -->
+      <!-- Game container -->
       <div id="game-container">
+        <div id="game"> <!-- Box que comporta o score e o jogo -->
+          <!-- Pontuação -->
+          <div id="score" class="">
+            <!-- Balões Inteiros -->
+            <div class="ballons-live ">
+              <div class=" balloon b-alive"></div>
+              <span class="alive"> <p id="value-alive">20</p> </span>
+              <div style="clear: both;"></div>
+            </div>
 
-      </div>
+            <!-- Balões Estourados -->
+            <div class="ballons-death ">
+              <div class=" balloon b-death"></div>
+              <span class="death"> <p id="value-death">20</p> </span>
+              <div style="clear: both;"></div>
+            </div>
+
+            <!-- Cronometro -->
+            <div class="timer ">
+              <p id="timer-tick"></p>
+            </div>
+
+
+          </div> <!-- / Pontação -->
+
+          <div id="game-inner" class="">
+
+          </div>
+        </div>
+      </div> <!-- / Game Container -->
 
 
 

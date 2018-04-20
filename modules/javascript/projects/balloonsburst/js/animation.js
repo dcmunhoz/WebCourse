@@ -9,7 +9,7 @@ function loader(){
 }
 
 // Abre o jogo
-function startGame(){
+function gameContainer(){
   document.getElementById('game-level').style.animation = 'level-fadeout 700ms cubic-bezier(.45,-0.58,.67,.53) forwards';
 
   load = setTimeout(function(){
@@ -17,5 +17,9 @@ function startGame(){
     document.getElementById('game-container').style.visibility = 'visible';
     document.getElementById('game-container').style.animation = 'game-load 1000ms ease-in-out forwards';
     clearTimeout(load);
+    var gameStart = setTimeout(function(){
+      startGame();
+      clearTimeout(gameStart);
+    },1200);
   }, 700)
 }
