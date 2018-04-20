@@ -1,11 +1,11 @@
 // Variaveis Globais
 var load = null;
 
-// Desativar logo load
+// Ativa o level assim que a logo sumir
 function loader(){
   load = setTimeout(function(){
     document.getElementById('game-level').style.visibility = 'visible';
-  }, 4000);
+  }, 0); // Mudar esse tempo para a duração da Animação do logo
 }
 
 // Abre o jogo
@@ -15,7 +15,7 @@ function gameContainer(){
 
   load = setTimeout(function(){
     getLevel();
-    setBalloons();
+    setBalloons(70);
     document.getElementById('game-level').style.visibility = 'hidden';
     document.getElementById('game-container').style.visibility = 'visible';
     document.getElementById('game-container').style.animation = 'game-load 1000ms ease-in-out forwards';

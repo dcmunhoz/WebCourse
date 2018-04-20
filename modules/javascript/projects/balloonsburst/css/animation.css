@@ -82,7 +82,7 @@
 }
 
 #game-level{
-  animation: level-fadein 0ms ease-in-out 0ms forwards;
+  animation: level-fadein 2000ms ease-in-out 500ms forwards;
 
 }
 

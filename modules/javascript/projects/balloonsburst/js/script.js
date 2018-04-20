@@ -48,14 +48,21 @@ function timerTick(tim){
 
 }
 
-
 // Função para gerar os balõe
-function setBalloons(){
-  for(var i = 1; i <= 10; i++){
+function setBalloons(val){
+  for(var i = 1; i <= val; i++){
     var baloes = document.createElement('img');
     baloes.src = 'imgs/balao_azul_grande.png';
-    baloes.style.margin = '11px';
     baloes.setAttribute('id', 'b'+i);
+    baloes.classList.add('balloons-inner');
+    baloes.setAttribute('onclick', 'balloonShot('+ baloes.getAttribute('id')+ ')');
     document.getElementById('game-inner').appendChild(baloes);
   }
+}
+function balloonShot(el){
+  var elemento = el.id;
+  var balloon = document.getElementById(elemento);
+
+  balloon.src = 'imgs/balao_azul_grande_estourado.png';
+
 }

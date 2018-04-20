@@ -18,10 +18,6 @@ html, body, main{
   height: 100%;
 }
 
-.border{
-  border: 1px solid red;
-}
-
 /* Cor de fundo */
 main{
   background-color: #202020;
@@ -197,7 +193,7 @@ main{
 /* Contagem regressiva */
 #count{
   position: absolute;
-  /* background-color: rgba(0, 0, 0, .8); */
+  background-color: rgba(0, 0, 0, .5);
   width: 100%;
   height: 100%;
   top:0;
@@ -212,6 +208,13 @@ main{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Baloes */
+.balloons-inner{
+  width: 65px;
+  height: 75px;
+  margin: 7px;
 }
 
 /* ============ Tipografia ============ */
