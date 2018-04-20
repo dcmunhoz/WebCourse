@@ -88,8 +88,11 @@
 
 
 .pulse{
-  animation: pulse 1000ms ease-in-out 0ms infinite;
-  color: blue;
+  animation: pulse 1000ms ease-in-out 1000ms infinite;
+}
+
+.status-animation{
+  
 }
 
 

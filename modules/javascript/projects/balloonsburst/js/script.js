@@ -1,6 +1,10 @@
 // Variaveis Globais
 var game_level = null;
 var timer = null;
+var time = null;
+var balloons_alive = null;
+var balloons_death = 0;
+var win = false;
 
 // Função para iniciar o jogo
 function startGame(){
@@ -34,22 +38,24 @@ function getLevel(){
 
 // Função para contar o tempo.
 function timerTick(tim){
-  var time = null;
-  tim -= 1;
+  time = tim;
+  time -= 1;
   timer = setInterval(function(){
-    if( tim == -1){
-      clearInterval(timer);
-      alert('PERDEU PLAYBOY');
-    }else{
-      document.getElementById('timer-tick').innerHTML = tim;
-      tim = tim - 1;
+
+    if(time >= 0){
+      document.getElementById('timer-tick').innerHTML = time;
+      time = time - 1;
+      statusGame(); // Verifica o status do game a cada segundo
     }
+
   },1000);
 
 }
 
 // Função para gerar os balõe
 function setBalloons(val){
+
+  balloons_alive = val;
   for(var i = 1; i <= val; i++){
     var baloes = document.createElement('img');
     baloes.src = 'imgs/balao_azul_grande.png';
@@ -59,10 +65,59 @@ function setBalloons(val){
     document.getElementById('game-inner').appendChild(baloes);
   }
 }
+
+// Função para estourar os balões ao clicar
 function balloonShot(el){
   var elemento = el.id;
   var balloon = document.getElementById(elemento);
-
   balloon.src = 'imgs/balao_azul_grande_estourado.png';
+  scoreRefresh();
+  balloon.onclick = '';
 
+}
+
+
+// Função para inserir o placar
+function score(){
+  document.getElementById('value-alive').innerHTML = balloons_alive;
+  document.getElementById('value-death').innerHTML = balloons_death;
+}
+
+// Função para atualizar o placar
+function scoreRefresh(){
+  balloons_alive -= 1;
+  balloons_death += 1;
+  score();
+}
+
+// Função que verifica vitoria ou derrota
+function statusGame(){
+  if(balloons_alive > 0 && time == 0){ // Derrota
+    removeBalloonsClick();
+    clearInterval(timer);
+    win = false;
+  }else if(balloons_alive == 0 && time >= 0){ // Vitoria
+    removeBalloonsClick();
+    clearInterval(timer);
+    win = true;
+  }
+}
+
+
+// Função para remover evento de clique em caso de derrota
+function removeBalloonsClick(){
+  var i = 1;
+  while (document.getElementById('b'+i)) {
+      document.getElementById('b'+i).onclick = '';
+      i++;
+  }
+}
+
+// Animação vitoria
+function isWinner(){
+  if ( win == true){
+    alert('vitoria');
+  }else{
+    alert('derrota');
+  }
 }

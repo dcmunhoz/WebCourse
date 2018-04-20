@@ -15,14 +15,16 @@ function gameContainer(){
 
   load = setTimeout(function(){
     getLevel();
-    setBalloons(70);
+    setBalloons(5);
+    score();
     document.getElementById('game-level').style.visibility = 'hidden';
     document.getElementById('game-container').style.visibility = 'visible';
     document.getElementById('game-container').style.animation = 'game-load 1000ms ease-in-out forwards';
     var gameStart = setTimeout(function(){
       document.getElementById('game').style.visibility = 'visible';
       document.getElementById('game').style.animation = 'game-fadein 1000ms ease-in-out forwards';
-      counter()
+      document.getElementsByClassName('pulse')[0].style.animation = 'pulse 1000ms ease-in-out 1000ms infinite';
+      counter();
       clearTimeout(gameStart);
     },1200);
     clearTimeout(load);
