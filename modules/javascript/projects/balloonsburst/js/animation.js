@@ -5,7 +5,7 @@ var load = null;
 function loader(){
   load = setTimeout(function(){
     document.getElementById('game-level').style.visibility = 'visible';
-  }, 0); // Mudar esse tempo para a duração da Animação do logo
+  }, 4000); // Mudar esse tempo para a duração da Animação do logo
 }
 
 // Abre o jogo
@@ -15,7 +15,7 @@ function gameContainer(){
 
   load = setTimeout(function(){
     getLevel();
-    setBalloons(5);
+    setBalloons(70);
     score();
     document.getElementById('game-level').style.visibility = 'hidden';
     document.getElementById('game-container').style.visibility = 'visible';
@@ -56,4 +56,10 @@ function counter(){
     counting = counting - 1;
   },1000);
 
+}
+
+// Exibe Vitoria ou Derrota
+function showMessage(msg){
+  document.getElementById('status').style.visibility = 'visible';
+  document.getElementById('message').innerHTML = msg;
 }

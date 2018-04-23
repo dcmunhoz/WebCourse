@@ -2,16 +2,15 @@
 var game_level = null;
 var timer = null;
 var time = null;
+var base_time = null;
 var balloons_alive = null;
 var balloons_death = 0;
-var win = false;
+var win = null;
 
 // Função para iniciar o jogo
 function startGame(){
-
-
   // Inserir o valor do timer
-  timerTick(5) // Função que faz o timer funcionar
+  timerTick(base_time) // Função que faz o timer funcionar
 }
 
 // Função para verificar o nivel
@@ -22,17 +21,17 @@ function getLevel(){
   // Definir o tempo de acordo com o nivel.
   switch(game_level){
     case '1':
-      timer = 120;
+      base_time = 120;
       break;
     case '2':
-      timer = 60;
+      base_time = 60;
       break;
     case '3':
-      timer = 30;
+      base_time = 30;
       break;
   }
 
-  document.getElementById('timer-tick').innerHTML = timer;
+  document.getElementById('timer-tick').innerHTML = base_time;
 
 }
 
@@ -42,10 +41,22 @@ function timerTick(tim){
   time -= 1;
   timer = setInterval(function(){
 
-    if(time >= 0){
+    if(balloons_alive > 0 && time == -1){ // Derrota
+      win = 0;
+      isWinner();
+      removeBalloonsClick();
+      clearInterval(timer);
+
+
+    }else if(balloons_alive == 0 && time >= 0){ // Vitoria
+      win = 1;
+      isWinner();
+      removeBalloonsClick();
+      clearInterval(timer);
+
+    }else{
       document.getElementById('timer-tick').innerHTML = time;
       time = time - 1;
-      statusGame(); // Verifica o status do game a cada segundo
     }
 
   },1000);
@@ -90,19 +101,6 @@ function scoreRefresh(){
   score();
 }
 
-// Função que verifica vitoria ou derrota
-function statusGame(){
-  if(balloons_alive > 0 && time == 0){ // Derrota
-    removeBalloonsClick();
-    clearInterval(timer);
-    win = false;
-  }else if(balloons_alive == 0 && time >= 0){ // Vitoria
-    removeBalloonsClick();
-    clearInterval(timer);
-    win = true;
-  }
-}
-
 
 // Função para remover evento de clique em caso de derrota
 function removeBalloonsClick(){
@@ -115,9 +113,14 @@ function removeBalloonsClick(){
 
 // Animação vitoria
 function isWinner(){
-  if ( win == true){
-    alert('vitoria');
+  if ( win == 1){
+    var message = 'Winner =]';
+    showMessage(message);
+
   }else{
-    alert('derrota');
+    var message = 'Loser =[';
+    showMessage(message);
   }
 }
+
+// Animação derrota

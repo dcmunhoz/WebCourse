@@ -75,6 +75,17 @@
   }
 }
 
+@keyframes status {
+  0%{
+    text-shadow: 0px 0px 0px rgba(255, 147, 0, 0);
+    font-size: 150px;
+  }
+  100%{
+    text-shadow: 0px 0px 20px rgba(255, 147, 0, 1);
+    font-size: 170px;
+  }
+}
+
 /* ========== Aplicar Animação ========== */
 #game-logo{
   animation: logo-load 4000ms ease-in-out;
@@ -82,7 +93,7 @@
 }
 
 #game-level{
-  animation: level-fadein 2000ms ease-in-out 500ms forwards;
+  animation: level-fadein 2000ms ease-in-out 4000ms forwards;
 
 }
 
@@ -92,7 +103,7 @@
 }
 
 .status-animation{
-  
+  animation: status 600ms ease-in-out infinite alternate;
 }
 
 

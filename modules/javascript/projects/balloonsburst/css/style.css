@@ -226,7 +226,7 @@ main{
   top: 50%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   color:rgba(255, 147, 0, 1);
   font-size: 150px;
 }
