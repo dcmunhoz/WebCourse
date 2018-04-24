@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Exemplo Seletores</title>
+
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript">
+
+      function exibeElementoPorTag(tag){
+        $(tag).show();
+      }
+
+      function ocultaElementoPorTag(tag){
+        $(tag).hide();
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <main class="container">
+      <header class="cabecalho">
+        <h1>Selecionando elementos com JQuery</h1>
+      </header>
+      <article class="content">
+
+        <div class="box paragrafos">
+          <header>
+            <h3>Paragrafos (p)</h3>
+          </header>
+          <article class="inner">
+            <p>Este é um paragrafo</p>
+            <p>Este é outro paragrafo</p>
+          </article>
+          <footer>
+            <div class="btn btn-hide" onclick="ocultaElementoPorTag('p')">
+              Esconder
+            </div>
+            <div class="btn btn-show" onclick="exibeElementoPorTag('p')">
+              Exibir
+            </div>
+          </footer>
+        </div>
+
+        <div class=" box paragrafos">
+          <header>
+            <h3>Div's (div)</h3>
+          </header>
+          <article class="inner">
+            <div class="exp1 div-ex">
+
+            </div>
+            <div class="exp2 div-ex">
+
+            </div>
+          </article>
+          <footer>
+            <div class="btn btn-hide">
+              Esconder
+            </div>
+            <div class="btn btn-show">
+              Exibir
+            </div>
+          </footer>
+        </div>
+
+        <div class=" box paragrafos">
+          <header>
+            <h3>Campos (input)</h3>
+          </header>
+          <article class="inner">
+            <input type="text" name="" value="" placeholder="Campo 1">
+            <input type="text" name="" value="" placeholder="Campo 2">
+          </article>
+          <footer>
+            <div class="btn btn-hide">
+              Esconder
+            </div>
+            <div class="btn btn-show">
+              Exibir
+            </div>
+          </footer>
+        </div>
+
+      </article>
+    </main>
+  </body>
+</html>

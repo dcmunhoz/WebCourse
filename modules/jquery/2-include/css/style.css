@@ -1,0 +1,52 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  background-color: #1378D5;
+  font-family: 'Trebuchet MS';
+}
+
+.container{
+  background-color: #FFF;
+  width: 80%;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+header{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header .title{
+  padding: 10px 0;
+  color: #0484FA;
+  font-size: 35px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+}
+
+.content{
+
+}
+
+.content ul{
+  padding: 0 30px;
+}
+
+.content ul li span{
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content ul li ul{
+  list-style: none;
+  text-align: justify;
+  color: #2D2D2D;
+}
+
+.description p {
+  color: green;
+}
