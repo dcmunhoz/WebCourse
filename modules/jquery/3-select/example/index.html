@@ -10,12 +10,31 @@
 
     <script type="text/javascript">
 
+
+      // Por tag
       function exibeElementoPorTag(tag){
         $(tag).show();
       }
 
       function ocultaElementoPorTag(tag){
         $(tag).hide();
+      }
+
+      // Por ID / Class
+      function ocultaElementoPorClasse(classe){
+        $('.'+classe).hide();
+      }
+
+      function exibeElementoPorClasse(classe){
+        $('.'+classe).show();
+      }
+
+      function ocultaElementoPorID(id){
+        $('#'+id).hide();
+      }
+
+      function exibeElementoPorID(id){
+        $('#'+id).show();
       }
 
     </script>
@@ -51,18 +70,18 @@
             <h3>Div's (div)</h3>
           </header>
           <article class="inner">
-            <div class="exp1 div-ex">
+            <div class="exp1 div-ex div" id="el1">
 
             </div>
-            <div class="exp2 div-ex">
+            <div class="exp2 div-ex div">
 
             </div>
           </article>
           <footer>
-            <div class="btn btn-hide">
+            <div class="btn btn-hide" onclick="ocultaElementoPorClasse('div')">
               Esconder
             </div>
-            <div class="btn btn-show">
+            <div class="btn btn-show" onclick="exibeElementoPorClasse('div')">
               Exibir
             </div>
           </footer>
@@ -73,14 +92,14 @@
             <h3>Campos (input)</h3>
           </header>
           <article class="inner">
-            <input type="text" name="" value="" placeholder="Campo 1">
-            <input type="text" name="" value="" placeholder="Campo 2">
+            <input type="text" name="" value="" placeholder="Campo 1" id="input_1">
+            <input type="text" name="" value="" placeholder="Campo 2" id="input_2">
           </article>
           <footer>
-            <div class="btn btn-hide">
+            <div class="btn btn-hide" onclick="ocultaElementoPorID('input_1')">
               Esconder
             </div>
-            <div class="btn btn-show">
+            <div class="btn btn-show" onclick="exibeElementoPorID('input_1')">
               Exibir
             </div>
           </footer>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <!-- Meta Tags Importantes -->
+    <meta charset="utf-8">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Incluir JQuery Minified -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <!-- Title -->
+    <title>JQuery - Eventos</title>
+  </head>
+  <body>
+    <!-- Container Principal -->
+    <main class="container">
+      <!-- Titulo -->
+      <header>
+        <h1 class="title">JQuery - Eventos JQuery</h1>
+      </header>
+
+      <article class="content">
+        <ul>
+          <li>
+            <span class="title">O que são eventos?</span>
+            <ul class="description">
+              <li>
+                <p>
+                  Como ja vimos anteriormente, eventos são ações que podem ser capturadas conforme a utilização do usuário. <br>
+                  Por exemplo, o clique do Mouse, uma teclas precionada. <br>
+                  Podemos determinar uma certa ação a ser tomada com base nesse evento capturado.
+                </p>
+
+              </li>
+            </ul>
+
+          </li>
+
+          <li>
+            <span class="title">Função ready() do JQuery</span>
+            <ul class="description">
+              <li>
+                <p>A função ready é altamente recomendavel que se use antes de iniciar uma codificação javascript, pois utilizando a função como na imagem abaixo, garantimos que todo codigo JQuery será executado somente quando todo o DOM for carregado.</p>
+                <p>
+                  Isso nos da uma segurança a mais na hora de escrever o nosso codigo, pois temos a certeza que o elemento html já vai estar sendo interpretado pelo navegador antes de executarmos determinada função no mesmo.
+                </p>
+                <img src="imgs/e1.png" alt="">
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="title">Tipos de eventos</span>
+            <ul>
+              <li> <a href="examples/mouse/">Mouse</a> </li>
+              <li> <a href="examples/keyboard/">Teclado</a> </li>
+              <li> <a href="examples/forms/">Formulários</a> </li>
+            </ul>
+          </li>
+
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>

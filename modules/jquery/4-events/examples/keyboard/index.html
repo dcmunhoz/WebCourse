@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Eventos Teclado</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // Keydown
+        $('#down').keydown(function(){
+          alert('Tecla pressionada');
+        });
+
+        // keypress
+        $('#press').keypress(function(){
+          alert('Tecla pressionada 2');
+        });
+
+        // keyup
+        $('#up').keyup(function(){
+          alert('Tecla solta');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Eventos Teclado</h1>
+      </header>
+      <article class="">
+        <div class="box">
+          <header>
+            <p> <span class="title">.keydown()</span> - Acionado no momento em que uma tecla é pressionada (soltando ou não)</p>
+          </header>
+          <article class="">
+            <input type="text" placeholder="Campo Keydown" name="" value="" id="down">
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.keypress()</span> - Acionado no momento em que uma tecla é pressionada (soltando ou não), porem não captura todas as teclas, como por exemplo alt, ctrl, esc, shift, etc.</p>
+          </header>
+          <article class="">
+            <input type="text" placeholder="Campo Keypress" name="" value="" id="press">
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.keyup()</span> - Acionado no momento em que uma tecla é solta</p>
+          </header>
+          <article class="">
+            <input type="text" placeholder="Campo Keyup" name="" value="" id="up">
+          </article>
+        </div>
+
+
+      </article>
+    </main>
+  </body>
+</html>

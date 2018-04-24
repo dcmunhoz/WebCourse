@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Eventos Mouse</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        //Evento Click
+        $('#click').click(function(){
+          alert('Elemento Clicado');
+        });
+
+        //Evento Double Click
+        $('#dblclick').dblclick(function(){
+          alert('Elemento Clicado 2x');
+        });
+
+        //Evento Mouse Down
+        $('#down').mousedown(function(){
+          alert('Elemento foi pressionado');
+        });
+
+        //Evento Mouse Over
+        $('#over').mouseover(function(){
+          alert('Mouse sobre elemento');
+        });
+
+        //Evento Mouse Out
+        $('#out').mouseout(function(){
+          alert('Mouse saiu do elemento');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Eventos Mouse</h1>
+      </header>
+      <article class="">
+        <div class="box">
+          <header>
+            <p> <span class="title">.click()</span> - acionado no clique do mouse </p>
+          </header>
+          <article class="">
+            <div class="example-box" id="click">
+
+            </div>
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.dblclick()</span> - acionado no clique duplo do mouse </p>
+          </header>
+          <article class="">
+            <div class="example-box" id="dblclick">
+
+            </div>
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.mousedown()</span> - acionado no clique do mouse (soltando ou não o botão) </p>
+          </header>
+          <article class="">
+            <div class="example-box" id="down">
+
+            </div>
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.mouseover()</span> - acionado quando o cursor do mouse sobrepõe o elemento </p>
+          </header>
+          <article class="">
+            <div class="example-box" id="over">
+
+            </div>
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.mouseout()</span> - acionado quando o cursor do mouse sai da area do elemento </p>
+          </header>
+          <article class="">
+            <div class="example-box" id="out">
+
+            </div>
+          </article>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

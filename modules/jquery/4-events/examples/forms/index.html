@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Eventos Formulário</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // focus
+        $('#focus').focus(function(){
+          alert('Elemento recebeu foco');
+        });
+
+        // blur
+        $('#blur').blur(function(){
+          alert('Elemento perdeu o foco');
+        });
+
+        // Change
+        $('#change').change(function(){
+          alert('Elemento alterado');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Eventos Formulário</h1>
+      </header>
+      <article class="">
+        <div class="box">
+          <header>
+            <p> <span class="title">.focus()</span> - Acionado quando o elemento recebe o foco do cursor</p>
+          </header>
+          <article class="">
+            <input type="text" placeholder="Campo Focus" name="" value="" id="focus">
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.blur()</span> - Acionado quando o elemento perde o foco do cursor</p>
+          </header>
+          <article class="">
+            <input type="text" placeholder="Campo Blur" name="" value="" id="blur">
+          </article>
+        </div>
+
+        <div class="box">
+          <header>
+            <p> <span class="title">.change()</span> - Acionado quando o estado do elemento muda</p>
+          </header>
+          <article class="">
+            <select class="" name="" id="change">
+              <option value="">Primeira</option>
+              <option value="">Segunda</option>
+              <option value="">Terceira</option>
+            </select>
+          </article>
+        </div>
+
+      </article>
+    </main>
+  </body>
+</html>
