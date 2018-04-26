@@ -9,19 +9,102 @@
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animation.cs"></script>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
     <!-- Importar CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/animation.css">
 
+    <!-- Importar fonte -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
     <!-- Icon -->
-    <link rel="icon" href="assets/favicon.png">
+    <link rel="icon" href="assets/icons/favicon.png">
 
     <!-- Titulo -->
     <title>Hash 2.0</title>
   </head>
 
   <body>
+    <!-- Container -->
+    <main class="container border">
 
+      <!-- Game Panel -->
+      <div class="game-panel border">
+
+        <!-- Game start box -->
+        <div id="game-start">
+
+          <!-- Player 1 Icon -->
+          <div class="player" id="p1">
+            <!-- Icon -->
+            <div class="icon">
+              <i class="far fa-user"></i>
+            </div>
+            <!-- Nick Input -->
+            <div class="nick-input">
+              <input type="text" name="" value="" id="player-one-nick" placeholder="Player 1">
+            </div>
+          </div>
+
+          <!-- Play Game Icon -->
+          <div class="start" >
+            <div class="icon-play" id="start-game">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+
+          <!-- Player 2 Icon -->
+          <div class="player" id="p2">
+            <!-- Icon -->
+            <div class="icon">
+              <i class="far fa-user"></i>
+            </div>
+            <!-- Nick Input -->
+            <div class="nick-input">
+              <input type="text" name="" value="" id="player-two-nick" placeholder="Player 2 ">
+            </div>
+          </div>
+
+        </div> <!-- / Game Start Box -->
+
+        <!-- Game Inner -->
+        <div id="game-inner">
+          <!-- Player 1 Icon -->
+          <div class="player" id="p1">
+            <!-- Icon -->
+            <div class="icon">
+              <i class="far fa-user"></i>
+            </div>
+            <!-- Nick Input -->
+            <div class="nick-input">
+              <span id="nick-player-one"></span>
+            </div>
+          </div>
+
+          <!-- Game body -->
+          <div class="game-body" id="game">
+            <!-- Tabela gerada -->
+            <table  id="game-table" name="game-table">
+
+            </table>
+          </div> <!-- / Game body -->
+
+          <!-- Player 2 Icon -->
+          <div class="player" id="p2">
+            <!-- Icon -->
+            <div class="icon">
+              <i class="far fa-user"></i>
+            </div>
+            <!-- Nick Input -->
+            <div class="nick-input">
+              <span id="nick-player-two"></span>
+            </div>
+          </div>
+        </div> <!-- / Game Inner -->
+
+      </div> <!-- / Game Panel -->
+    </main> <!-- / Container -->
   </body>
 </html>

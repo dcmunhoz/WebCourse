@@ -1,0 +1,138 @@
+/*
+  @author       : Daniel Costa Munhoz
+  @version      : 1.0
+  @description  : CSS que comporta todos os estilos estaticos da pagina.
+*/
+
+/* ========== VISUAL ========= */
+
+/* Resetar padding e margin */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.border{
+  border: 1px solid #bebebe;
+}
+
+/* Deixar pagina com Height 100% */
+html, body{
+  height: 100%;
+}
+
+/* Main Container */
+.container{
+  height: 100%;
+}
+
+/* Game Panel */
+.game-panel{
+  height: 90%;
+  width: 90%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* - Game start - */
+/* Seleção dos players */
+#game-start{
+  /* display: none; */
+}
+#game-start, #game-inner{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
+#game-start div{
+  display: inline-block;
+  padding:0 5px;
+  margin:0 10px;
+
+}
+#game-start div .icon,
+#game-start div .icon-play{
+  display: block;
+  font-size: 200px;
+}
+
+#game-start div .icon-play{
+  position: relative;
+  top: -50px;
+  font-size: 150px;
+}
+
+#game-start .nick-input input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  outline: 0;
+}
+
+/* Icone player */
+#p1{
+  color: red;
+}
+#p2{
+  color: blue;
+}
+
+/* - Game Inner - */
+#game-inner{
+  display: none;
+
+}
+
+#game-inner div{
+  display: inline-block;
+  padding:0 5px;
+  margin:0 10px;
+
+}
+#game-inner div .icon,
+#game-inner div .icon-play{
+  display: block;
+  font-size: 200px;
+}
+
+#game-inner div .icon-play{
+  position: relative;
+  top: -50px;
+  font-size: 150px;
+}
+
+#game-inner .nick-input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  outline: 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* - Table Jogo - */
+#game-table{
+
+}
+
+#game-table tr td{
+  width: 100px;
+  height: 100px;
+}
+
+.jogada{
+
+}
+/* ========== TIPOGRAFIA ========= */
+body{
+  font-family: 'Lato', sans-serif;
+
+}
