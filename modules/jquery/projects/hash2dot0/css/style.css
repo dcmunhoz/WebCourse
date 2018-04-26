@@ -53,6 +53,7 @@ html, body{
   top: 50%;
   left: 50%;
   transform:translate(-50%, -50%);
+  display: none;
 }
 
 #game-start div{
@@ -93,12 +94,6 @@ html, body{
 }
 
 /* - Game Inner - */
-#game-inner{
-  display: none;
-  padding: 10px;
-
-}
-
 #game-inner div{
   display: inline-block;
   padding:0 5px;
@@ -140,13 +135,6 @@ html, body{
   padding: 0px;
   border-color: black !important;
 }
-
-
-.jogada{
-
-}
-
-
 
 
 /* ========== TIPOGRAFIA ========= */

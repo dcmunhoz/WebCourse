@@ -3,59 +3,88 @@ var player = '';
 var point = 0;
 var hash = [];
 var soma = null;
+var valido = null;
 
 $(document).ready(function(){
 
   // Inicia o jogo
   $('#start-game').click(function(){
-    // Desabilita start e habilita jogo
-    $('#game-start').hide();
-
-    // Exibe a tela do jogo
-    $('#game-inner').show(function(){
-      // Exibe os nicks
-      $('#nick-player-one').html($('#player-one-nick').val());
-      $('#nick-player-two').html($('#player-two-nick').val());
-
-      // Tabela do jogo pronta
-      $('#game-table').ready(function(){
-        criarTabelaJogo();
-
-        // Jogada click
-        $('.jogada').click(function(){
-
-          varificaRodada();
-
-          // Separa o id do elemento clicado em um array para utilizar na isnerção do array
-          var mxn     = this.id.split('-');
-          var linha   = mxn[0];
-          var coluna  = mxn[1];
-
-          hash[linha][coluna] = point;
-
-          this.innerHTML = player;
-
-          // Incrementa a variavel de RODADA
-          round += 1;
-
-          // Apos um elemento ser clicado, remove seu evento de click
-          $('#'+this.id).off();
-
-          // Verifica jogo
-          verificaJogo(mxn);
-
-        }); // # Jogada click
-
-      }); // # Tabela do jogo pronta
-
-
-    }); // # Exibe a tela do jogo
-
-
+    iniciaJogo();
   }); // # Inicia Jogo
 
+  // Verificar se os campos no nick estão preenchidos
+  $('#player-one-nick').blur(function(){
+    if($('#player-one-nick').val() == '' || $('#player-one-nick').val() == null){
+      $('#player-one-nick').css('animation','nick_input_error 400ms ease-in-out alternate infinite');
+      $('#player-one-nick').css('border-color','#B20000');
+    }else{
+      $('#player-one-nick').css('animation','');
+      $('#player-one-nick').css('border-color','');
+    }
+  });
+
+  $('#player-two-nick').blur(function(){
+    if($('#player-two-nick').val() == '' || $('#player-one-nick').val() == null){
+      $('#player-two-nick').css('animation','nick_input_error 400ms ease-in-out alternate infinite');
+      $('#player-two-nick').css('border-color','#B20000');
+    }else{
+      $('#player-two-nick').css('animation','');
+      $('#player-two-nick').css('border-color','');
+    }
+  });
+
+  function iniciaJogo(){
+
+        // Verifica se os campos foram preenchidos
+        verificaCampos();
+        if(!(valido == 1)){
+          // Desabilita start e habilita jogo
+          $('#game-start').hide();
+
+          // Exibe a tela do jogo
+          $('#game-inner').show(function(){
+            // Exibe os nicks
+            $('#nick-player-one').html($('#player-one-nick').val());
+            $('#nick-player-two').html($('#player-two-nick').val());
+
+            // Tabela do jogo pronta
+            $('#game-table').ready(function(){
+              criarTabelaJogo();
+
+              // Jogada click
+              $('.jogada').click(function(){
+
+                varificaRodada();
+
+                // Separa o id do elemento clicado em um array para utilizar na isnerção do array
+                var mxn     = this.id.split('-');
+                var linha   = mxn[0];
+                var coluna  = mxn[1];
+
+                hash[linha][coluna] = point;
+
+                this.innerHTML = player;
+
+                // Incrementa a variavel de RODADA
+                round += 1;
+
+                // Apos um elemento ser clicado, remove seu evento de click
+                $('#'+this.id).off();
+
+                // Verifica jogo
+                verificaJogo(mxn);
+
+              }); // # Jogada click
+
+            }); // # Tabela do jogo pronta
 
 
+          }); // # Exibe a tela do jogo
+
+
+        }
+  }
+  
   function criarTabelaJogo(){
     // Cria a tabela visual do jogo juntamente com a matriz que recebera os dados.
 
@@ -191,5 +220,32 @@ $(document).ready(function(){
       alert($('#player-two-nick').val() + ' Ganhou');
       $('.jogada').off();
     }
+  }
+
+  function verificaCampos(){
+    var nick_p1 = $('#player-one-nick').val();
+    var nick_p2 = $('#player-two-nick').val();
+
+
+    if (nick_p1 == null || nick_p1 == ''){
+      $('#player-one-nick').css('animation','nick_input_error 400ms ease-in-out alternate infinite');
+      $('#player-one-nick').css('border-color','#B20000');
+      valido = 1;
+    }else{
+      valido = 0;
+    }
+    if(nick_p2 == null || nick_p2 == ''){
+      $('#player-two-nick').css('animation','nick_input_error 400ms ease-in-out alternate infinite');
+      $('#player-two-nick').css('border-color','#B20000');
+      valido = 1;
+    }else{
+      valido = 0;
+    }
+
+  }
+
+  function atribuiErro(el){
+    $('#'+el).css('animation','nick_input_error 400ms ease-in-out alternate infinite');
+    $('#'+el).css('border','#B20000');
   }
 });
