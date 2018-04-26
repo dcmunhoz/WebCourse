@@ -1,5 +1,8 @@
 var round = 1;
+var player = '';
+var point = 0;
 var hash = [];
+var soma = null;
 
 $(document).ready(function(){
 
@@ -20,7 +23,26 @@ $(document).ready(function(){
 
         // Jogada click
         $('.jogada').click(function(){
-          alert(this.id);
+
+          varificaRodada();
+
+          // Separa o id do elemento clicado em um array para utilizar na isnerção do array
+          var mxn     = this.id.split('-');
+          var linha   = mxn[0];
+          var coluna  = mxn[1];
+
+          hash[linha][coluna] = point;
+
+          this.innerHTML = player;
+
+          // Incrementa a variavel de RODADA
+          round += 1;
+
+          // Apos um elemento ser clicado, remove seu evento de click
+          $('#'+this.id).off();
+
+          // Verifica jogo
+          verificaJogo(mxn);
 
         }); // # Jogada click
 
@@ -91,14 +113,83 @@ $(document).ready(function(){
         }else if(i == 3 && j == 3){
           cell.style.borderLeft = '1px solid red';
         }
-
-        console.log(hash);
-
       }
+    }
+  }
+
+  function varificaRodada(){
+    // LOGICA DE RODADA: A variavel da rodada (round) irá iniciar com o valor 1, então
+    // vamos dividir essa variavel por 2 e pegar o seu resto. Caso resto deja 1, significa
+    // que a rodada é impar, portando o jogador 1 irá jogar sempre na rodada impar, se for
+    // 0 então o jogador 2 irá jogar a rodada par.
+
+    // O jogador 1 irá inserir na matriz o valor -1 e o jogador 2 irá inserir o valor 1
+
+    if(round % 2 == 1){ // Rodada impar = Jogador 1
+      point = -1;
+      player = '<img src="assets/imgs/p1.png">';
+    } else{ // Rodada par = Jogador 2
+      point = 1;
+      player = '<img src="assets/imgs/p2.png">';
     }
 
   }
 
+  function verificaJogo(el){
+    // A cada click verifica se existe um ganhador, se a soma dos valores for igual -3
+    // então o jogador 1 ganha, se for 3 então o jogador 2 ganha.
+
+    // Zerar a soma a cada laço
+    soma = 0;
+    // Verifica Horizontal do elemento
+    for(var i = 1; i <=3; i++){
+      soma += hash[el[0]][i];
+    }
+
+    // Verifica se a posição é vencedora
+    alertaGanhador();
+
+    // Zerar a soma a cada laço
+    soma = 0;
+    // Verifica Vertical do elemento
+    for(var i = 1; i <=3; i++){
+      soma += hash[i][el[1]];
+    }
+
+    // Verifica se a posição vencedora
+    alertaGanhador();
+
+    // Zerar a soma a cada laço
+    soma = 0;
+    // Verifica Diagonal para direita
+    for(var i = 1; i <=3; i++){
+      soma += hash[i][i];
+    }
+
+    // Verifica se a posição vencedora
+    alertaGanhador();
+
+    // Zerar a soma a cada laço
+    soma = 0;
+    // Verifica Diagonal para esquerda
+    for(var i = 3; i >=1; i++){
+      soma += hash[i][i];
+    }
+
+    // Verifica se a posição vencedora
+    alertaGanhador();
 
 
+
+  }
+
+  function alertaGanhador(){
+    if(soma == -3){
+      alert($('#player-one-nick').val() + ' Ganhou');
+      $('.jogada').off();
+    }else if(soma == 3){
+      alert($('#player-two-nick').val() + ' Ganhou');
+      $('.jogada').off();
+    }
+  }
 });

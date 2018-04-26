@@ -12,6 +12,9 @@
   margin: 0;
 }
 
+body{
+  background-color: purple;
+}
 .border{
   border: 1px solid #bebebe;
 }
@@ -19,6 +22,7 @@
 /* Deixar pagina com Height 100% */
 html, body{
   height: 100%;
+  overflow: hidden;
 }
 
 /* Main Container */
@@ -34,6 +38,7 @@ html, body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #FFF;
 }
 
 /* - Game start - */
@@ -78,15 +83,19 @@ html, body{
 
 /* Icone player */
 #p1{
-  color: red;
+  color: #FF2B2B;
 }
 #p2{
-  color: blue;
+  color: #0A5EFF;
+}
+#start-game{
+  color: black;
 }
 
 /* - Game Inner - */
 #game-inner{
   display: none;
+  padding: 10px;
 
 }
 
@@ -100,12 +109,14 @@ html, body{
 #game-inner div .icon-play{
   display: block;
   font-size: 200px;
+  position: relative;
+  top: -50px;
 }
 
 #game-inner div .icon-play{
   position: relative;
   top: -50px;
-  font-size: 150px;
+  font-size: 200px;
 }
 
 #game-inner .nick-input{
@@ -124,13 +135,20 @@ html, body{
 }
 
 #game-table tr td{
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
+  padding: 0px;
+  border-color: black !important;
 }
+
 
 .jogada{
 
 }
+
+
+
+
 /* ========== TIPOGRAFIA ========= */
 body{
   font-family: 'Lato', sans-serif;
