@@ -17,6 +17,29 @@
   }
 }
 
+@keyframes logo-load {
+  0%{
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50%{
+    opacity: 1;
+    transform: rotate(30deg) scale(1.2);
+  }
+  100%{
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes logo-out {
+  0%{
+    opacity: 1;
+  }100%{
+    opacity: 0;
+  }
+}
+
 /* Atribuindo animações */
 #start-game{
   transition: all 300ms;
@@ -35,4 +58,7 @@
 .player-nick:focus{
   animation: nick_input 400ms ease-in-out alternate infinite !important;
   border: 1px solid #0C8337 !important;
+}
+#game-logo{
+  animation: logo-load 500ms ease-in-out forwards;
 }

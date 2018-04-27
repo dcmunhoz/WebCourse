@@ -53,7 +53,6 @@ html, body{
   top: 50%;
   left: 50%;
   transform:translate(-50%, -50%);
-  display: none;
 }
 
 #game-start div{
@@ -91,6 +90,10 @@ html, body{
 }
 #start-game{
   color: black;
+}
+
+#game-inner{
+  display: none;
 }
 
 /* - Game Inner - */
@@ -136,6 +139,24 @@ html, body{
   border-color: black !important;
 }
 
+/* - Logo - */
+#game-logo{
+  text-align: center;
+}
+
+#game-logo span{
+  padding: 0;
+  margin: 0;
+}
+#hash-logo{
+  display: block;
+  font-size: 300px;
+}
+
+#hash-text{
+  font-size: 100px;
+  font-weight: bold;
+}
 
 /* ========== TIPOGRAFIA ========= */
 body{
