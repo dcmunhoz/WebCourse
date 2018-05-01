@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>PHP - Embutindo</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <header>
+        <h1>Embutindo blocos PHP no HTML</h1>
+      </header>
+
+      <section>
+        <table>
+            <tr class="header">
+              <th>Nome</th>
+              <th>TAG</th>
+              <th></th>
+            </tr>
+          <tbody>
+            <tr>
+              <td>Tag Padrão</td>
+              <td> <span class="php">&lt;?php</span> código php <span class="php">?&gt;</span> </td>
+              <td>Habilitada</td>
+            </tr>
+
+            <tr>
+              <td>Tag de impressão</td>
+              <td> <span class="php">&lt;?=</span> código php <span class="php">?&gt;</span> </td>
+              <td>Habilitada</td>
+            </tr>
+
+            <tr>
+              <td>Tag curta</td>
+              <td> <span class="php">&lt;?</span> código php <span class="php">?&gt;</span> </td>
+              <td>Não Habilitada (short_open_tag)</td>
+            </tr>
+
+            <tr>
+              <td>Asp Tag</td>
+              <td> <span class="php">&lt;%</span> código php <span class="php">%&gt;</span> </td>
+              <td>Não Habilitada (short_open_tag)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="example/">Exemplo</a>
+      </section>
+    </main>
+  </body>
+</html>
