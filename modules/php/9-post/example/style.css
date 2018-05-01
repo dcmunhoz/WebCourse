@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+.container{
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #FFF;
+}
+
+.selecao, .resposta{
+  margin: 10px 0;
+}
+
+.resposta span{
+  background-color: #bebebe;
+}
+
+
+.form{
+  padding: 5px;
+}
+
+.form label{
+  font-weight: bold;
+  color:#bebebe;
+}
+
+.form .form-control{
+  outline: 0;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  display: block;
+  width: 250px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+.form button{
+  border: 1px solid black;
+  background-color: #FFF;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
