@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>PHP - Include e Require</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <header>
+        <h1>Include e Require</h1>
+      </header>
+
+      <section>
+          <ul>
+            <li>
+              O que são
+              <ul>
+                <li>
+                  São a construção da linguagem, assim como o ECHO tambem é uma construção.
+                </li>
+                <li>
+                  Usamos sempre quando precisarmos contruir uma pagina html que é padrão em todas as paginas. Criamos um unico arquivo e chamamor ele via include ou require nas demais paginas.
+                </li>
+                <li>
+                  Ao criarmos aquivos de funções separadas, podemos utilizar o include e require em uma pagina especifica para termos acesso a determinadas funções criadas em outros arquivos.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              Inclide
+              <ul>
+                <li>
+                  Tenta incluir um arquivo PHP, caso não consiga retorna um Warning porem continua a execução.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              Require
+              <ul>
+                <li>
+                  Tenta incluir um arquivo PHP, caso não consiga retorna um FATAL ERROR e para a execução.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              include_once e require_once
+              <ul>
+                <li>
+                  Faz a inserção do arquivo apenas uma vez. Caso ja tenha sido incluido, não ira fazer novamente.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              Sintaxe
+              <ul>
+                <li>include("arquivo.php") / require("arquivo.php") || include_once("arquivo.php") / require_once("arquivo.php")</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="examples/">Exemplo</a>
+            </li>
+          </ul>
+      </section>
+    </main>
+  </body>
+</html>
