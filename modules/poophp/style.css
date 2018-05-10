@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #00CF4E;
+  font-family: sans-serif;
+}
+.container{
+  background-color: #FFF;
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+header{
+  text-align: center;
+  background-color: #EFEFEF;
+  padding: 50px 0;
+}
+section{
+  padding: 30px 0;
+  text-align: justify;
+}
+
+ul{
+  padding: 0px 30px;
+}
+
+ul li{
+  margin-bottom: 10px;
+}
+ul li .title{
+  font-size: 20px;
+  font-weight: bold;
+  color:#3D3D3D;
+}
+
+ul li ul li{
+  list-style: none;
+}
+
+ul li a.exemplo{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color:#00A5CE;
+}
+
+p{
+  margin-bottom: 10px;
+}
