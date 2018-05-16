@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Lucida Sans";
+  background-color: #F4F4F4;
+}
+
+header{
+    background: #00578A;
+    height: 200px;
+    width: 100%;
+}
+
+header h1{
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: #FFF;
+}
+
+div.content{
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px 10px;
+}
+
+div.content p{
+  margin-bottom: 10px;
+  text-indent: 10px;
+  text-align: justify;
+}
+
+.items {
+  list-style: none;
+}
+
+ul li{
+    margin-bottom: 15px;
+}
+
+ul li .item-title{
+  corlor: #141414;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ul li ul{
+  margin-left: 30px;
+}
