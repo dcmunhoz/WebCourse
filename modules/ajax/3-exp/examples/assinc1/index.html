@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+    <title>Exemplo Sincrono</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Requisições síncronas e assíncronas</h1>
+    </nav>
+
+    <div class="content-body">
+
+      <div class="nav-buttons">
+        <ul>
+          <li> <a href="#" class="button" id="b1" onclick="reqAssinc('contents/pagina_1.html')"> Pagina 1 </a> </li>
+          <li> <a href="#" class="button" id="b2" onclick="reqAssinc('contents/pagina_2.html')"> Pagina 2 </a> </li>
+          <li> <a href="#" class="button" id="b3" onclick="reqAssinc('contents/pagina_3.html')"> Pagina 3 </a> </li>
+        </ul>
+      </div>
+
+      <div class="panel" id="content-loader">
+
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>
