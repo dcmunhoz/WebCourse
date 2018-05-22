@@ -1,0 +1,164 @@
+/*
+*
+* Title: Edições de estilo
+*
+*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: arial;
+}
+
+.btn{
+  border: 1px solid #bebebe;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn-full{
+  width: 100%;
+  margin: auto;
+}
+
+.btn-primary{
+  background-color: #0072DB !important;
+  border-color: #0067C6;
+  color: #fff;
+}
+
+/* ========= NAV ========= */
+nav{
+  width: 100%;
+  background-color: #EEEEEE;
+  height: 60px;
+  border-bottom: 1px solid #BEBEBE;
+}
+
+/* Icone */
+#icon{
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  background-image: url('../imgs/icone_twitter.png');
+}
+
+/* Menu */
+.menu{
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+}
+
+.menu ul{
+  list-style-type: none;
+
+}
+
+.menu ul li{
+    display: inline-block;
+}
+
+.menu ul li a{
+  text-decoration: none;
+  padding: 0 10px;
+  color: #313131;
+  margin: 0 5px;
+}
+
+.menu-colapsed{
+  display: block;
+  top: 5px;
+  background-color: #EEEEEE;
+}
+
+.menu-colapsed ul{
+  list-style: none;
+}
+
+.menu-colapsed ul li{
+display: block;
+}
+
+.menu-colapsed ul li a{
+  display: block;
+  position: relative;
+  padding: 10px 10px;
+  color: #313131;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}
+
+.menu-toggler{
+  float: right;
+  display: none;
+  font-size: 30px;
+  padding: 12px;
+}
+
+/* ========== Content ========== */
+.content-body{
+  margin-top: 20px !important;
+}
+
+.welcome{
+  background-color: #EEEEEE;
+  padding: 30px 40px;
+  box-sizing:border-box;
+}
+
+.welcome div{
+  margin: 50px 0;
+}
+
+/* Form Inscrevase */
+.inscrevase{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.singup-header{
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.form-group{
+  width: 100%;
+
+}
+
+.form-group label{
+  display: block;
+}
+
+.form-group input{
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border:1px solid #bebebe;
+  padding: 10px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+/* Login Form */
+.login{
+  position: absolute;
+  right: 10%;
+  top: 60px;
+  background-color: #EEEEEE;
+  border: 1px solid #bebebe;
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: none;
+}
