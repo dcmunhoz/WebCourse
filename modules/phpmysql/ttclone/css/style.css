@@ -162,3 +162,8 @@ display: block;
   box-sizing: border-box;
   display: none;
 }
+
+.login-title{
+    padding: 10px;
+    color: red; 
+}
