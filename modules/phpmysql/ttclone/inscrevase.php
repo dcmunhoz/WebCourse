@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+    
+    if(isset($_SESSION['usuario'])){
+        header('Location: home.php');
+    }
+
+?>
+
+
 <!doctype html>
 <html>
 	<head>
@@ -30,14 +40,14 @@
 		<nav>
 			<div class="container">
 				<!-- Icone TT -->
-				<a href="index.html" id="icon"></a>
+				<a href="index.php" id="icon"></a>
 
 				<!-- Menu -->
 				<!-- Menu normal -->
 				<div class="menu">
 					<ul>
 
-						<li> <a href="index.html">Voltar para Home</a> </li>
+						<li> <a href="index.php">Voltar para Home</a> </li>
 					</ul>
 				</div> <!-- / Menu -->
 

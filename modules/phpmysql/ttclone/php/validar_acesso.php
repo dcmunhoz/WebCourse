@@ -1,4 +1,6 @@
 <?php 
+
+    session_start();
     
     require_once("dao/db.php");
 
@@ -17,21 +19,17 @@
         $dados_usuario = mysqli_fetch_array($resultado);
         
         if(isset($dados_usuario['usuario'])){
-            header('Location: ../home.html');
+            
+            $_SESSION['usuario'] = $dados_usuario['usuario'];
+            $_SESSION['email']   = $dados_usuario['email'];
+            
+            header('Location: ../home.php');
         }else{
-            header('Location: ../index.html?login_error=1');
+            header('Location: ../index.php?login_error=1');
         }
          
     }else{
         echo "Erro na execução da consulta, favor contatar o administrador do Site";
     }
-    
-    
-    
-    
-    
-    
-    
-  
 
 ?>

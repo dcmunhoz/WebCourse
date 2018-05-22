@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    
+    if(isset($_SESSION['usuario'])){
+        header('Location: home.php');
+    }
+
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -27,14 +36,14 @@
 		<nav>
 			<div class="container">
 				<!-- Icone TT -->
-				<a href="index.html" id="icon"></a>
+				<a href="index.php" id="icon"></a>
 
 				<!-- Menu -->
 				<!-- Menu normal -->
 				<div class="menu">
 					<ul>
 
-						<li> <a href="inscrevase.html">Inscreva-se</a> </li>
+						<li> <a href="inscrevase.php">Inscreva-se</a> </li>
 
 						<li>
 							 <a href="#" id="menuBtnEntrar">Entrar</a>
