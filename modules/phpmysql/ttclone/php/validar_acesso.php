@@ -9,13 +9,19 @@
 
     
     $query = "select * from usuarios where usuario = '$userLogin' and senha = '$pwdLogin'; ";
-    $query2 = "select * from usuarios; ";
+
     
-    $resultado = mysqli_query($link, $query2);
+    $resultado = mysqli_query($link, $query);
     
     if($resultado){
         $dados_usuario = mysqli_fetch_array($resultado);
-        var_dump($dados_usuario);
+        
+        if(isset($dados_usuario['usuario'])){
+            echo 'Usuário existe';
+        }else{
+            header('Location: ../index.html?login_error=1');
+        }
+         
     }else{
         echo "Erro na execução da consulta, favor contatar o administrador do Site";
     }
