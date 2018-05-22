@@ -14,6 +14,8 @@ body{
   font-family: arial;
 }
 
+/* =========== Classes Utilitarias =========== */
+
 .btn{
   border: 1px solid #bebebe;
   padding: 10px 20px;
@@ -35,6 +37,12 @@ body{
 
 .btn-primary:hover{
     background-color: #2281D9 !important;
+}
+
+.input-error{
+    border: 1px solid #E51818 !important;
+    box-shadow: 0 0 5px #E51818;
+    
 }
 
 /* ========= NAV ========= */

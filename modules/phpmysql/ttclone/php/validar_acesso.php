@@ -17,7 +17,7 @@
         $dados_usuario = mysqli_fetch_array($resultado);
         
         if(isset($dados_usuario['usuario'])){
-            echo 'Usuário existe';
+            header('Location: ../home.html');
         }else{
             header('Location: ../index.html?login_error=1');
         }

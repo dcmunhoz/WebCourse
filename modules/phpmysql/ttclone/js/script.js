@@ -38,3 +38,30 @@ function verificaParametros(){
     }catch (e){
     }
 }
+
+// Verifica se os campos de usuário e senha estão preenchidos
+document.getElementById("btnLogin").onclick = function(){
+    var usuarioLoginCampo = document.getElementById("user-login");
+    var senhaLoginCampo   = document.getElementById("pwd-login");
+    var usuarioLogin      = usuarioLoginCampo.value;
+    var senhaLogin        = senhaLoginCampo.value;
+    var campoVazio        = false;
+    
+    if(usuarioLogin == ''){
+        usuarioLoginCampo.classList.add('input-error');
+        campoVazio = true;
+    }else{
+        usuarioLoginCampo.classList.remove('input-error');
+    }
+    
+    if(senhaLogin == ''){
+        senhaLoginCampo.classList.add('input-error');
+        campoVazio = true;
+    }else{
+        senhaLoginCampo.classList.remove('input-error');
+        
+    }
+    
+    if (campoVazio) return false;
+    
+}
