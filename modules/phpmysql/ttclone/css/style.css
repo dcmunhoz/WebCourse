@@ -204,3 +204,77 @@ display: block;
     display: inline-block;
     position: relative;
 }
+
+
+/* ========== HOMEPAGE ========== */
+/* Paineis */
+.main-panel>div{
+    width: 100px;
+    border: 1px solid #BEBEBE;
+    border-radius: 2px;
+    display: inline-block;
+    float: left;
+    margin: 0 1%;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2);
+    box-sizing: border-box;
+    padding: 20px 15px;
+}
+
+.profile,
+.search{
+    width: 21% !important;
+}
+
+.tweetar{
+    width: 50% !important;
+}
+
+/* Profile */
+.profile #logged-user{
+    display:block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.profile .profile-infos{
+    
+}
+
+.profile .profile-infos>div{
+    display: inline-block;
+    margin: 0 7%;
+}
+
+.search>a{
+    color:#008CFF;
+}
+
+.tweetar .tweet-group{
+    
+}
+
+.tweetar .tweet-group .tweet-form{
+}
+
+.tweetar .tweet-group .tweet-form .tweet-item{
+    padding: 5px 10px;
+    height: 100%;
+    background-color: #FFF;
+    border: 1px solid #bebebe;
+    font-size: 16px;
+    position: relative;
+}
+
+.tweetar .tweet-group .tweet-form .tweet-field{
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+}
+
+.tweetar .tweet-group .tweet-form .tweet-button{
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    left: -5px;
+    width: 21.31%;
+}

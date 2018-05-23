@@ -58,11 +58,50 @@
 
 		<!-- Corpo da pagina -->
 		<div class="content-body container">
-                    Bem Vindo a Home
-                    <br>
-                    <?php echo $_SESSION['usuario']; ?>
-                    <br>
-                    <?php echo $_SESSION['email']; ?>
+                    <!-- Painel Central -->
+                    <div class="main-panel">
+                        <!-- Coluna Perfil Logado -->
+                        <div class="profile">
+                            <!-- Usuario Conectado -->
+                            <div>
+                                <span id="logged-user"> @<?php echo $_SESSION['usuario']; ?></span> 
+                            </div>
+                            
+                            <!-- Informação Tweets e Seguidores -->
+                            <div class="profile-infos">
+                                <!-- Quantidade de Tweets -->
+                                <div class="tweet-count">
+                                    <header>Tweets</header>
+                                    <span id="tweet-count-number">1</span>
+                                </div>
+                                
+                                <!-- Quantidade Seguidores -->
+                                <div class="followers-count">
+                                    <header>Seguidores</header>
+                                    <span id="followers-count-number">1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coluna Fazer Tweet -->
+                        <div class="tweetar">
+                            <div class="tweet-group">
+                                <form class="tweet-form" action="" method="POST">
+                                    <input  class="tweet-item tweet-field" type="text" placeholder="O que esta acontecendo agora?">
+                                    <button class="tweet-item tweet-button" type="submit">Tweet</button>
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <!-- Coluna pesquisar pessoas -->
+                        <div class="search">
+                            <a href="#">Procurar por pessoas</a>
+                        </div>
+                    </div>
+                    
+                    <div class="clear:both;"></div>
                 </div>
 
             <!-- Scripts -->
