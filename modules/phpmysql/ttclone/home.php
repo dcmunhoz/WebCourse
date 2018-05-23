@@ -90,7 +90,7 @@
                     <!-- Painel Central -->
                     <div class="main-panel">
                         <!-- Coluna Perfil Logado -->
-                        <div class="profile">
+                        <div class="profile block">
                             <!-- Usuario Conectado -->
                             <div>
                                 <span id="logged-user"> @<?php echo $_SESSION['usuario']; ?></span> 
@@ -112,21 +112,39 @@
                             </div>
                         </div>
 
-                        <!-- Coluna Fazer Tweet -->
-                        <div class="tweetar">
-                            <div class="tweet-group">
-                                <form id="form-tweet" class="tweet-form">
-                                    <input  class="tweet-item tweet-field"  id="textoTweet" name="textoTweet" type="text" placeholder="O que esta acontecendo agora?">
-                                    <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="submit">Tweet</button>
+                        <!-- Coluna centrar : Time line e fazer Tweet -->
+                        <div class="middle">
+                            <!-- Coluna Fazer Tweet -->
+                            <div class="tweetar block">
+                                <div class="tweet-group">
+                                    <form id="form-tweet" class="tweet-form">
+                                        <input  class="tweet-item tweet-field"  id="textoTweet" name="textoTweet" type="text" placeholder="O que esta acontecendo agora?">
+                                        <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="submit">Tweet</button>
 
-                                    
-                                </form>
+
+                                    </form>
+                                </div>
                             </div>
-
+                            
+                            <!-- Coluna Time Line -->
+                            <div class="time-line">
+                                <!--
+                                <div class="tweet block">
+                                    <div class="tweet-header">
+                                        <span class="tweet-title">Publicação</span>
+                                    </div>
+                                    <div class="tweet-body">
+                                        <span class="tweet-content"> Lorem Ipsum</span>
+                                    </div>
+                                </div>
+                                
+                                -->
+                                
+                            </div>
+                            
                         </div>
-
                         <!-- Coluna pesquisar pessoas -->
-                        <div class="search">
+                        <div class="search block">
                             <a href="#">Procurar por pessoas</a>
                         </div>
                     </div>
