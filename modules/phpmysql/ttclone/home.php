@@ -3,7 +3,7 @@
     session_start();
     
     if(!isset($_SESSION['usuario'])){
-        header('Location: index.html?error=1');
+        header('Location: index.php?error=1');
     }
 
 ?>
@@ -23,8 +23,37 @@
                 <link rel="stylesheet" type="text/css" href="css/media.css">
 
                 <!-- Scripts -->
-                            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+                <script type="text/javascript">
+                    
+                    $(document).ready(function(){
+                        
+                        // Acossiar evento click do botão
+                        $("#btnTweet").click(function(){
+                            if($("#textoTweet").val().length > 0){
+                                
+                                // Função Ajax
+                                $.ajax({
+                                    url: 'php/inclui_tweet.php',
+                                    method: 'POST',
+                                    data: $("#form-tweet").serialize(),
+                                    
+                                    
+                                    success: function(data){
+                                        $("#textoTweet").val('');
+                                    }
+                                });
+                                
+                            }
+                        });
+                        
+                        
+                    });
+                    
+                   
+
+                </script>
 
                 <!-- Titulo -->
                 <title>Twitter Clone - Home</title>
@@ -86,9 +115,10 @@
                         <!-- Coluna Fazer Tweet -->
                         <div class="tweetar">
                             <div class="tweet-group">
-                                <form class="tweet-form" action="" method="POST">
-                                    <input  class="tweet-item tweet-field" type="text" placeholder="O que esta acontecendo agora?">
-                                    <button class="tweet-item tweet-button" type="submit">Tweet</button>
+                                <form id="form-tweet" class="tweet-form">
+                                    <input  class="tweet-item tweet-field"  id="textoTweet" name="textoTweet" type="text" placeholder="O que esta acontecendo agora?">
+                                    <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="submit">Tweet</button>
+
                                     
                                 </form>
                             </div>

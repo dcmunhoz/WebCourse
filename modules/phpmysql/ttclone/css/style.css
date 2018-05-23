@@ -277,4 +277,9 @@ display: block;
     position: relative;
     left: -5px;
     width: 21.31%;
+    transition: all 300ms;
+}
+
+.tweetar .tweet-group .tweet-form .tweet-button:hover{
+    background-color: #EEEEEE;
 }
