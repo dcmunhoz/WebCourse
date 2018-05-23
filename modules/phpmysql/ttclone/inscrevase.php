@@ -4,6 +4,9 @@
     if(isset($_SESSION['usuario'])){
         header('Location: home.php');
     }
+    
+    $erro_usuario = isset($_GET['erro_usuario']) ? $_GET['erro_usuario'] : 0;
+    $erro_email   = isset($_GET['erro_email'])   ? $_GET['erro_email']   : 0;
 
 ?>
 
@@ -23,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="css/media.css">
 
     <!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
 
     <!-- Titulo -->
     <title>Twitter Clone - Inscreva-se</title>
@@ -69,10 +72,20 @@
 
           <div class="form-group">
             <input type="text" name="user" id="user" placeholder="Usuário">
+            <?php 
+                if($erro_usuario == 1){
+                    echo '<span class="exists-error">Usuário já existe</span>';
+                }
+            ?>
           </div>
 
           <div class="form-group">
             <input type="email" name="email" id="email" placeholder="E-mail">
+            <?php 
+                if($erro_email == 1){
+                    echo '<span class="exists-error">Email já existe</span>';
+                }
+            ?>
           </div>
 
           <div class="form-group">
@@ -80,7 +93,7 @@
           </div>
 
           <div class="form-button">
-            <button type="submit" class="btn btn-full btn-primary" name="btn-Inscreverse" id="btn-Inscreverse">Inscrever-se</button>
+            <button type="submit" class="btn btn-full btn-primary" name="btnInscreverse" id="btnInscreverse">Inscrever-se</button>
           </div>
 
         </form>

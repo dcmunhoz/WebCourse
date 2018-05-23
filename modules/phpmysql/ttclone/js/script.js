@@ -64,4 +64,4 @@ document.getElementById("btnLogin").onclick = function(){
     
     if (campoVazio) return false;
     
-}
+};

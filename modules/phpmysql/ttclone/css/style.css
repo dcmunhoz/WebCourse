@@ -198,3 +198,9 @@ display: block;
   box-sizing: border-box;
 }
 
+.exists-error{
+    top: -10px;
+    color:red;
+    display: inline-block;
+    position: relative;
+}

@@ -5,7 +5,7 @@
     require_once("dao/db.php");
 
     $userLogin = $_POST["user-login"];
-    $pwdLogin  = $_POST["pwd-login"];
+    $pwdLogin  = md5($_POST["pwd-login"]);
     $objDB     = new dataBase();
     $link      = $objDB->conectaDB();
 
