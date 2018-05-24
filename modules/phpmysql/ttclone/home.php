@@ -31,22 +31,37 @@
                         
                         // Acossiar evento click do botão
                         $("#btnTweet").click(function(){
+                            
                             if($("#textoTweet").val().length > 0){
                                 
                                 // Função Ajax
                                 $.ajax({
                                     url: 'php/inclui_tweet.php',
-                                    method: 'POST',
-                                    data: $("#form-tweet").serialize(),
-                                    
-                                    
+                                    method: 'post',
+                                    data: $('#form-tweet').serialize(),
                                     success: function(data){
                                         $("#textoTweet").val('');
+                                        atualizaTweet();
                                     }
                                 });
                                 
                             }
                         });
+                        
+                        
+                        //Atualizar os Tweets
+                        function atualizaTweet(){
+                            $.ajax({
+                                url: 'php/get_tweet.php',
+                                success: function(data){
+                                    $('#tweets').html(data);
+                                }
+                                
+                            });
+                            
+                        }
+                        
+                        atualizaTweet();
                         
                         
                     });
@@ -119,7 +134,7 @@
                                 <div class="tweet-group">
                                     <form id="form-tweet" class="tweet-form">
                                         <input  class="tweet-item tweet-field"  id="textoTweet" name="textoTweet" type="text" placeholder="O que esta acontecendo agora?">
-                                        <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="submit">Tweet</button>
+                                        <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="button" >Tweet</button>
 
 
                                     </form>
@@ -127,18 +142,21 @@
                             </div>
                             
                             <!-- Coluna Time Line -->
-                            <div class="time-line">
+                            <div class="time-line" id="tweets">
+                                
                                 <!--
-                                <div class="tweet block">
+                                <div class="tweet block" >
+                                    
                                     <div class="tweet-header">
                                         <span class="tweet-title">Publicação</span>
                                     </div>
                                     <div class="tweet-body">
                                         <span class="tweet-content"> Lorem Ipsum</span>
                                     </div>
+                                    
                                 </div>
-                                
                                 -->
+                                
                                 
                             </div>
                             
