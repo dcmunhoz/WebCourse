@@ -5,6 +5,37 @@
     if(!isset($_SESSION['usuario'])){
         header('Location: index.php?error=1');
     }
+    
+    require_once('php/dao/db.php');
+
+    $id_usuario = $_SESSION['id'];
+    
+    // Iniciar o objeto de conexão com o banco e recuperar o link da conexão
+    $myObj = new dataBase();
+    $myCon = $myObj->conectaDB();
+
+    // === Quantidade de tweets ===
+    $query = "SELECT count(*) as qtde_tweets FROM tweets WHERE idusuario = $id_usuario";
+    $resultado_id = mysqli_query($myCon, $query);
+    $qtde_tweets = 0;
+    if($resultado_id){
+        $dados_usuario = mysqli_fetch_array($resultado_id);
+        $qtde_tweets = $dados_usuario['qtde_tweets'];
+    }else{
+        echo 'Erro na execução do script';
+    }
+
+    // Quantidade de Seguidores
+       // === Quantidade de tweets ===
+       $query = "select count(*) as qtde_seguidores from usuario_seguidores where seguindo_id_usuario = $id_usuario";
+       $resultado_id = mysqli_query($myCon, $query);
+       $qtde_seguidores = 0;
+       if($resultado_id){
+           $dados_usuario = mysqli_fetch_array($resultado_id);
+           $qtde_seguidores = $dados_usuario['qtde_seguidores'];
+       }else{
+           echo 'Erro na execução do script';
+       }
 
 ?>
 
@@ -134,13 +165,13 @@
                                 <!-- Quantidade de Tweets -->
                                 <div class="tweet-count">
                                     <header>Tweets</header>
-                                    <span id="tweet-count-number">1</span>
+                                    <span id="tweet-count-number"><?= $qtde_tweets; ?></span>
                                 </div>
                                 
                                 <!-- Quantidade Seguidores -->
                                 <div class="followers-count">
                                     <header>Seguidores</header>
-                                    <span id="followers-count-number">1</span>
+                                    <span id="followers-count-number"><?= $qtde_seguidores; ?></span>
                                 </div>
                             </div>
                         </div>
