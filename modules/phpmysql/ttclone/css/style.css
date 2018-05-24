@@ -35,6 +35,18 @@ body{
   transition: all 300ms;
 }
 
+.btn-success{
+    background-color: #3AB767 !important;
+    color:#FFF;
+    transition: all 300ms;
+    border-color:#28A656;
+}
+
+.btn-success:hover{
+    background-color: #45C372 !important;
+
+}
+
 .btn-primary:hover{
     background-color: #2281D9 !important;
 }
@@ -220,7 +232,7 @@ display: block;
     box-sizing: border-box;
     padding: 20px 15px;
     border: 1px solid #BEBEBE;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 .profile,
@@ -239,10 +251,6 @@ display: block;
     margin-bottom: 20px;
     font-size: 20px;
     border-bottom: 1px solid #EEEEEE;
-}
-
-.profile .profile-infos{
-    
 }
 
 .profile .profile-infos>div{
@@ -287,7 +295,6 @@ display: block;
 
 .time-line{
     width: 100%;
-    height: 300px;
 }
 
 .time-line .tweet{
@@ -321,4 +328,29 @@ display: block;
 
 .tweet .tweet-body{
     font-size: 14px;
+}
+
+.user-search{
+    margin-bottom: 10px;
+}
+
+.user-search .user-name{
+    font-size: 18px;
+}
+
+.user-search .user-name::after{
+    content: ' - '; 
+    font-size: 16px;
+}
+
+.user-search .user-email{
+    font-size:14px;
+}
+
+.btnFollow{
+    display: inline-block;
+    padding: 5px 10px;
+    float: right;
+    position: relative;
+    top: -25px;
 }

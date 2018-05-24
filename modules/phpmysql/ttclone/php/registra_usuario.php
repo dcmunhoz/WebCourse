@@ -60,7 +60,7 @@
 
   //Executar Query
   if(mysqli_query($link, $sql_insert_usuario)){
-    echo 'Usuario Registrado com Sucesso';
+    header('Location: ../index.php');
   }else{
     echo 'Erro ao registrar o usuário';
   }

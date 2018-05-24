@@ -26,7 +26,7 @@
 /* Telas Médias = Tablets */
 @media (max-width: 991.98px){
   .container{
-    width: 85%;
+    width: 90%;
   }
 
   .inscrevase{
@@ -42,6 +42,8 @@
 @media (max-width:767.98px){
   .container{
     width: 100%;
+    margin: auto;
+
   }
 
   .welcome{
@@ -68,6 +70,18 @@
   .menu-toggler{
     display: inline-block;
   }
+
+
+
+  .main-panel>div{
+    display: block !important;
+    margin: 1%;
+    width: 98% !important;
+  }
+
+
+
+
 }
 
 /* Telas Super Pequenas */

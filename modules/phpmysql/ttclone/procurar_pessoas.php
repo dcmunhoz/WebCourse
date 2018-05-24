@@ -30,38 +30,27 @@
                     $(document).ready(function(){
                         
                         // Acossiar evento click do botão
-                        $("#btnTweet").click(function(){
+                        $("#nomePessoa").keyup(function(){
                             
-                            if($("#textoTweet").val().length > 0){
+                            if($("#nomePessoa").val().length > 0){
                                 
                                 // Função Ajax
                                 $.ajax({
-                                    url: 'php/inclui_tweet.php',
+                                    url: 'php/get_pessoas.php',
                                     method: 'post',
-                                    data: $('#form-tweet').serialize(),
+                                    data: $('#form-procurar-pessoa').serialize(),
                                     success: function(data){
-                                        $("#textoTweet").val('');
-                                        atualizaTweet();
+                                        $('#pessoas').html(data);
+
+                                        $('.btnFollow').click(function(){
+                                            alert('teste');
+                                        });
                                     }
                                 });
-                                
+                            }else{
+                                $("#pessoas").html('');
                             }
                         });
-                        
-                        
-                        //Atualizar os Tweets
-                        function atualizaTweet(){
-                            $.ajax({
-                                url: 'php/get_tweet.php',
-                                success: function(data){
-                                    $('#tweets').html(data);
-                                }
-                                
-                            });
-                            
-                        }
-                        
-                        atualizaTweet();
                         
                         
                     });
@@ -90,7 +79,7 @@
 				<!-- Menu normal -->
 				<div class="menu">
 					<ul>
-                        
+                        <li> <a href="home.php">Home</a> </li>
 						<li> <a href="php/sair.php">Sair</a> </li>
 					</ul>
 				</div> <!-- / Menu -->
@@ -132,9 +121,9 @@
                             <!-- Coluna Fazer Tweet -->
                             <div class="tweetar block">
                                 <div class="tweet-group">
-                                    <form id="form-tweet" class="tweet-form">
-                                        <input  class="tweet-item tweet-field"  id="textoTweet" name="textoTweet" type="text" placeholder="O que esta acontecendo agora?">
-                                        <button class="tweet-item tweet-button" id="btnTweet"   name="btnTweet"   type="button" >Tweet</button>
+                                    <form id="form-procurar-pessoa" class="tweet-form">
+                                        <input  class="tweet-item tweet-field"  id="nomePessoa" name="nomePessoa" type="text" placeholder="Quem você esta procurando?">
+                                        <button class="tweet-item tweet-button" id="btnProcurarPessoa"   name="btnProcurarPessoa"   type="button" ><i class="fas fa-search"></i></button>
 
 
                                     </form>
@@ -142,20 +131,19 @@
                             </div>
                             
                             <!-- Coluna Time Line -->
-                            <div class="time-line" id="tweets">
+                            <div class="time-line" id="pessoas">
                                 
-                                <!--
-                                <div class="tweet block" >
-                                    
-                                    <div class="tweet-header">
-                                        <span class="tweet-title">Publicação</span>
+                                <!-- <div class="user-search block" >
+                                    <div class="user-header">
+                                        <span class="user-name">@[NOME]</span>
+                                        <span class="user-email">usuario@usuario.com</span>
                                     </div>
-                                    <div class="tweet-body">
-                                        <span class="tweet-content"> Lorem Ipsum</span>
-                                    </div>
-                                    
-                                </div>
-                                -->
+                                    <p class="follow">
+                                        <div class="follow-button btn  btnFollow btn-success">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                    </p>
+                                </div> -->
                                 
                                 
                             </div>
@@ -163,7 +151,7 @@
                         </div>
                         <!-- Coluna pesquisar pessoas -->
                         <div class="search block">
-                            <a href="procurar_pessoas.php">Procurar por pessoas</a>
+                            <!-- <a href="#">Procurar por pessoas</a> -->
                         </div>
                     </div>
                     
