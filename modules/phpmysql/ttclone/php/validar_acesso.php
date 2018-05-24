@@ -1,5 +1,6 @@
 <?php 
 
+    // Validar acesso do usuario
     session_start();
     
     require_once("dao/db.php");
