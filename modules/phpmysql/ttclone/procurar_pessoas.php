@@ -43,7 +43,29 @@
                                         $('#pessoas').html(data);
 
                                         $('.btnFollow').click(function(){
-                                            alert('teste');
+                                           var id_usuario = $(this).data('id_usuario');
+                                           console.log(id_usuario);
+                                           alert(id_usuario);
+                                           $.ajax({
+                                               url: 'php/seguir.php',
+                                               method: 'post',
+                                               data: { seguir_id_usuario: id_usuario },
+                                               success: function(data){
+                                                   alert("Registro efetuado com sucesso");
+                                               }
+                                           });
+                                        });
+
+                                        $('.btnUnfollow').click(function(){
+                                            var id_usuario = $(this).data('id_usuario');
+                                            $.ajax({
+                                                url: 'php/deixar_seguir.php',
+                                                method:'post',
+                                                data: { seguir_id_usuario: id_usuario },
+                                                success: function(data){
+                                                    alert('Registro Deletado');
+                                                }
+                                            });
                                         });
                                     }
                                 });

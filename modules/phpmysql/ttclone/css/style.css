@@ -51,6 +51,18 @@ body{
     background-color: #2281D9 !important;
 }
 
+.btn-danger{
+    background-color: #FF3434 !important;
+    color:#000;
+    transition: all 300ms;
+    border-color:#D31F1F;
+}
+
+.btn-danger:hover{
+    background-color: #FF4D4D !important;
+
+}
+
 .input-error{
     border: 1px solid #E51818 !important;
     box-shadow: 0 0 5px #E51818;
@@ -347,10 +359,13 @@ display: block;
     font-size:14px;
 }
 
-.btnFollow{
+.btnFollow,
+.btnUnfollow{
     display: inline-block;
     padding: 5px 10px;
     float: right;
     position: relative;
     top: -25px;
+    margin: 0 2px;
 }
+

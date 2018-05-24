@@ -32,9 +32,12 @@
                          '<span class="user-email">'.$dados_usuarios['email'].'</span>'.
                      '</div>'.
                      '<p class="follow">'.
-                        '<div class="follow-button btn  btnFollow btn-success" data-id="'.$dados_usuarios['id_usuario'].'">'.
+                        '<button type="button" class="follow-button btn  btnFollow btn-success" data-id_usuario="'.$dados_usuarios['id_usuario'].'">'.
                             '<i class="fas fa-plus"></i>'.
-                        '</div>'.
+                        '</button>'.
+                        '<button type="button" class="follow-button btn  btnUnfollow btn-danger" data-id_usuario="'.$dados_usuarios['id_usuario'].'">'.
+                            '<i class="fas fa-minus"></i>'.
+                        '</button>'.
                     '</p>'.
                  '</div>';
         }
