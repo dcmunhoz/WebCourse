@@ -13,7 +13,7 @@
     $myObj = new dataBase();
     $myCon = $myObj->conectaDB();
     
-    $query = "SELECT u.usuario, t.tweet, t.data_inclusao FROM tweets t JOIN usuarios u ON t.idusuario = u.id_usuario ORDER BY data_inclusao DESC;";
+    $query = "SELECT u.usuario, t.tweet, t.data_inclusao FROM tweets t JOIN usuarios u ON t.idusuario = u.id_usuario WHERE id_usuario = $id_usuario OR id_usuario IN (select seguindo_id_usuario from usuario_seguidores us where us.id_usuario = $id_usuario) ORDER BY data_inclusao DESC;";
 
     $resultado_id = mysqli_query($myCon, $query);
 
