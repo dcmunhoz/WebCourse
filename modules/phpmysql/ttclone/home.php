@@ -73,9 +73,13 @@
                                     success: function(data){
                                         $("#textoTweet").val('');
                                         atualizaTweet();
+                                        atualizaQtdeTweets();
                                     }
                                 });
                                 
+                            }else{
+                                
+                                atualizaQtdeTweets();
                             }
                         });
                         
@@ -91,8 +95,19 @@
                             });
                             
                         }
+
+                        // Atualizar a quantidade de tweets
+                        function atualizaQtdeTweets(){
+                            $.ajax({
+                                url:    'php/atualiza_qtde_tweets.php',
+                                success: function(data){
+                                    $('#tweet-count-number').html(data);
+                                }
+                            });
+                        }
                         
                         atualizaTweet();
+                        atualizaQtdeTweets();
                         
                         
                     });
@@ -147,7 +162,7 @@
                                 <!-- Quantidade de Tweets -->
                                 <div class="tweet-count">
                                     <header>Tweets</header>
-                                    <span id="tweet-count-number"><?= $qtde_tweets; ?></span>
+                                    <span id="tweet-count-number"></span>
                                 </div>
                                 
                                 <!-- Quantidade Seguidores -->

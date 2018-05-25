@@ -85,7 +85,7 @@
                                                method: 'post',
                                                data: { seguir_id_usuario: id_usuario },
                                                success: function(data){
-                                                   alert("Registro efetuado com sucesso");
+                                                  
                                                }
                                            });
                                         });
@@ -101,7 +101,7 @@
                                                 method:'post',
                                                 data: { seguir_id_usuario: id_usuario },
                                                 success: function(data){
-                                                    alert('Registro Deletado');
+                                                    
                                                 }
                                             });
                                         });
