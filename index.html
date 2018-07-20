@@ -7,11 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Importar Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
 
         <!-- Importar CSS -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- HTML5Shiv -->
         <!--[if lt IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -20,298 +20,29 @@
         <title>Daniel - Cursos WEB</title>
     </head>
     <body>
-        <main class="container-fluid">
-            <div id="main"><!-- Inicio div #MAIN -->
-                <div id="header">
-                    <div class="page-header">
-                      <h1>Acompanhamento Curso WEB</h1>
-                      <p>Site destinado para acompanhamento e organização de aulas e projetos didaticos</p>
-                    </div>
-                </div>
+        <main class="main-page container">
+          
+          <!-- Header com background -->
+          <header class="background">
+            <span>Acompanhamento curso WEB</span>
+          </header>
 
-                <div class="courses"> <!-- Inicio div .COURSES-->
-                    <div class="course-content"> <!-- Inicio div .CONTENT -->
-                        <div class="course-header">
-                            <h3>Curso completo de Desenvolvimento Web</h3>
-                        </div>
+          <!-- Article que contem os cursos -->
+          <article class="courses-container"> 
+            <div class="course" id="desenvolvimento-web-completo">
+              <header>
+                <h1>Curso Completo Desenvolvimento Web</h1>
+                <button type="button">C</button>
+              </header>
+            </div>
+          </article>
 
-                        <div class="courses-body">
-                            <ul id="courses-modules">
-                              <div class="row">
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                    <div class="module-header">
-                                      <span class="module-header-name">
-                                          HTML
-                                      </span>
-                                      <a href="modules/html/projHTML/" class="project-button" >Projeto</a>
-                                      <div class="clear">
-
-                                      </div>
-                                    </div>
-                                    <ul class="module-content">
-                                        <li><a href="modules/html/1-structure/">Estrutura HTML</a></li>
-                                        <li><a href="modules/html/2-headers/">Cabeçalhos</a></li>
-                                        <li><a href="modules/html/3-breakline/">Quebra de Linha</a></li>
-                                        <li><a href="modules/html/4-paragraph/">Paragrafos</a></li>
-                                        <li><a href="modules/html/5-textsformats/">Formatação de Texto</a></li>
-                                        <li><a href="modules/html/6-lists/ordered/">Listas Ordenadas</a></li>
-                                        <li><a href="modules/html/6-lists/unordered/">Listas Não Ordenadas</a></li>
-                                        <li><a href="modules/html/7-images/">Imagens</a></li>
-                                        <li><a href="modules/html/8-links/">Links</a></li>
-                                        <li><a href="modules/html/10-tables/">Tabelas</a></li>
-                                        <li><a href="modules/html/11-forms/">Formulários</a></li>
-                                        <li><a href="modules/html/12-characters/">Caracteres Especiais</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                    <div class="module-header">
-                                        <span class="module-header-name">
-                                          CSS
-                                        </span>
-
-                                        <div class="clear">
-
-                                        </div>
-                                    </div>
-                                    <ul class="module-content">
-                                        <li><a href="modules/css/1-inline_style/">Estilo Inline</a></li>
-                                        <li><a href="modules/css/2-selectors/">Seletores</a></li>
-                                        <li><a href="modules/css/3-divs/">Divisores</a></li>
-                                        <li><a href="modules/css/4-border/">Bordas</a></li>
-                                        <li><a href="modules/css/5-fontes_cores/">Fontes e Cores</a></li>
-                                        <li><a href="modules/css/6-text_edit/">Edição de Texto</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                    <div class="module-header">
-                                        <span class="module-header-name">CSS Intermediário </span><a class="project-button" href="modules/css_intermediario/prjCSS/">Projeto</a>
-                                        <div class="clear">
-
-                                        </div>
-                                    </div>
-                                        <ul class="module-content">
-                                        <li><a href="modules/css_intermediario/1-boxmodel/">Modelo de Caixa</a></li>
-                                        <li><a href="modules/css_intermediario/2-elementosflutuantes/">Elementos Flutuantes</a></li>
-                                        <li><a href="modules/css_intermediario/3-position/">Posições</a></li>
-                                        <li><a href="modules/css_intermediario/4-inlineblock/">Inline, Block, Inline-Block</a></li>
-                                        <li><a href="modules/css_intermediario/5-links/">Links</a></li>
-                                        <li><a href="modules/css_intermediario/6-cssexterno/">CSS Externo</a></li>
-
-                                    </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                    <div class="module-header">
-                                        <span class="module-header-name">HTML5</span>
-                                        <div class="clear">
-
-                                        </div>
-                                    </div>
-                                    <ul class="module-content">
-                                        <li><a href="modules/html5/1-newtags/">Novas Tags</a></li>
-                                        <li><a href="modules/html5/2-compatibility/">Compatibilidade</a></li>
-                                        <li><a href="modules/html5/3-newinputs/">Novos Inputs</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                    <div class="module-header">
-                                        <span class="module-header-name">
-                                          CSS3
-                                        </span>
-                                        <a class="project-button" href="https://dcmunhoz.github.io/Animations"> Projeto </a>
-                                        <div class="clear">
-
-                                        </div>
-                                    </div>
-                                    <ul class="module-content">
-                                        <li><a href="modules/css3/1-normalizer/">Nomalizer</a></li>
-                                        <li><a href="modules/css3/2-boxsizing/">Box Sizing</a></li>
-                                        <li><a href="modules/css3/3-degradetransparencia/">Degrade &amp; Transparencia </a></li>
-                                        <li><a href="modules/css3/4-shadows/">Sombras</a></li>
-                                        <li><a href="modules/css3/5-animation/">Animação</a></li>
-                                        <li><a href="modules/css3/6-transacao/">Transição</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      Bootstrap
-                                    </span>
-                                    <a class="project-button" href="modules/bootstrap/projects/responsive-web/">Projeto</a>
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="http://dcmunhoz.github.io/spotify-css-clone/" class="important-button">Spotify Clone</a>  </li>
-                                    <li> <a href="modules/bootstrap/1-responsivedesign">Design Responsivo</a> </li>
-                                    <li> <a href="modules/bootstrap/2-bootstrapconfig/">Configurar Bootstrap</a> </li>
-                                    <li> <a href="modules/bootstrap/3-containers/">Containers</a> </li>
-                                    <li> <a href="modules/bootstrap/4-grids/">Modelo de Grids</a> </li>
-                                    <li> <a href="modules/bootstrap/5-forms/">Formulários</a> </li>
-                                    <li> <a href="modules/bootstrap/6-table/">Tabelas</a> </li>
-                                    <li> <a href="modules/bootstrap/7-buttons/">Botões</a> </li>
-                                    <li> <a href="modules/bootstrap/8-images/">imagens</a> </li>
-                                    <li> <a href="modules/bootstrap/9-nav/">Barra de Navegação</a> </li>
-                                    <li> <a href="modules/bootstrap/10-icons/">Icones</a> </li>
-                                    <li> <a href="modules/bootstrap/11-modal/">Janelas Modal</a> </li>
-                                    <li> <a href="modules/bootstrap/12-alerts/">Alertas</a> </li>
-                                    <li> <a href="modules/bootstrap/13-tooltip-popover/">Tooltip &amp; Popover</a> </li>
-                                    <li> <a href="modules/bootstrap/14-tabs">Tabs de navegação</a> </li>
-                                  </ul>
-                                </li>
-
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      Javascript
-                                    </span>
-                                    <a class="project-button" href="modules/javascript/projects/calculadora/">Projeto</a>
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/javascript/projects/balloons/" class="important-button">Estourando Balões</a> </li>
-                                    <li> <a href="modules/javascript/projects/balloonsburst/" class="important-button">Balloons Burst 2.0</a> </li>
-                                    <li> <a href="modules/javascript/1-whatis/"> O que é </a> </li>
-                                    <li> <a href="modules/javascript/2-includejs/">Incluindo Javascript</a> </li>
-                                    <li> <a href="modules/javascript/3-vars/">Variaveis</a> </li>
-                                    <li> <a href="modules/javascript/4-concat/">Contatenação</a> </li>
-                                    <li> <a href="modules/javascript/5-array/">Arrays</a> </li>
-                                    <li> <a href="modules/javascript/6-multarray/">Arrays Multiplos</a> </li>
-                                    <li> <a href="modules/javascript/7-ifelse/">If Else parte 1</a> </li>
-                                    <li> <a href="modules/javascript/8-operadores/">Operadores Relacionais</a> </li>
-                                    <li> <a href="modules/javascript/9-ifelse2/">If Else parte 2 </a> </li>
-                                    <li> <a href="modules/javascript/10-operadoreslogicos/">Operadores Lógicos </a> </li>
-                                    <li> <a href="modules/javascript/11-ifelse3/">If Else parte 3</a> </li>
-                                    <li> <a href="modules/javascript/12-switch/">Switch</a> </li>
-                                    <li> <a href="modules/javascript/13-operadoresaritmeticos/">Operadores Aritmeticos</a> </li>
-                                    <li> <a href="modules/javascript/14-repeticao/">Laços de Repetição</a> </li>
-                                    <li> <a href="modules/javascript/15-functions/">Funções</a> </li>
-                                    <li> <a href="modules/javascript/16-events/">Eventos</a> </li>
-                                    <li> <a href="modules/javascript/17-htmldom/">HTML DOM</a> </li>
-                                  </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      JQuery
-                                    </span>
-                                    <a class="project-button" href="modules/jquery/projects/hash2dot0/">Projeto</a>
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/jquery/projects/hash" class="important-button">Hash</a> </li>
-                                    <li> <a href="modules/jquery/1-whatis/">O que é</a> </li>
-                                    <li> <a href="modules/jquery/2-include/">Como incluir</a> </li>
-                                    <li> <a href="modules/jquery/3-select/">Selecionando Elementos</a> </li>
-                                    <li> <a href="modules/jquery/4-events/">Eventos JQuery</a> </li>
-                                  </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      PHP
-                                    </span>
-                                    <!-- <a class="project-button" href="modules/jquery/projects/hash2dot0/">Projeto</a> -->
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/php/1-whatis/">O que é</a> </li>
-                                    <li> <a href="modules/php/2-embut/">Como incluir</a> </li>
-                                    <li> <a href="modules/php/3-echo/">Comando ECHO</a> </li>
-                                    <li> <a href="modules/php/4-vars/">Variaveis</a> </li>
-                                    <li> <a href="modules/php/5-array/">Arrays</a> </li>
-                                    <li> <a href="modules/php/6-biarray/">Matriz</a> </li>
-                                    <li> <a href="modules/php/7-processforms/">Processamento de Formulários</a> </li>
-                                    <li> <a href="modules/php/8-get">$_GET</a> </li>
-                                    <li> <a href="modules/php/9-post">$_POST</a> </li>
-                                    <li> <a href="modules/php/10-ifelse">If Else</a> </li>
-                                    <li> <a href="modules/php/11-switch">Switch</a> </li>
-                                    <li> <a href="modules/php/12-repeats">Laçõs de Repetição</a> </li>
-                                    <li> <a href="modules/php/13-functions">Funções</a> </li>
-                                    <li> <a href="modules/php/14-includerequire">Include e Require</a> </li>
-                                  </ul>
-                                </li>
-
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      Orientação a Objetos PHP
-                                    </span>
-                                    <a class="project-button" href="modules/poophp/projects/calculadoraphp/">Projeto</a>
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/poophp/1-whatis/">O que é</a> </li>
-                                    <li> <a href="modules/poophp/2-cpm/">Classes, Propriedades e Metodos</a> </li>
-                                    <li> <a href="modules/poophp/3-hp/">Herança e Polimorfismo</a> </li>
-                                    <li> <a href="modules/poophp/4-ev/">Encapsulamento e Visibilidade</a> </li>
-                                  </ul>
-                                </li>
-
-                                <li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      AJAX
-                                    </span>
-                                    <!-- <a class="project-button" href="modules/poophp/projects/calculadoraphp/">Projeto</a> -->
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/ajax/1-whatis/">O que é</a> </li>
-									<li> <a href="modules/ajax/2-sincassinc/">Requisiçõe Sincronas e Assincronas</a> </li>
-									<li> <a href="modules/ajax/3-exp/">Exemplos</a> </li>
-                                  </ul>
-                                </li>
-								  
-								<li class="module col-lg-4 col-md-6 col-sm-12">
-                                  <div class="module-header">
-                                    <span class="module-header-name">
-                                      PHP com Mysql
-                                    </span>
-                                    <!-- <a class="project-button" href="modules/poophp/projects/calculadoraphp/">Projeto</a> -->
-                                    <div class="clear">
-
-                                    </div>
-                                  </div>
-                                  <ul class="module-content">
-                                    <li> <a href="modules/phpmysql/ttclone/">Twitter Clone</a> </li>
-									
-                                  </ul>
-                                </li>
-								  
-								  
-								  
-                                </li>
-                              </div>
-                            </ul>
-                        </div>
-                    </div> <!-- Final div .CONTENT -->
-                </div> <!-- Final div .COURSES-->
-            </div> <!-- Final div #MAIN -->
         </main>
-
+        
+        <script src="js/script.js"></script>
         <!-- Javascript necessário para Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
     </body>
 </html>
