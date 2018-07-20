@@ -7,28 +7,36 @@
     margin: 0;
     padding: 0;
 }
-body, html, main{
+
+body, html{
     width: 100%;
     height: 100%;
 }
 
 body{
-    background-color: #e6e6e6;
+    background-color: #f2f3f5;
     font-family: 'Open Sans', sans-serif;
+}
+
+/* Classes Padrões */
+.collapsed{
+    max-height: 65px !important;
+    overflow: hidden;
 }
 
 .container{
     margin: auto;
     width: 65%;
-    background-color: #fefefe;
 
 }
 
+/* ===== Container Principal ===== */
 .main-page{
     box-sizing: border-box;
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, .2);
+    width: 100% !important;
 }
 
+/* ===== Banner ===== */
 .background{
     background-color: #000;
     height: 50%;
@@ -39,6 +47,7 @@ body{
     background-size: cover;
     background-position: top;
     border-bottom: 15px solid rgb(0, 153, 255);
+    height: 300px;
 }
 
 .background span{
@@ -48,27 +57,77 @@ body{
     text-shadow: 1px 2px 10px rgba(0, 0, 0, .8);
 }
 
+/* ===== Cursos ===== */
+/* Container cursos */
 .courses-container{
     box-sizing: border-box;
     padding: 10px;
 }
 
-.courses-container .course{
-    background-color: #FFF;
+.courses-container .course,
+.courses-container .course .modules{
+    background-color: #fff;
     box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid red;
+    border-radius: 2px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
+    /* border: 1px solid rgb(202, 202, 202); */
+    transition: 500ms;
+    padding: 1px 0;
+}
+
+.courses-container .course:hover{
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .2);
 }
 
 .courses-container .course header{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    padding: 20px;
+}
+
+.courses-container .course header:hover,
+.courses-container .course .modules header:hover{
+    cursor: pointer;
 }
 
 .courses-container .course header h1{
     font-weight: bold;
-    color: #686f7a;
+    color: #444444;
     font-size: 18px;
+}
+
+/* Container Modulos */
+.courses-container .course .modules{
+    /* box-shadow: 0px 0px 0px rgba(0, 0, 0, .5); */
+    padding: 0;
+    margin: 20px 10px;
+    border-radius: 0;
+}
+
+.courses-container .course .modules header{
+    padding: 20px !important;
+    margin: 0;
+    background-color: rgb(255, 255, 246);
+}
+
+.courses-container .course .modules .module-container ul{
+    list-style: none;
+    z-index: -1;
+}
+
+.courses-container .course .modules .module-container ul li a{
+    display: block;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+    transition: 200ms;
+    font-size: 14px;
+}
+
+.courses-container .course .modules .module-container ul li a:hover{
+    background-color: rgb(255, 255, 246);
 }
 
 /* Media Queries */

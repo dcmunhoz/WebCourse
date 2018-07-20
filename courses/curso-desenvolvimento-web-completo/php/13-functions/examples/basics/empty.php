@@ -1,5 +1,5 @@
 <?php
-  $valor = ;
+  $valor = "";
 
   if(empty($valor)){
     echo 'Variavel Vazia';
