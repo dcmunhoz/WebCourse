@@ -57,18 +57,17 @@ class CalcController{
     setLastOperation(value){
 
         // My code, challange
-        if(this._operation.length == 0){
+        // if(this._operation.length == 0){
 
-            this._operation.push(value);
+        //     this._operation.push(value);
 
-        }else{
+        // }else{
 
-            this._operation[this._operation.length - 1] = value;
+        //     this._operation[this._operation.length - 1] = value;
 
-        }
+        // }
 
-        // Hcode teacher code
-        //this._operation[this._operation.length-1] = value;
+        this._operation[this._operation.length-1] = value;
 
     }
 
@@ -95,55 +94,45 @@ class CalcController{
         
         let result  = eval(this._operation.join(""));
         this._operation = [result, last];
-        console.log(this._operation);
+        
+        this.setLastNumberToDisplay();
     }
 
     setLastNumberToDisplay(){
         
+        let lastNumber;
+
+        for(let i = this._operation.length-1; i >= 0; i--){
+            if(!this.isOperator(this._operation[i])){
+                lastNumber = this._operation[i];
+                break;
+            }
+        }
+
+        this.displayCalc = lastNumber;
+
     }
 
     addOperation(value){
 
         if(isNaN(this.getLastOperation())){
 
-            // My code, challange by teacher
             if(this.isOperator(value)){
 
                 this.setLastOperation(value);
-                
-            }else{
-                this.pushOperation(value);
+
+            }else if(isNaN(value)){
+
+                console.log('outra coisa', value);
+
+            }else{    
+
+                this._operation.push(value);
+                this.setLastNumberToDisplay();
             }
-
-            // HCODE teacher code
-            // if(this.isOperator(value)){
-
-            //     this.setLastOperation(value);
-
-            // }else if(isNaN(value)){
-
-            //     this.setLastOperation(value);
-
-            // }else{    
-
-            //     this._operation.push(value);
-
-            // }
 
         }else{
 
-            //My Code Challange
-            // if(isNaN(value)){
-
-            //     this._operation.push(value);
-
-            // }else{
-
-            //     let newValue = this.getLastOperation().toString() + value.toString();
-            //     this.setLastOperation(parseInt(newValue));
-            // }
-
-            // Hcode Teacher
             if(this.isOperator(value)){
 
                 this.pushOperation(value);
@@ -158,7 +147,6 @@ class CalcController{
             
 
         }
-        
         //console.log(this._operation);
     }
 
