@@ -1,6 +1,6 @@
 <?php
 
-// Para iniciar uma variavel sempre colocamos '$'(Cifão/Dollar) seguida do nome
+// Para iniciar uma variavel sempre colocamos '$'(Cifrão/Dollar) seguida do nome
 $nome = "Daniel";
 
 //Exibir o dado de uma variavel na tela
