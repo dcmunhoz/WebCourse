@@ -6,3 +6,11 @@ var emailEl         = document.querySelector("#exampleInputEmail");
 var passEl          = document.querySelector("#exampleInputPassword");
 var photoEl         = document.querySelector("#exampleInputFile");
 var adminEl         = document.querySelector("#exampleInputAdmin");
+
+
+
+
+var fields          = document.querySelectorAll("#form-user-create [name]");
+fields.forEach((field, index)=>{
+    console.log(field.id, field.name, field.checked, index);
+});
