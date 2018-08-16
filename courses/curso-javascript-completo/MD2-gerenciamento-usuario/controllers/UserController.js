@@ -23,7 +23,7 @@ class UserController{
     getValues(){
 
         let user = {}
-        
+
         let fields = this.formEl.elements;
         [...fields].forEach((field, index)=>{
    
@@ -47,7 +47,7 @@ class UserController{
     }
 
     addline(dataUser, tableId){
-        this.tableEl.innerHTML = `
+        this.tableEl.innerHTML += `
             <tr>
                 <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
                 <td>${dataUser.name}</td>
