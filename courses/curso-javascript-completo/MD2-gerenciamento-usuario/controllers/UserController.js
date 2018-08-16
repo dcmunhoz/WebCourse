@@ -1,4 +1,4 @@
-class UserControler{
+class UserController{
 
     constructor(formId, tableId){
     
@@ -23,8 +23,9 @@ class UserControler{
     getValues(){
 
         let user = {}
-
-        this.formEl.elements.forEach((field, index)=>{
+        
+        let fields = this.formEl.elements;
+        [...fields].forEach((field, index)=>{
    
             if(field.name == 'gender'){
         
@@ -46,8 +47,6 @@ class UserControler{
     }
 
     addline(dataUser, tableId){
-
-        console.log(dataUser);
         this.tableEl.innerHTML = `
             <tr>
                 <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
