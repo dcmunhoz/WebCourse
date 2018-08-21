@@ -81,10 +81,18 @@ class UserController{
     getValues(){
 
         let user = {}
+        let isValid = true;
 
         let fields = this.formEl.elements;
         [...fields].forEach((field, index)=>{
    
+            if(['name', 'email', 'password'].indexOf(field.name) > -1 && !field.value){
+            
+                field.parentElement.classList.add('has-error');
+                isValid = false;
+                
+            }            
+
             if(field.name == 'gender'){
         
                 if(field.checked){
@@ -102,7 +110,13 @@ class UserController{
             }
         
         });
-    
+        
+
+        if(!isValid){
+            return false;
+        }
+
+
         return new User(user.name, user.gender, user.birth, user.country, user.email, user.password, user.photo, user.admin);
     }
 
