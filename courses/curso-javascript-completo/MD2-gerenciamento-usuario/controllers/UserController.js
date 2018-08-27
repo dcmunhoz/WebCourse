@@ -194,14 +194,11 @@ class UserController{
             
             let json = JSON.parse(tr.dataset.user);
             let form = document.querySelector("#form-user-update");
-            
             form.dataset.trIndex = tr.sectionRowIndex;
 
             for (let name in json){
 
-                document.querySelector("#form-user-update")
-
-                let field = form.querySelector("[name="+ name.replace("_", "") +"]")
+                let field = form.querySelector("[name="+ name.replace("_", "") +"]");
 
                 if(field){
 
@@ -219,9 +216,8 @@ class UserController{
                             field.checked = json[name];
                         break;
 
-                        dafault:
+                        default:
                             field.value = json[name];
-                        
                         break;
                     }
                 }
