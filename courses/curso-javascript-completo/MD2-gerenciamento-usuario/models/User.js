@@ -131,8 +131,9 @@ class User{
 
                 if(u._id == this.id){
 
-                    u = this;
-                    console.log(u);
+                    Object.assign(u, this);
+                    
+
                 }
 
                 return u;
