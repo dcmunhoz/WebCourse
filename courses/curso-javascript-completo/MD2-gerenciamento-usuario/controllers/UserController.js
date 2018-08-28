@@ -7,6 +7,7 @@ class UserController{
         this.tableEl = document.getElementById(tableId); 
         this.onSubmit();
         this.onEditCancel();
+        this.selectAll();
     
     }
 
@@ -32,14 +33,6 @@ class UserController{
 
             let result = Object.assign({}, userOld, user);
 
-            
-
-            
-
-            
-
-
-            
             this.showPanelCreate();
 
             this.getPhoto(this.formUpdateEl).then(
@@ -70,7 +63,6 @@ class UserController{
                     this.addEventsTr(tr);
         
                     this.updateCount();
-
                     
                     this.formUpdateEl.reset();
 
@@ -108,7 +100,9 @@ class UserController{
                 (content)=>{
 
                     user.photo = content;
-
+                    
+                    this.insert(user);
+    
                     this.addline(user);
                     
                     this.formEl.reset();
@@ -203,6 +197,46 @@ class UserController{
 
 
         return new User(user.name, user.gender, user.birth, user.country, user.email, user.password, user.photo, user.admin);
+    }
+
+    getUsersStorage(){
+
+        let users = [];
+        
+        if(sessionStorage.getItem("users")){
+
+            users = JSON.parse(sessionStorage.getItem("users"));
+
+        }
+
+        return users;
+
+    }
+
+    selectAll(){
+
+        let users = this.getUsersStorage();
+
+        console.log(this.getUsersStorage());
+
+        users.forEach(dataUser=>{
+
+            let user = new User();
+
+            user.loadFromJSON(dataUser);
+
+            this.addline(user)
+        });
+    }
+
+    insert(data){
+
+        let user = this.getUsersStorage();
+
+        user.push(data);
+
+        sessionStorage.setItem("users", JSON.stringify(user));
+
     }
 
     addline(dataUser, tableId){
