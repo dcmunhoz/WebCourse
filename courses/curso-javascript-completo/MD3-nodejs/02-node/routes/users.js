@@ -12,15 +12,10 @@ module.exports = app=>{
         });
     });
     
-    app.get('/users/admin', (req, res)=>{
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json({
-            admin:[{
-                nome:'Daniel Munhoz',
-                email:'dc.munhoz@hotmail.com'
-            }]
-        });
+    app.post('/users', (req, res)=>{
+
+        res.json(req.body);
+
     });
 
 };
