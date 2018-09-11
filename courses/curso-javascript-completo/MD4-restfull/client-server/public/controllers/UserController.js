@@ -197,7 +197,7 @@ class UserController{
         ajax.open('get', '/users');
         ajax.onload = event =>{
 
-            let obj = { user: [] };
+            let obj = { users: [] };
 
             try{
 
