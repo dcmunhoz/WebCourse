@@ -30,7 +30,7 @@ class HttpRequest{
         return new Promise((resolve, reject)=>{
             let ajax = new XMLHttpRequest();
 
-            ajax.open(method.toUppercase(), url);
+            ajax.open(method.toUpperCase(), url);
 
             ajax.addEventListener('error', e=>{
 
