@@ -48,17 +48,19 @@ class UserController{
 
                     userEdit.loadFromJSON(result);
 
-                    userEdit.save();
+                    userEdit.save().then(pUser=>{
 
-                    this.getTr(userEdit, tr);
+                        this.getTr(pUser, tr);
         
-                    this.updateCount();
-                    
-                    this.formUpdateEl.reset();
+                        this.updateCount();
+                        
+                        this.formUpdateEl.reset();
+    
+                        btn.disabled = false;
+    
+                        this.showPanelCreate();
 
-                    btn.disabled = false;
-
-                    this.showPanelCreate();
+                    });                   
 
                 }, 
                 (e)=>{
@@ -91,13 +93,17 @@ class UserController{
 
                     user.photo = content;
 
-                    user.save();
-    
-                    this.addline(user);
+                    user.save().then(pUser=>{
+                        
+                        this.addline(pUser);
                     
-                    this.formEl.reset();
+                        this.formEl.reset();
+    
+                        btn.disabled = false;
 
-                    btn.disabled = false;
+                    });
+    
+                    
 
                 }, 
                 (e)=>{
