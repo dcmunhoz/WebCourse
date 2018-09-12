@@ -99,7 +99,7 @@ class User{
 
     static getUsersStorage(){
 
-        return HttpRequest.get('/users');
+        return Fetch.get('/users');
 
     }
 
