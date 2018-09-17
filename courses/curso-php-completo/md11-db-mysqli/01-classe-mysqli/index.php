@@ -23,7 +23,7 @@ if($conn->connect_error){
 
 // $stmt->execute();
 
-// 
+// Consultar Tabela
 
 $result = $conn->query("SELECT * FROM tb_usuarios");
 
