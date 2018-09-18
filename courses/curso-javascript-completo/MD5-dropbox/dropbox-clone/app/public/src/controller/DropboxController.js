@@ -19,7 +19,8 @@ class DropboxController {
         });
 
         this.inputFilesEl.addEventListener('change', event=>{
-            console.log(event.target.files);
+            
+            this.uploadTask(event.target.files);
 
             this.snackModalEl.style.display = 'block';
 
@@ -27,6 +28,51 @@ class DropboxController {
 
     }
 
+    uploadTask(files){
+
+        let promises = [];
+
+        [...files].forEach(file=>{
+
+            promises.push(new Promise((resolve, reject)=>{
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('POST', '/upload');
+
+                xhr.onload = event =>{
+
+                    try{
+
+                        resolve(JSON.parse(xhr.responseText));
+
+                    }catch(e){
+
+                        reject(e);
+
+                    }
+
+                };
+
+                xhr.onerror = event => {
+
+                    reject(event);
+
+                };  
+
+                let formData = new FormData();
+
+                formData.append('input-file', file);
+
+                xhr.send(formData);
+
+            }));
+
+        });
+
+        return Promise.all(promises);
+
+    }
     
 
 }
