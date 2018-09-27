@@ -2,20 +2,13 @@
 
 require_once("config.php");
 
-$sql = new Sql();
+// $sql = new Sql();
 
-$res = $sql->select("SELECT * FROM tb_usuarios");
+// $res = $sql->select("SELECT * FROM tb_usuarios");
 
-foreach($res as $row){
-    $ar = array();
+$user = new Usuario();
+$user->loadById(4);
 
-    foreach($row as $key => $value){
-        $ar[$key] = $value;
-        
-    }
-    echo json_encode($ar);
-    echo "<br>";
-
-}
+echo $user;
 
 ?>
