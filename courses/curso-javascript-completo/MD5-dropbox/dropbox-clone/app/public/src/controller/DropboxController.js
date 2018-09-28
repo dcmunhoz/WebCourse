@@ -349,7 +349,15 @@ class DropboxController {
             </li>
         `;
 
+        this.initEventsLi(li);        
+
         return li;
+    }
+
+    initEventsLi(li){
+        li.addEventListener('click', e=>{
+            li.classList.toggle('selected');
+        });
     }
 
     readFiles(){
