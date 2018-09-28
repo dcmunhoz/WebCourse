@@ -20,8 +20,15 @@ require_once("config.php");
 // echo json_encode($busca);
 
 // Autentica usuários
-$usuario = new Usuario();
-$usuario->login("root", ")(*&");
+// $usuario = new Usuario();
+// $usuario->login("root", ")(*&");
+//echo $usuario;
 
-echo $usuario;
+// Insert de um novo usuário
+$aluno = new Usuario("Daniel", "Oe Oe Oe");
+
+$aluno->insert();
+
+echo $aluno;
+
 ?>
