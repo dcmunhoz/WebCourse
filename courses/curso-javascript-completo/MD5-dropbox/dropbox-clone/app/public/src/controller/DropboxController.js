@@ -10,6 +10,10 @@ class DropboxController {
         this.nameFileEL     = this.snackModalEl.querySelector('.filename');
         this.timeLeftEl     = this.snackModalEl.querySelector('.timeleft');
         this.listFileEl     = document.querySelector("#list-of-files-and-directories");
+        this.btnNewFolderEl = document.querySelector("#btn-new-folder");
+        this.btnRenameEl    = document.querySelector("#btn-rename");
+        this.btnDeleteEl    = document.querySelector("#btn-delete");
+
         this.connectFirebase();
         this.initEvents();
         this.readFiles();
@@ -28,10 +32,31 @@ class DropboxController {
         firebase.initializeApp(config);
     }
 
+    getSelection(){
+        return this.listFileEl.querySelectorAll('.selected');
+    }
+
     initEvents(){
 
         this.listFileEl.addEventListener('selectionchange', e=>{
-            console.log('selectionchange');
+            
+            switch(this.getSelection().length){
+                case 0:
+                    this.btnDeleteEl.style.display = 'none';
+                    this.btnRenameEl.style.display = 'none';
+                break;
+                
+                case 1:
+                    this.btnDeleteEl.style.display = 'block';
+                    this.btnRenameEl.style.display = 'block';
+                break;
+
+                default:
+                    this.btnDeleteEl.style.display = 'block';
+                    this.btnRenameEl.style.display = 'none';
+                break;
+            }
+            
         });
 
         this.btnSendFileEl.addEventListener('click', event =>{
@@ -394,6 +419,7 @@ class DropboxController {
 
                 }
 
+                this.listFileEl.dispatchEvent(this.onselectionchange);
                 return true;
 
             }
@@ -408,6 +434,7 @@ class DropboxController {
 
             li.classList.toggle('selected');
 
+            this.listFileEl.dispatchEvent(this.onselectionchange);
 
         });
     }
