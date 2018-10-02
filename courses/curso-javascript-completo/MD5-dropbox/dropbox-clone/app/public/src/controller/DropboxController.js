@@ -1,7 +1,8 @@
 class DropboxController {
 
     constructor(){
-
+        
+        this.onselectionchange = new Event('selectionchange');
         this.btnSendFileEl  = document.querySelector("#btn-send-file");
         this.inputFilesEl   = document.querySelector("#files");
         this.snackModalEl   = document.querySelector("#react-snackbar-root");
@@ -28,6 +29,10 @@ class DropboxController {
     }
 
     initEvents(){
+
+        this.listFileEl.addEventListener('selectionchange', e=>{
+            console.log('selectionchange');
+        });
 
         this.btnSendFileEl.addEventListener('click', event =>{
 
@@ -356,6 +361,9 @@ class DropboxController {
 
     initEventsLi(li){
         li.addEventListener('click', e=>{
+
+
+            this.listFileEl.dispatchEvent(this.onselectionchange);
 
             if(e.shiftKey){
 
