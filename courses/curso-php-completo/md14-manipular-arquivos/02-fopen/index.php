@@ -21,7 +21,7 @@
 
     $file = fopen("usuarios.csv", "w+");
 
-    fwrite($file, implode(";", $headers));
+    fwrite($file, implode(";", $headers) . "\r\n");
 
     foreach($usuarios as $row){
 
@@ -36,5 +36,6 @@
     }
 
     fclose($file);
+    echo "Dados exportados para csv";
 
 ?>
