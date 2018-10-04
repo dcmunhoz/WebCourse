@@ -2,17 +2,18 @@ class DropboxController {
 
     constructor(){
         
-        this.onselectionchange = new Event('selectionchange');
-        this.btnSendFileEl  = document.querySelector("#btn-send-file");
-        this.inputFilesEl   = document.querySelector("#files");
-        this.snackModalEl   = document.querySelector("#react-snackbar-root");
-        this.progressBarEl  = this.snackModalEl.querySelector('.mc-progress-bar-fg');
-        this.nameFileEL     = this.snackModalEl.querySelector('.filename');
-        this.timeLeftEl     = this.snackModalEl.querySelector('.timeleft');
-        this.listFileEl     = document.querySelector("#list-of-files-and-directories");
-        this.btnNewFolderEl = document.querySelector("#btn-new-folder");
-        this.btnRenameEl    = document.querySelector("#btn-rename");
-        this.btnDeleteEl    = document.querySelector("#btn-delete");
+        this.currentFolder      = ['daniel'];
+        this.onselectionchange  = new Event('selectionchange');
+        this.btnSendFileEl      = document.querySelector("#btn-send-file");
+        this.inputFilesEl       = document.querySelector("#files");
+        this.snackModalEl       = document.querySelector("#react-snackbar-root");
+        this.progressBarEl      = this.snackModalEl.querySelector('.mc-progress-bar-fg');
+        this.nameFileEL         = this.snackModalEl.querySelector('.filename');
+        this.timeLeftEl         = this.snackModalEl.querySelector('.timeleft');
+        this.listFileEl         = document.querySelector("#list-of-files-and-directories");
+        this.btnNewFolderEl     = document.querySelector("#btn-new-folder");
+        this.btnRenameEl        = document.querySelector("#btn-rename");
+        this.btnDeleteEl        = document.querySelector("#btn-delete");
 
         this.connectFirebase();
         this.initEvents();
@@ -61,6 +62,22 @@ class DropboxController {
     }
 
     initEvents(){
+
+        this.btnNewFolderEl.addEventListener('click', e=>{
+
+            let name = prompt("Nome da nova pasta:");
+
+            if (name){
+
+                this.getFirebaseRef().push().set({
+                    name,
+                    type:'folder',
+                    path:this.currentFolder.join('/')
+                });
+
+            }
+
+        });
 
         this.btnDeleteEl.addEventListener('click', e=>{
 
