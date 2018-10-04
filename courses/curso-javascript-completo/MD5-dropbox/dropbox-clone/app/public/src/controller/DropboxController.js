@@ -36,7 +36,54 @@ class DropboxController {
         return this.listFileEl.querySelectorAll('.selected');
     }
 
+    removeTask(){
+
+        let promises = [];
+
+        this.getSelection().forEach(li=>{
+
+            let file = JSON.parse(li.dataset.file);
+            let key = li.dataset.key;
+
+
+            let formData = new FormData();
+            formData.append('path', file.path);
+            formData.append('key', key);
+
+
+            promises.push(this.ajax('/file', 'DELETE', formData));
+
+            
+
+        });
+        return Promise.all(promises);
+
+    }
+
     initEvents(){
+
+        this.btnDeleteEl.addEventListener('click', e=>{
+
+            this.removeTask().then(responses=>{
+
+                responses.forEach(response=>{
+
+                    if(response.fields.key){
+
+                        this.getFirebaseRef().child(response.fields.key).remove();
+
+                    }
+
+
+                });
+
+            }).catch(err=>{
+
+                console.log(err);
+
+            });
+
+        });
 
         this.btnRenameEl.addEventListener('click', e=>{
 
@@ -128,54 +175,65 @@ class DropboxController {
         this.snackModalEl.style.display = (show) ? 'block' : 'none';
     }
 
+    ajax(url, method = 'GET', formData = new FormData(), onprogress = function(){}, onloadstart = function(){}  ){
+
+        return new Promise((resolve, reject)=>{
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open(method, url);
+
+            xhr.onload = event =>{
+
+
+                try{
+
+                    resolve(JSON.parse(xhr.responseText));
+
+                }catch(e){
+
+                    reject(e);
+
+                }
+
+            };
+
+            xhr.onerror = event => {
+
+                reject(event);
+                
+            };  
+
+            xhr.upload.onprogress = onprogress;
+
+            onloadstart();
+
+
+            xhr.send(formData);
+
+
+        });
+
+    }
+
     uploadTask(files){
 
         let promises = [];
 
         [...files].forEach(file=>{
 
-            promises.push(new Promise((resolve, reject)=>{
+            let formData = new FormData();
 
-                var xhr = new XMLHttpRequest();
+            formData.append('input-file', file);
 
-                xhr.open('POST', '/upload');
+            promises.push(this.ajax('/upload', 'POST', formData, (event)=>{
 
-                xhr.onload = event =>{
+                // Erro de evento
+                this.uploadProgress(event, file);
 
-
-                    try{
-
-                        resolve(JSON.parse(xhr.responseText));
-
-                    }catch(e){
-
-                        reject(e);
-
-                    }
-
-                };
-
-                xhr.onerror = event => {
-
-                    reject(event);
-                    
-                };  
-
-                xhr.upload.onprogress = event =>{
-
-                    this.uploadProgress(event, file);
-
-                }
-
-
-                let formData = new FormData();
-
-                formData.append('input-file', file);
+            }, ()=>{
 
                 this.startUploadTime = Date.now();
-
-
-                xhr.send(formData);
 
             }));
 
