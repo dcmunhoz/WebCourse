@@ -47,13 +47,22 @@ class DropboxController {
             let file = JSON.parse(li.dataset.file);
             let key = li.dataset.key;
 
+            promises.push(new Promise((resolve, reject)=>{
 
-            let formData = new FormData();
-            formData.append('path', file.path);
-            formData.append('key', key);
+                let fileRef = firebase.storage().ref(this.currentFolder.join('/')).child(file.name);
 
+                fileRef.delete().then(()=>{
 
-            promises.push(this.ajax('/file', 'DELETE', formData));
+                    resolve({
+                        fields:{
+                            key
+                        }
+                    });
+                }).catch(err=>{
+                    reject(err);
+                });
+
+            }));
 
             
 
