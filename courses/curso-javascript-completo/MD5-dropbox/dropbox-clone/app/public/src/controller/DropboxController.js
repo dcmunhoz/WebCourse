@@ -155,7 +155,16 @@ class DropboxController {
 
                 responses.forEach(resp=>{
 
-                    this.getFirebaseRef().push().set(resp.files['input-file']);
+                    resp.ref.getDownloadURL().then(downloadURL => {
+ 
+                        this.getFirebaseRef().push().set({
+                            name: resp.name,
+                            type: resp.contentType,
+                            path: downloadURL,
+                            size: resp.size
+                        });
+ 
+                    });
 
                 });
 
@@ -236,24 +245,55 @@ class DropboxController {
 
     }
 
+    getCompleteMeta(storage, metadata){
+        
+        let urls = storage.getDownloadURL();
+
+        [urls].forEach((key, value)=>{
+            console.log(value);
+        });
+
+        return ;
+    }
+
     uploadTask(files){
 
         let promises = [];
 
         [...files].forEach(file=>{
 
-            let formData = new FormData();
+            promises.push(new Promise((resolve, reject)=>{
 
-            formData.append('input-file', file);
+                let fileRef = firebase.storage().ref(this.currentFolder.join('/')).child(file.name);
 
-            promises.push(this.ajax('/upload', 'POST', formData, (event)=>{
+                let task = fileRef.put(file);
 
-                // Erro de evento
-                this.uploadProgress(event, file);
+                task.on('state_changed', snapshot=>{
 
-            }, ()=>{
+                    this.uploadProgress({
+                        loaded: snapshot.bytesTransferred,
+                        total: snapshot.totalBytes
+                    }, file);
 
-                this.startUploadTime = Date.now();
+                }, error=>{
+
+                    console.error(error);
+                    reject(error);
+                }, ()=>{
+
+                    fileRef.getMetadata().then(metadata=>{
+
+                        resolve(metadata);
+
+                    }).catch(err=>{
+
+                        reject(err);
+                    });
+
+                    console.log('success', snapshot);
+                    resolve();
+
+                });
 
             }));
 
