@@ -690,7 +690,7 @@ class DropboxController {
                     break;
 
                 default:
-                    window.open('/file?path=' + file.path);
+                    window.open(file.path);
             }
 
         });
