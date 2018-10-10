@@ -38,6 +38,54 @@ class DropboxController {
         return this.listFileEl.querySelectorAll('.selected');
     }
 
+    removeFolderTask(ref, name){
+
+        return new Promise((resolve, reject)=>{
+
+            let folderRef = this.getFirebaseRef(ref + '/' + name);
+
+            folderRef.on('value', snapshot=>{
+
+                folderRef.off('value');
+
+                snapshot.forEach(item=>{
+                    let data = item.val();
+                    data.key = item.key;
+
+                    if(data.type === 'folder'){
+
+                        this.removeFolderTask(ref + '/' + name, data,name).then(()=>{
+                            resolve({
+                                fields:{
+                                    key:data.key
+                                }
+                            });
+                        }).catch(err=>{
+                            reject(err);
+                        });
+
+                    }else if(data.type){
+                        this.removeFile(ref + '/' + name, data,name).then(()=>{
+                            resolve({
+                                fields:{
+                                    key:data.key
+                                }
+                            });
+                        }).catch(err=>{
+                            reject(err);
+                        });
+                    }
+                });
+
+                folderRef.remove();
+                
+
+            });
+
+        });
+
+    }
+
     removeTask(){
 
         let promises = [];
@@ -49,18 +97,31 @@ class DropboxController {
 
             promises.push(new Promise((resolve, reject)=>{
 
-                let fileRef = firebase.storage().ref(this.currentFolder.join('/')).child(file.name);
+                if(file.type === 'folder'){
 
-                fileRef.delete().then(()=>{
+                    this.removeFolderTask(this.currentFolder.join('/'), file.name).then(()=>{
 
-                    resolve({
-                        fields:{
-                            key
-                        }
+                        resolve({
+                            fields:{
+                                key
+                            }
+                        });
+
                     });
-                }).catch(err=>{
-                    reject(err);
-                });
+                    
+                }else if(file.type) {
+
+                    this.removeFile(this.currentFolder.join('/'), file.name).then(()=>{
+
+                        resolve({
+                            fields:{
+                                key
+                            }
+                        });
+
+                    });
+
+                }
 
             }));
 
@@ -68,6 +129,14 @@ class DropboxController {
 
         });
         return Promise.all(promises);
+
+    }
+
+    removeFile(ref, name){
+
+        let fileRef = firebase.storage().ref(ref).child(name);
+
+        return fileRef.delete();
 
     }
 
@@ -162,15 +231,16 @@ class DropboxController {
 
             this.uploadTask(event.target.files).then(responses =>{
 
-                responses.forEach(resp=>{
+                responses.forEach(response=>{
 
-                    resp.ref.getDownloadURL().then(downloadURL => {
+
+                    response.ref.getDownloadURL().then(downloadURL => {
  
                         this.getFirebaseRef().push().set({
-                            name: resp.name,
-                            type: resp.contentType,
+                            name: response.name,
+                            type: response.contentType,
                             path: downloadURL,
-                            size: resp.size
+                            size: response.size
                         });
  
                     });
@@ -299,7 +369,6 @@ class DropboxController {
                         reject(err);
                     });
 
-                    console.log('success', snapshot);
                     resolve();
 
                 });
