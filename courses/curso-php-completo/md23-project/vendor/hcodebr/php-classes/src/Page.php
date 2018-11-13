@@ -17,12 +17,12 @@
         ];
         private $options = [];
 
-        public function __construct($opts = array()){
+        public function __construct($opts = array(), $tpl_dir = '/WebCourse/courses/curso-php-completo/md23-project/views/'){
 
             $this->options = array_merge($this->defaults, $opts);
 
             $config = array(
-                "tpl_dir"       =>  $_SERVER["DOCUMENT_ROOT"]."/WebCourse/courses/curso-php-completo/md23-project/views/",
+                "tpl_dir"       =>  $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
                 "cache_dir"     =>  $_SERVER["DOCUMENT_ROOT"]."/WebCourse/courses/curso-php-completo/md23-project/views-cache/",
                 "debug"         =>  false
             );
