@@ -84,22 +84,32 @@ $app->get('/admin/users/create', function(){
 
 });
 
-$app->get('/admin/user/:iduser/delete', function($iduser){
+$app->get('/admin/users/:iduser/delete', function($iduser){
 
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user->get((int)$iduser);
+	$user->delete();
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/users");
+	exit;
 
 });
 
 $app->get('/admin/users/:iduser', function($iduser){
 
 	User::verifyLogin();
-	$user = User::getUser($iduser);
+
+	$user = new User();
+
+	$user->get((int)$iduser);
 	
 	$page = new PageAdmin();
 	
 	$page->setTpl("users-update", array(
-		"user"=>$user
+		"user"=>$user->getValues()
 	));
 
 
@@ -109,10 +119,17 @@ $app->post('/admin/users/create', function(){
 
 	User::verifyLogin();
 
-	var_dump($_POST);
+	$user = new User();
 
-	// Pausa - 17:49
+	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
 
+	$user->setData($_POST);
+
+	$user->save();
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/users");
+
+	exit;
 
 });
 
@@ -120,7 +137,19 @@ $app->post('/admin/users/:iduser', function($iduser){
 
 	User::verifyLogin();
 
+	$user = new User();
 
+	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
+
+	$user->get((int)$iduser);
+
+	$user->setData($_POST);
+
+	$user->update();
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/users");
+
+	exit;
 });
 
 
