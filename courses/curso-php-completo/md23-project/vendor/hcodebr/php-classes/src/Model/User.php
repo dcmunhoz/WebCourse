@@ -6,7 +6,8 @@
 
     class User extends Model {
 
-        const SESSION = "User";
+        const SESSION   = "User";
+        const SECRET  = "HcodePhp7_Secret";
 
         public function login($login, $password){
 
@@ -166,9 +167,9 @@
                     $dataRecovery = $result2[0];
 
                     // Pausa - 14:08
-                    base64_encode();
+                    $code  = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, User::SECRET, $dataRecovery['idrecovery'], MCRYPT_MODE_ECB));
 
-
+                    $link = "http://localhost:8133/WebCourse/courses/curso-php-completo/md23-project/index.php/admin/forgot/reset?code=&code";
                 }
 
             }
