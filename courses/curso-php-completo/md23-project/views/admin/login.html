@@ -67,7 +67,7 @@
     </div>
     <!-- /.social-auth-links -->
 
-    <a href="/WebCourse/courses/curso-php-completo/md23-project/index.php/admin/forgot/">I forgot my password</a><br>
+    <a href="/WebCourse/courses/curso-php-completo/md23-project/index.php/admin/forgot">I forgot my password</a><br>
     <a href="register.html" class="text-center">Register a new membership</a>
 
   </div>

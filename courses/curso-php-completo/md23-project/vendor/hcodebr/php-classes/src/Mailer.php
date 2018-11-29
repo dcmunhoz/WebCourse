@@ -7,8 +7,8 @@ use Rain\Tpl;
 
 class Mailer{
 
-    const USERNAME  = '';
-    const PASSWORD  = '';
+    const USERNAME  = 'danielcursophp7@gmail.com';
+    const PASSWORD  = '<?senha?>';
     const NAME_FROM = 'Hcode Store';
 
     private $mail;
@@ -16,8 +16,8 @@ class Mailer{
     public function __construct($toAddress, $toName, $subject, $tplName, $data = array()){
 
         $config = array(
-            "tpl_dir"       =>  $_SERVER["DOCUMENT_ROOT"].'/views/email/',
-            "cache_dir"     =>  $_SERVER["DOCUMENT_ROOT"].'/views/email/',
+            "tpl_dir"       =>  $_SERVER["DOCUMENT_ROOT"].'/WebCourse/courses/curso-php-completo/md23-project/views/email/',
+            "cache_dir"     =>  $_SERVER["DOCUMENT_ROOT"].'/WebCourse/courses/curso-php-completo/md23-project/views/email/',
             "debug"         =>  false
         );
 
@@ -30,7 +30,7 @@ class Mailer{
             $tpl->assign($key, $value);
         }
 
-        // Pausa Aqui -- 25:20
+        $html = $tpl->draw($tplName, true);
 
         
         //Create a new PHPMailer instance
@@ -55,19 +55,19 @@ class Mailer{
         $this->mail->Port = 587;
 
         //Set the encryption system to use - ssl (deprecated) or tls
-        $this->mail->SMTPSecure = 'tsl';
+        $this->mail->SMTPSecure = 'tls';
 
         //Whether to use SMTP authentication
         $this->mail->SMTPAuth = true;
 
         //Username to use for SMTP authentication - use full email address for gmail
-        $this->mail->Username = Mailer::USERNAME;
+        $this->mail->Username = 'danielcursophp7@gmail.com';
 
         //Password to use for SMTP authentication
-        $this->mail->Password = Mailer::PASSWORD;
+        $this->mail->Password = '<?senha?>';
 
         //Set who the message is to be sent from
-        $this->mail->setFrom(Mailer::USERNAME, Mailer::NAME_FROM);
+        $this->mail->setFrom('danielcursophp7@gmail.com', 'No_Reply');
 
         //Set an alternative reply-to address
         //$this->mail->addReplyTo('replyto@example.com', 'First Last');
@@ -88,37 +88,17 @@ class Mailer{
         //Attach an image file
         //$this->mail->addAttachment('images/phpmailer_mini.png');
 
-        //send the message, check for errors
-        if (!$this->mail->send()) {
-            echo "Mailer Error: " . $this->mail->ErrorInfo;
-        } else {
-            echo "Message sent!";
-            //Section 2: IMAP
-            //Uncomment these to save your message in the 'Sent Mail' folder.
-            #if (save_mail($this->mail)) {
-            #    echo "Message saved!";
-            #}
-        }
-
-        //Section 2: IMAP
-        //IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
-        //Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
-        //You can use imap_getmailboxes($imapStream, '/imap/ssl') to get a list of available folders or labels, this can
-        //be useful if you are trying to get this working on a non-Gmail IMAP server.
-        function save_mail($mail)
-        {
-            $mail = $this->mail;
-            //You can change 'Sent Mail' to any other folder or tag
-            $path = "{imap.gmail.com:993/imap/ssl}[Gmail]/Sent Mail";
-
-            //Tell your server to open an IMAP connection using the same username and password as you used for SMTP
-            $imapStream = imap_open($path, $this->mail->Username, $this->mail->Password);
-
-            $result = imap_append($imapStream, $path, $this->mail->getSentMIMEMessage());
-            imap_close($imapStream);
-
-            return $result;
-        }
+        // //send the message, check for errors
+        // if (!$this->mail->send()) {
+        //     echo "Mailer Error: " . $this->mail->ErrorInfo;
+        // } else {
+        //     echo "Message sent!";
+        //     //Section 2: IMAP
+        //     //Uncomment these to save your message in the 'Sent Mail' folder.
+        //     #if (save_mail($this->mail)) {
+        //     #    echo "Message saved!";
+        //     #}
+        // }
 
 
     }
