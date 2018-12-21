@@ -5,7 +5,7 @@
     use \Hcode\Model;
     use \Hcode\Mailer;
 
-    class Category extends Model {
+    class Product extends Model {
 
         
         public static function listAll(){
