@@ -44,11 +44,29 @@ $app->post("/admin/products/create", function(){
     exit;
 });
 
+$app->get('/admin/products/:idproduct', function($idProduct){
+
+    User::verifyLogin();
+
+    $product = new Product();
+
+    $product->get((int)$idProduct);
+
+    $page = new PageAdmin();
+
+    $page->setTpl("products-update", [
+        'product'=>$product->getValues()
+    ]);
+
+});
+
 /**
- *  PAUSA AQUI - Criar a rota de edição do produto
  * 
- *  TEMPO: 23:00
+ * Desc - Resolver problema da imagem
+ * 
+ * Tempo: 25:00
  * 
  */
+
 
 ?>
