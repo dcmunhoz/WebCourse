@@ -60,13 +60,39 @@ $app->get('/admin/products/:idproduct', function($idProduct){
 
 });
 
-/**
- * 
- * Desc - Resolver problema da imagem
- * 
- * Tempo: 25:00
- * 
- */
+$app->post('/admin/products/:idproduct', function($idProduct){
+
+    User::verifyLogin();
+
+    $product = new Product();
+
+    $product->get((int)$idProduct);
+
+    $product->setData($_POST);
+
+    $product->save();
+
+    $product->setPhoto($_FILES["file"]);
+
+    header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/products");
+    exit;
+
+});
+
+$app->get('/admin/products/:idproduct/delete', function($idProduct){
+
+    User::verifyLogin();
+
+    $product = new Product();
+
+    $product->get((int)$idProduct);
+
+    $product->delete();
+
+    header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/products");
+    exit;
+
+});
 
 
 ?>
