@@ -77,7 +77,7 @@
 
         public function checkPhoto(){
 
-            if(file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "/WebCourse/courses/curso-php-completo/md23-project/res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . "jpg")){
+            if(file_exists($_SERVER['DOCUMENT_ROOT'] . "\WebCourse\courses\curso-php-completo\md23-project" . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . ".jpg")){
                 $url =  "/WebCourse/courses/curso-php-completo/md23-project/res/site/img/products/" . $this->getidproduct() . ".jpg";
             }else{
 
@@ -120,7 +120,8 @@
 
             }
 
-            $dest = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "/WebCourse/courses/curso-php-completo/md23-project/res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . ".jpg";
+            
+            $dest = $_SERVER['DOCUMENT_ROOT'] . "\WebCourse\courses\curso-php-completo\md23-project" . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . ".jpg";
     
             imagejpeg($image, $dest);
             
