@@ -39,7 +39,7 @@
             $sql = new Sql();
 
             $result = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
-                ":idproduct"=>$this->getidcategory(),
+                ":idproduct"=>$this->getidproduct(),
                 ":desproduct"=>$this->getdesproduct(),
                 ":vlprice"=>$this->getvlprice(),
                 ":vlwidth"=>$this->getvlwidth(),
@@ -101,31 +101,36 @@
 
         public function setPhoto($file){
 
-            $extension = explode('.', $file['name']);
-            $extension = end($extension);
+            
 
-            switch($extension){
-                case 'jpg':
-                case 'jpeg':
-                    $image = imagecreatefromjpeg($file["tmp_name"]);
-                break;
-                case 'gif':
-                    $image = imagecreatefromgif($file["tmp_name"]);
+            if($file['name'] !== ""){
+                $extension = explode('.', $file['name']);
+                $extension = end($extension);
 
-                break;
-                case 'png':
-                    $image = imagecreatefrompng($file["tmp_name"]);
+                switch($extension){
+                    case 'jpg':
+                    case 'jpeg':
+                        $image = imagecreatefromjpeg($file["tmp_name"]);
+                    break;
+                    case 'gif':
+                        $image = imagecreatefromgif($file["tmp_name"]);
+
+                    break;
+                    case 'png':
+                        $image = imagecreatefrompng($file["tmp_name"]);
+                    
+                    break;
+
+                }
+
                 
-                break;
+                $dest = $_SERVER['DOCUMENT_ROOT'] . "\WebCourse\courses\curso-php-completo\md23-project" . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . ".jpg";
+        
+                imagejpeg($image, $dest);
+                
+                imagedestroy($image);
 
             }
-
-            
-            $dest = $_SERVER['DOCUMENT_ROOT'] . "\WebCourse\courses\curso-php-completo\md23-project" . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "products" . DIRECTORY_SEPARATOR . $this->getidproduct() . ".jpg";
-    
-            imagejpeg($image, $dest);
-            
-            imagedestroy($image);
 
             $this->checkPhoto();
 
