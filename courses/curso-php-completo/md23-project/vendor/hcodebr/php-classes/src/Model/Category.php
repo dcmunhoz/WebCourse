@@ -72,6 +72,13 @@
 
         }
 
+        /**
+         * PAROU AQUI - 07:00
+         * 
+         * CRIAR INTELIGENCIA PARA PUXAR PRODUTOS SEM CATEGORIAS
+         * 
+         */
+
         
     }
 

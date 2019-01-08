@@ -96,17 +96,22 @@ $app->post('/admin/categories/:idcategory', function($idcategory){
 
 });
 
-$app->get('/category/:idcategory', function($idcategory){
+
+
+$app->get('/admin/categories/:idcategoy/products',function($idcategory){
+
+	User::verifyLogin();
 
 	$category = new Category();
 
 	$category->get((int)$idcategory);
 
-	$page = new Page();
+	$page = new PageAdmin();
 
-	$page->setTpl("category", [
+	$page->setTpl("categories-products", [
 		'category'=>$category->getValues(),
-		'products'=>[]
+		'productsRelated'=>[],
+		'productsNotRelated'=>[]
 	]);
 
 });
