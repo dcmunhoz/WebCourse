@@ -3,6 +3,7 @@
 use \Hcode\PageAdmin;
 use \Hcode\Page;
 use \Hcode\Model\Product;
+use \Hcode\Model\Category;
 
 $app->get('/', function() {
 
@@ -26,10 +27,18 @@ $app->get('/category/:idcategory', function($idcategory){
 
 	$page->setTpl("category", [
 		'category'=>$category->getValues(),
-		'products'=>[]
+		'products'=>$category->getProducts()
 	]);
 
 });
+
+/**
+ * 
+ * 	PAUSA AQUI - VERIFICAR PORQUE NÃO ESTA FUNCIONANDO A TELA DE CATEGORIAS.
+ * 
+ *  TEMPO: 21:00
+ * 
+ */
 
 
 ?>

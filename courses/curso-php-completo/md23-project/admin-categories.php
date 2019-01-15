@@ -3,6 +3,7 @@
 use \Hcode\PageAdmin;
 use \Hcode\Model\User;
 use \Hcode\Model\Category;
+use \Hcode\Model\Product;
 
 $app->get('/admin/categories', function(){
 
@@ -110,10 +111,43 @@ $app->get('/admin/categories/:idcategoy/products',function($idcategory){
 
 	$page->setTpl("categories-products", [
 		'category'=>$category->getValues(),
-		'productsRelated'=>[],
-		'productsNotRelated'=>[]
+		'productsRelated'=>$category->getProducts(),
+		'productsNotRelated'=>$category->getProducts(false)
 	]);
 
 });
+
+$app->get('/admin/categories/:idcategoy/products/:idproduct/add',function($idcategory, $idproduct){
+
+	User::verifyLogin();
+
+	$category = new Category();
+	$category->get((int)$idcategory);
+
+	$product = new Product();
+	$product->get((int)$idproduct);
+
+	$category->addProduct($product);
+
+	Header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/categories/$idcategory/products");
+	exit;
+});
+
+$app->get('/admin/categories/:idcategoy/products/:idproduct/remove',function($idcategory, $idproduct){
+
+	User::verifyLogin();
+
+	$category = new Category();
+	$category->get((int)$idcategory);
+
+	$product = new Product();
+	$product->get((int)$idproduct);
+
+	$category->removeProduct($product);
+
+	Header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/categories/$idcategory/products");
+	exit;
+});
+
 
 ?>
