@@ -135,6 +135,18 @@
             $this->checkPhoto();
 
         }
+
+        public function getFromURL($url){
+
+            $sql = new Sql();
+
+            $rows = $sql->select("SELECT * FROM tb_products WHERE desurl = :desurl LIMIT 1;", [
+                ':desurl'=>$url
+            ]);
+
+            $this->setData($rows[0]);
+
+        }
         
     }
 
