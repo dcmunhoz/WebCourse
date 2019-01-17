@@ -73,6 +73,35 @@
 
         }
 
+        public function getProductsPage($page = 1, $itemsPerPage = 3){
+
+            $start = ($page-1) * $itemsPerPage;
+
+            $sql = new Sql();
+
+            $results = $sql->select("
+
+                select * from tb_products a
+                inner join tb_productscategories b on a.idproduct = b.idproduct
+                inner join tb_categories c on c.idcategory = b.idcategory
+                where c.idcategory = :idcategory
+                limit $start, $itemsPerPage;
+            
+            ", [
+                ":idcategory"=>$this->getidcategory()
+
+            ]);
+
+            $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
+
+            return [
+                'data'=>Product::checkList($results),
+                'total'=>(int)$resultTotal[0]["nrtotal"],
+                'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
+            ];
+
+        }
+
         public function getProducts($related = true){
 
             $sql = new Sql();
