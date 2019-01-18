@@ -57,7 +57,7 @@ $app->get("/products/:desurl", function($desurl){
 
 	$page->setTpl('product-detail', [
 		'product'=>$product->getValues(),
-		'categories'=>[]
+		'categories'=>$product->getCategories()
 	]);
 
 });
