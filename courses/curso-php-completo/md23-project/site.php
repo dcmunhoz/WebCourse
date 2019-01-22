@@ -123,7 +123,7 @@ $app->get("/cart/:idproduct/remove", function($idproduct){
 	$cart->removeProduct($product, true);
 
 	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/cart");
-	exit;
+	exit; 
 
 });
 
