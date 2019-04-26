@@ -127,4 +127,14 @@ $app->get("/cart/:idproduct/remove", function($idproduct){
 
 });
 
+$app->post("/cart/freight", function(){
+
+	$cart = Cart::getFromSession();
+
+	$cart->setFreight($_POST['zipcode']);
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/cart");
+
+});
+
 ?>
