@@ -71,7 +71,8 @@ $app->get('/cart', function(){
 
 	$page->setTpl("cart",[
 		'cart'=>$cart->getValues(),
-		'products'=>$cart->getProducts()
+		'products'=>$cart->getProducts(),
+		'error'=>Cart::getMsgError()
 	]);
 
 });
@@ -134,6 +135,7 @@ $app->post("/cart/freight", function(){
 	$cart->setFreight($_POST['zipcode']);
 
 	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/cart");
+	exit;
 
 });
 

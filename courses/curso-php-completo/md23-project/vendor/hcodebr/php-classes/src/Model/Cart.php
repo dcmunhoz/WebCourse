@@ -104,6 +104,8 @@ class Cart extends Model{
             ":idproduct"=>$product->getidproduct()
         ]);
 
+        $this->getCalculateTotal();
+
     }
 
     public function removeProduct(Product $product, $all = false){
@@ -126,6 +128,7 @@ class Cart extends Model{
 
 
         }
+        $this->getCalculateTotal();
 
     }
 
@@ -201,13 +204,16 @@ class Cart extends Model{
             ]);
 
             $xml = simplexml_load_file("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?".$qs);
-
+                
             $result = $xml->Servicos->cServico;
 
-            if($result->MsgErro != ""){
+            if((string)$result->MsgErro != ""){
 
-                // #STOP : Terminei a aula aqui. = tempo 27:24
+                Cart::setMsgError((string)$result->MsgErro);
 
+            }else {
+                
+                Cart::clearMsgError();
             }
 
             $this->setnrdays($result->PrazoEntrega);
@@ -234,13 +240,45 @@ class Cart extends Model{
 
     public static function getMsgError(){
 
-        return (isset($_SESSION[Cart::SESSION_ERROR])) ? $_SESSION[Cart::SESSION_ERROR] : "";
+        $msg =  (isset($_SESSION[Cart::SESSION_ERROR])) ? $_SESSION[Cart::SESSION_ERROR] : "";
+        Cart::clearMsgError();
+        return $msg;
 
     }
 
     public static function clearMsgError(){
 
         $_SESSION[Cart::SESSION_ERROR] = NULL;        
+
+    }
+
+    public function updateFreight(){
+
+        if( $this->getdeszipcode() != '' ){
+
+            $this->setFreight($this->getdeszipcode());
+
+        }
+
+    }
+
+    public function getValues(){
+
+        $this->getCalculateTotal();
+
+
+        return parent::getValues();
+    }
+
+    public function getCalculateTotal(){
+
+
+        $this->updateFreight();
+        
+        $totals = $this->getProductsTotals();
+
+        $this->setvlsubtotal($totals['vlprice']);
+        $this->setvltotal($totals['vlprice'] + $this->getvlfreight());
 
     }
 
