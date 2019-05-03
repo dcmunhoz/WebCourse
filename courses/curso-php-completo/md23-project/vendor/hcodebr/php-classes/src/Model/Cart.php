@@ -53,7 +53,7 @@ class Cart extends Model{
         ]);
 
         if(count($results) > 0){
-            $this->setData($result[0]);
+            $this->setData($results[0]);
         }
 
     }

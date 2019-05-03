@@ -5,6 +5,8 @@ use \Hcode\Page;
 use \Hcode\Model\Product;
 use \Hcode\Model\Category;
 use \Hcode\Model\Cart;
+use \Hcode\Model\Address;
+use \Hcode\Model\User;
 
 $app->get('/', function() {
 
@@ -136,6 +138,69 @@ $app->post("/cart/freight", function(){
 
 	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/cart");
 	exit;
+
+});
+
+$app->GET("/checkout", function(){
+
+	User::verifyLogin(false);
+
+	$cart = Cart::getFromSession();
+	$address = new Address();
+
+	$page = new Page();
+
+	$page->setTpl("checkout", [
+		'cart'=>$cart->getValues(),
+		'address'=>$address->getValues()
+	]);
+
+
+});
+
+
+$app->GET("/login", function(){
+
+
+	$page = new Page();
+
+	$page->setTpl("login", [
+		'error'=>User::getError()
+	]);
+
+
+});
+
+
+$app->POST("/login", function(){
+
+
+	try{	
+
+		User::Login($_POST['login'], $_POST['password']);
+		
+
+	}catch(Exception $e){
+
+		User::setError($e->getMessage());
+
+	}
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/");
+	exit;
+
+	
+
+});
+
+$app->GET("/logout", function(){
+
+
+	User::logout();
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/login");
+	exit;
+	
 
 });
 

@@ -19,7 +19,7 @@
                 <div class="product-content-right">
                     <div class="woocommerce">
 
-                        <form action="/checkout">
+                        <form action="/WebCourse/courses/curso-php-completo/md23-project/index.php/checkout">
                             
                             <?php if( $error != '' ){ ?>
                             <div class="alert alert-danger" role="alert">
