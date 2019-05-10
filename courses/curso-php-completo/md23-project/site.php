@@ -234,7 +234,13 @@ $app->post('/checkout', function(){
 	$address->setData($_POST);
 	$address->save();
 
-	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/order");
+	$order= new Order();
+
+	$order->setData([
+		
+	]);
+
+	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/order/".$order->getidorder());
 	exit;
 
 });
@@ -467,5 +473,19 @@ $app->post("/profile", function(){
 	exit;
 
 });
+
+$app->get("/order/:idorder", function($idorder){
+
+	User::verifyLogin(false);
+
+	$page = new Page();
+	$page->setTpl("payment",[
+
+
+	]);
+
+
+});
+
 
 ?>
