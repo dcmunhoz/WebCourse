@@ -31,8 +31,8 @@
             $sql = new Sql();
 
             $results = $sql->select("
-                SELECT * FROM tb_order a 
-                INNER JOIN tb_orderstatus b USING(idstatus) 
+                SELECT * FROM tb_orders a 
+                INNER JOIN tb_ordersstatus b USING(idstatus) 
                 INNER JOIN tb_carts c USING(idcart)
                 INNER JOIN tb_users d ON d.iduser = a.iduser
                 INNER JOIN tb_addresses e USING(idaddress)
@@ -42,7 +42,9 @@
                 ":idorder"=>$idorder
             ]);
 
-            // Pausa aqui : 11:40
+            if (count($results) > 0) {
+                $this->setData($results[0]);
+            }
 
              
 
