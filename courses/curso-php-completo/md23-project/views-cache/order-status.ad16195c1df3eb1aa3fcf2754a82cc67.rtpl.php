@@ -35,7 +35,7 @@
             </div>
             <?php } ?>
             <!-- form start -->
-            <form role="form" action="/admin/orders/<?php echo htmlspecialchars( $order["idorder"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/status" method="post">
+            <form role="form" action=" /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders/<?php echo htmlspecialchars( $order["idorder"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/status" method="post">
                 <div class="box-body">
                     <div class="form-group">
                         <label for="desproduct">Status do Pedido</label>

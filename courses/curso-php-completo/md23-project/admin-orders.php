@@ -72,7 +72,9 @@ $app->POST("/admin/orders/:idorder/status", function($idorder){
 
     if (!isset($_POST['idstatus']) || !(int)$_POST['idstatus']) {
 
-            // Pausa Aqui: 24:36
+        Order::setError("Informe o status atual ");
+        header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders/".$idorder."/status");
+        exit;
 
     }
 
@@ -80,6 +82,12 @@ $app->POST("/admin/orders/:idorder/status", function($idorder){
     $order->get((int)$idorder);
 
     $order->setidstatus((int)$_POST['idstatus']);
+    $order->save();
+
+    Order::setSuccess("Status atualizado.");
+
+    header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders/".$idorder."/status");
+    exit;
 
 });
 
