@@ -191,7 +191,7 @@
             $results = $sql->select("
                 SELECT SQL_CALC_FOUND_ROWS *
                 FROM tb_categories   
-                WHERE descategory LIKE :descategory
+                WHERE descategory LIKE :search
                 ORDER BY descategory
                 LIMIT $start, $itemsPerPage;
             ",[
