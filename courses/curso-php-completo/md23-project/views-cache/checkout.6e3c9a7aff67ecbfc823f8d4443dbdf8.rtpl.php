@@ -116,6 +116,11 @@
 													</tr>
 												</tfoot>
 											</table>
+											<p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
+												<input checked="checked" type="radio" id="payment-method" name="payment-method"  value="1" class="input-text " style="float: left; margin: 10px;">
+												<label for="payment-method"><img style="height: 64px" src="/WebCourse/courses/curso-php-completo/md23-project/res/site/img/logo-paypal.png" alt=""></label>
+											</p>
+
 											<div id="payment">
 												<div class="form-row place-order">
 													<input type="submit" data-value="Place order" value="Continuar" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
