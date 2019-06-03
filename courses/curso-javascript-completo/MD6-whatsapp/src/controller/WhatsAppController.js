@@ -6,6 +6,7 @@ class WhatsAppController {
 
         this.elementsPrototype();
         this.loadElements();
+        this.initEvents();
         
 
     }
@@ -73,6 +74,47 @@ class WhatsAppController {
             return this.classList.contains(name);
         }
 
+
+    }
+
+    initEvents(){
+
+        this.el.myPhoto.on("click", el=>{
+            this.closeAllLeftPanel();
+            this.el.panelEditProfile.show();
+            setTimeout(()=>{
+                this.el.panelEditProfile.addClass('open');
+            }, 100);
+            
+
+        });
+
+
+        this.el.btnNewContact.on("click", el=>{
+            this.closeAllLeftPanel();
+            this.el.panelAddContact.show();
+
+            setTimeout(()=>{
+                this.el.panelAddContact.addClass('open');
+            }, 100);
+            
+
+        });
+
+        this.el.btnClosePanelEditProfile.on('click', el=>{
+            this.el.panelEditProfile.removeClass('open');
+        });
+
+        this.el.btnClosePanelAddContact.on("click", el=>{
+            this.el.panelAddContact.removeClass("open");
+        });
+
+    }
+
+    closeAllLeftPanel(){
+        
+        this.el.panelEditProfile.hide();
+        this.el.panelEditProfile.hide();
 
     }
 
