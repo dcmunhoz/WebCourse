@@ -7,7 +7,7 @@ use \Hcode\Model\OrderStatus;
 
 $app->get("/admin/orders/:idorder/delete", function($idorder){
 
-    User::verifyLogin();
+    
 
     $order = new Order();
 
@@ -22,10 +22,38 @@ $app->get("/admin/orders/:idorder/delete", function($idorder){
 $app->get("/admin/orders", function(){
     User::verifyLogin();
 
+    $search = (isset($_GET['search'])) ? $_GET['search'] : "";
+	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+
+	if($search !== ""){
+
+		$pagination = Order::getPageSearch($search, $page);
+
+	}else{
+
+		$pagination = Order::getPage($page);
+
+	}
+
+
+	$pages = [];
+
+	for($x = 0; $x < $pagination['pages']; $x++){
+		array_push($pages, [
+			'href'=>'/WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders?'.http_build_query([
+				'page'=>$x+1,
+				'search'=>$search
+			]),
+			'text'=>$x+1
+		]);
+	}
+
     $page = new PageAdmin();
 
     $page->setTpl("orders",[
-        "orders"=>Order::listAll()  
+        "orders"=>$pagination['data'],
+		"search"=>$search,
+		"pages"=>$pages
     ]);
 
 });
@@ -72,7 +100,9 @@ $app->POST("/admin/orders/:idorder/status", function($idorder){
 
     if (!isset($_POST['idstatus']) || !(int)$_POST['idstatus']) {
 
-            // Pausa Aqui: 24:36
+        Order::setError("Informe o status atual ");
+        header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders/".$idorder."/status");
+        exit;
 
     }
 
@@ -80,6 +110,12 @@ $app->POST("/admin/orders/:idorder/status", function($idorder){
     $order->get((int)$idorder);
 
     $order->setidstatus((int)$_POST['idstatus']);
+    $order->save();
+
+    Order::setSuccess("Status atualizado.");
+
+    header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/admin/orders/".$idorder."/status");
+    exit;
 
 });
 

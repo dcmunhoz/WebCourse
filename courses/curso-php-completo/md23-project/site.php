@@ -166,6 +166,7 @@ $app->GET("/checkout", function(){
 	}
 
 	if (!$address->getdesaddress() ) $address->setdesaddress("");
+	if (!$address->getdesnumber() ) $address->setdesnumber("");
 	if (!$address->getdescomplement() ) $address->setdescomplement("");
 	if (!$address->getdesdistrict() ) $address->setdesdistrict("");
 	if (!$address->getdescity() ) $address->setdescity("");
@@ -189,7 +190,6 @@ $app->GET("/checkout", function(){
 $app->post('/checkout', function(){
 
 	User::verifyLogin(false);
-
 	if (!isset($_POST['zipcode']) || $_POST['zipcode'] === '') {
 		Address::setMsgError("Informe o CEP.");
 		header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/checkout");
@@ -252,9 +252,37 @@ $app->post('/checkout', function(){
 
 	$order->save();
 
+	
+
+	switch ((int)$_POST['payment-method']) {
+		case 1:
+			header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/order/".$order->getidorder()."/paypal");
+			exit;
+		break;
+	}	
 
 	header("Location: /WebCourse/courses/curso-php-completo/md23-project/index.php/order/".$order->getidorder());
 	exit;
+
+});
+
+$app->get("/order/:idorder/paypal", function($idorder){
+
+	User::verifyLogin();
+
+	$order = new Order();
+
+	$order->get((int)$idorder);
+
+	$cart = $order->getCart();
+
+	$page = new Page(['header'=>false,'footer'=>false]);
+
+	$page->setTpl("payment-paypal",[
+		'order'=>$order->getValues(),
+		'cart'=>$cart->getValues(),
+		'products'=>$cart->getProducts()
+	]);
 
 });
 
