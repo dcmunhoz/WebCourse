@@ -1,4 +1,4 @@
-class CameraController {
+export class CameraController {
 
     constructor(videoEl){
 
@@ -11,8 +11,8 @@ class CameraController {
             this._videoEl.src = URL.createObjectURL(stream);
             this._videoEl.play();
 
-        }).catch(error=>{
-            console.error(error);
+        }).catch(err=>{
+            console.error(err);
         });
 
     }
