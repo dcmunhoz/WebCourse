@@ -137,6 +137,24 @@ export class WhatsAppController {
 
                 }   
 
+                div.on('click', e=>{
+
+                    this.el.activeName.innerHTML = contact.name;
+                    this.el.activeStatus.innerHTML = contact.status;
+
+                    if (contact.photo) {
+                        let photo = this.el.activePhoto;
+                        photo.src = contact.photo;
+                        photo.show(); 
+                    }
+
+                    this.el.home.hide();
+                    this.el.main.css({
+                        display:'flex'
+                    });
+
+                });
+
 
                 this.el.contactsMessagesList.appendChild(div);
 
