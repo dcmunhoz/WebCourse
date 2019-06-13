@@ -198,6 +198,10 @@ export class WhatsAppController {
 
         this.el.btnSavePanelEditProfile.on('click', e=>{
 
+            this._user.name = this.el.inputNamePanelEditProfile.innerHTML;
+
+            this._user.save();
+
             console.log(this.el.inputNamePanelEditProfile.innerHTML);
 
         });
