@@ -212,7 +212,21 @@ export class WhatsAppController {
 
             let formData = new FormData(this.el.formPanelAddContact);
 
-            console.log(formData);
+            let contact = new User(formData.get('email'));
+
+            contact.on('datachange', data=>{
+                if (data.name){
+                    this._user.addContact(contact).then(()=>{
+
+                        this.el.btnClosePanelAddContact().click();
+                        console.info("Contato foi Adicionado.");
+
+
+                    });
+                }else{
+                    console.error("Usuário não foi encontrador");
+                }
+            });
 
         });
 
