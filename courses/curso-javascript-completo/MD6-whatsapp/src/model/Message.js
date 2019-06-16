@@ -96,9 +96,6 @@ export class Message extends Model {
 
                 }
 
-                div.querySelector('.btn-message-send').on('click', e=>{
-                    console.log('enviar mensagem');
-                });
             break;
             case 'document':
                     div.innerHTML = `
