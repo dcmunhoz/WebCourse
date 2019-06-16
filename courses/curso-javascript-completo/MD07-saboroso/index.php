@@ -13,7 +13,7 @@
     
     <h1>Restaurante Saboroso</h1>
     <p>
-        Para visualizar este projeto, é necessário abrir o caminho via cmd e executar o comando ""
+        Para visualizar este projeto, é necessário abrir o caminho via cmd e executar o comando <b>'set DEBUG=saboroso:* & npm start'</b>
     </p>
 
 
