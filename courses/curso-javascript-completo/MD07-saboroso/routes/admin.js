@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var users = require('./../includes/users');
 var admin = require('./../includes/admin');
+var menus = require('./../includes/menus');
 
 router.use(function(req, res, next){
 
@@ -92,7 +93,13 @@ router.get('/emails', function(req, res, next){
 
 router.get('/menus', function(req, res, next){
 
-    res.render('admin/menus', admin.getParams(req));
+    menus.getMenus().then(data=>{
+
+        res.render('admin/menus', admin.getParams(req, {
+            data
+        }));
+
+    });
 
 });
 
