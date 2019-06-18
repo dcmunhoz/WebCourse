@@ -2,7 +2,7 @@ var conn   = require('./../includes/db');
 var express = require('express');
 var router = express.Router();
 var menus = require('./../includes/menus');
-
+var reservations = require('./../includes/reservation');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -48,12 +48,37 @@ router.get('/menus', function(req, res, next){
 });
 
 router.get('/reservations', function(req, res, next){
+
+  reservations.render(req, res);
+
+});
+
+router.post('/reservations', function(req, res, next){
   
-  res.render('reservations', {
-    title: "Fazer uma reserva",
-    background: "images/img_bg_2.jpg",
-    h1: 'Reserve uma mesa!'
-  });
+  if(!req.body.name){
+    reservations.render(req, res, "Digite o nome.");
+  }else if(!req.body.email){
+    reservations.render(req, res, "Digite um email.");
+  }else if(!req.body.people){
+    reservations.render(req, res, "Selecione o numero de pessoas.");
+  }else if(!req.body.date){
+    reservations.render(req, res, "Escolha uma data.");
+  }else if(!req.body.email){
+    reservations.render(req, res, "Escolha um horario.");
+  }else{
+
+    reservations.save(req.body).then(results=>{
+
+     reservations.render(req, res, null, "Reserva realizada com sucesso.");
+
+    }).catch(err=>{
+
+      reservations.render(req, res, err.message);
+
+    });
+
+  }
+
 
 });
 
