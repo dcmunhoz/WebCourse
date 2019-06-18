@@ -32,7 +32,18 @@ router.get('/logout', function(req, res, next){
 
 router.get('/', function(req, res, next){
 
-    res.render("admin/index.ejs", admin.getParams(req));
+    admin.dashboard().then(data=>{
+
+        
+        res.render("admin/index.ejs", admin.getParams(req, {
+            data: data
+        }));
+
+    }).catch(err=>{
+
+        console.error(err);
+
+    });
 
 });
 
