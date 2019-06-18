@@ -142,3 +142,28 @@
     </div>
 
 <%- include("./../admin/includes/footer") -%>
+
+<script>
+
+let formCreate = document.querySelector('#modal-create form');
+let formCreateData = new FormData(formCreate);
+
+formCreate.addEventListener('submit', e=>{
+  e.preventDefault();
+
+  let formCreateData = new FormData(formCreate);
+
+  fetch("/admin/menus", {
+    method: 'POST',
+    body: formCreateData
+  }).then(response => response.json())
+    .then(json => {
+
+      console.log("JSON", json);
+
+    });
+
+});
+
+
+</script>
