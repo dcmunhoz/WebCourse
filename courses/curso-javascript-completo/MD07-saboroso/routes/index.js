@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var menus = require('./../includes/menus');
 var reservations = require('./../includes/reservation');
+var contacts = require('./../includes/contacts');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,11 +23,29 @@ router.get('/', function(req, res, next) {
 
 router.get('/contacts', function(req, res, next){
 
-  res.render('contacts', {
-    title: "Contatos",
-    background: "images/img_bg_3.jpg",
-    h1: 'Diga um Oi!'
-  });
+  contacts.render(req, res);
+
+});
+
+router.post('/contacts', function(req, res){
+
+  if(!req.body.name){
+    contacts.render(req, res, "Insira um nome.");
+  }else if(!req.body.email){
+    contacts.render(req, res, "Insira um email.");
+  }else if(!req.body.message){
+    contacts.render(req, res, "Informe a mensagem.");
+  }else{
+
+    contacts.save(req.body).then(results=>{
+
+      contacts.render(req, res, null, "Sua mensagem foi enviada com sucesso !");
+
+    }).catch(err=>{
+      contacts.render(req, res, err.message);
+    });
+
+  }
 
 });
 
