@@ -143,7 +143,12 @@
 
 <%- include("./../admin/includes/footer") -%>
 
+<script src="/js/hcode-fileheader.js"></script>
+
 <script>
+
+new HcodeFileReader("#modal-create [type=file]", "#modal-create img" );
+new HcodeFileReader("#modal-update [type=file]", "#modal-update img" );
 
 let formCreate = document.querySelector('#modal-create form');
 let formCreateData = new FormData(formCreate);
@@ -183,7 +188,7 @@ let formUpdate = document.querySelector("#modal-update form");
 
       switch(name){
         case 'photo':
-
+          formUpdate.querySelector('img').src = '/'+data[name]
         break;
 
         default:
