@@ -3,6 +3,7 @@ var router = express.Router();
 var users = require('./../includes/users');
 var admin = require('./../includes/admin');
 var menus = require('./../includes/menus');
+var reservations = require('./../includes/reservation');
 
 router.use(function(req, res, next){
 
@@ -134,6 +135,31 @@ router.get('/reservations', function(req, res, next){
     }));
 
 });
+
+router.post('/reservations', function(req, res, next){
+
+    reservations.save(req.fields, req.files).then(results=>{
+
+        window.location.reload();
+
+    }).catch(err=>{
+
+        res.send(err);
+
+    });
+
+});
+
+router.delete("/reservations/:id", function(req, res, next){
+
+    reservations.del(req.params.id).then(results=>{
+
+        res.send(results);
+
+    }).catch(err=>{res.send(err);});
+
+});
+
 
 router.get('/users', function(req, res, next){
 
