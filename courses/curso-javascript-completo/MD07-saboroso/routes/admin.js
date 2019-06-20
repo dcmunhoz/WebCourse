@@ -4,6 +4,7 @@ var users = require('./../includes/users');
 var admin = require('./../includes/admin');
 var menus = require('./../includes/menus');
 var reservations = require('./../includes/reservation');
+var moment = require('moment');
 
 router.use(function(req, res, next){
 
@@ -134,7 +135,8 @@ router.get('/reservations', function(req, res, next){
     reservations.getReservation().then(data=>{
         res.render('admin/reservations', admin.getParams(req, {
             date: {},
-            data
+            data,
+            moment
         }));
     });
 
