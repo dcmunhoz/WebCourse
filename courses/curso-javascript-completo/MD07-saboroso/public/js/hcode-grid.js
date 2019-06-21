@@ -2,17 +2,37 @@ class HcodeGrid {
 
     constructor(configs){
 
+        configs.listeners = Object.assign({
+            beforeUpdateClick(e){
+                console.log("antes do click");
+        
+            },
+            afterUpdateClick(e){
+                $('#modal-update').modal('show');
+        
+            }
+        }, configs.listeners)
+
         this.options = Object.assign({}, {
             formCreate: '#modal-create form',
             formUpdate: '#modal-update form',
             btnUpdate: '.btn-update',
             btnDelete: '.btn-delete',
+            listeners: {
+                
+            }
         }, configs);
 
         this.initForms();
         this.initButtons();
 
 
+    }
+
+    fireEvent(name, args){
+        if(typeof this.options.listeners[name] === 'function') this.options.listeners[name].apply(this, args)
+    
+    
     }
 
     initForms(){
@@ -48,70 +68,73 @@ class HcodeGrid {
 
         [...document.querySelectorAll(this.options.btnUpdate)].forEach(btn=>{
 
+
             btn.addEventListener('click', e=>{
-    
-            e.preventDefault();
-    
-            let tr = e.path.find(el=>{
-                return (el.tagName.toUpperCase() === "TR")
-            });
-    
-            let data = JSON.parse(tr.dataset.row)
-    
-            let formUpdate = document.querySelector(this.options.formUpdate);
-            
-            for (let name in data ){
-    
-                let input = formUpdate.querySelector(`[name=${name}]`);
-    
-                switch(name){
-                case 'date':
                     
-                    if (input) input.value = moment(data[name]).format("YYYY-MM-DD")
-                break;
-    
-                default:
-                    
-                    if (input) input.value = data[name]
-                break;
-    
+        
+                e.preventDefault();
+        
+                let tr = e.path.find(el=>{
+                    return (el.tagName.toUpperCase() === "TR")
+                });
+        
+                let data = JSON.parse(tr.dataset.row)
+        
+                let formUpdate = document.querySelector(this.options.formUpdate);
+
+                for (let name in data ){
+        
+                    let input = formUpdate.querySelector(`[name=${name}]`);
+        
+                    switch(name){
+                    case 'date':
+                        
+                        if (input) input.value = moment(data[name]).format("YYYY-MM-DD")
+                    break;
+        
+                    default:
+                        
+                        if (input) input.value = data[name]
+                    break;
+        
+                    } 
+        
                 }
-    
-            }
-    
-            $('#modal-update').modal('show');
-    
+                
+                this.fireEvent('afterUpdateClick', []);
+               
             });
+
     
             });
     
             [...document.querySelectorAll(this.options.btnDelete)].forEach(btn=>{
     
     
-            btn.addEventListener('click', e=>{
-    
-            e.preventDefault();
-    
-            if (confirm("Deseja realmente excluir?")){
-    
-    
-                let tr = e.path.find(el=>{
-                return (el.tagName.toUpperCase() === "TR")
+                btn.addEventListener('click', e=>{
+        
+                    e.preventDefault();
+            
+                    if (confirm("Deseja realmente excluir?")){
+            
+            
+                        let tr = e.path.find(el=>{
+                        return (el.tagName.toUpperCase() === "TR")
+                        });
+            
+                        let data = JSON.parse(tr.dataset.row)
+            
+                        fetch(eval( '`' + this.options.deleteUrl + '`' ),
+                        {
+                            method: 'DELETE'
+                        }).then(response => response.json())
+                            .then(json=>{
+            
+                            window.location.reload(); 
+            
+                        });
+                    }
                 });
-    
-                let data = JSON.parse(tr.dataset.row)
-    
-                fetch(eval( '`' + this.options.deleteUrl + '`' ),
-                {
-                    method: 'DELETE'
-                }).then(response => response.json())
-                    .then(json=>{
-    
-                    window.location.reload(); 
-    
-                });
-            }
-            });
     
             });
 
