@@ -262,4 +262,35 @@ btn.addEventListener('click', e=>{
 
 });
 
+[...document.querySelectorAll('.btn-delete')].forEach(btn=>{
+
+
+btn.addEventListener('click', e=>{
+
+  e.preventDefault();
+
+  if (confirm("Deseja realmente excluir?")){
+
+
+      let tr = e.path.find(el=>{
+      return (el.tagName.toUpperCase() === "TR")
+    });
+
+    let data = JSON.parse(tr.dataset.row)
+
+    fetch(`/admin/reservations/${data.id}`,
+      {
+        method: 'DELETE'
+      }).then(response => response.json())
+        .then(json=>{
+
+          window.location.reload(); 
+
+      });
+  }
+});
+
+});
+
+
 </script>
