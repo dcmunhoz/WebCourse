@@ -4,6 +4,7 @@ var router = express.Router();
 var menus = require('./../includes/menus');
 var reservations = require('./../includes/reservation');
 var contacts = require('./../includes/contacts');
+var email = require('./../includes/contacts')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -108,6 +109,17 @@ router.get('/services', function(req, res, next){
     background: "images/img_bg_1.jpg",
     h1: 'É um prazer poder servir!'
   });
+
+});
+
+router.post('/subscribe', function(req, res, next){
+
+  email.save(req).then(resulst=>{
+    res.send(resulst);
+  }).catch(err=>{
+    res.send(err);
+  });
+
 
 });
 

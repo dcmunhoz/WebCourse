@@ -6,6 +6,7 @@ var menus = require('./../includes/menus');
 var reservations = require('./../includes/reservation');
 var moment = require('moment');
 var contacts = require('./../includes/contacts');
+var email = require('./../includes/emails');
 
 router.use(function(req, res, next){
 
@@ -110,7 +111,23 @@ router.delete('/contacts/:id', function(req, res, next){
 
 router.get('/emails', function(req, res, next){
 
-    res.render('admin/emails', admin.getParams(req));
+    email.getEmails().then(data=>{
+        res.render('admin/emails', admin.getParams(req, {
+            data
+        }));
+    });
+
+});
+
+router.delete('/emails/:id', function(req, res, next){
+
+    email.delete(req.params.id).then(result=>{
+
+        res.send(result);
+
+    }).catch(err=>{
+        res.send(result);
+    });
 
 });
 
