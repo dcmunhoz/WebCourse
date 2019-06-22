@@ -40,12 +40,14 @@ class HcodeGrid {
         this.options = Object.assign({}, {
             formCreate: '#modal-create form',
             formUpdate: '#modal-update form',
-            btnUpdate: '.btn-update',
-            btnDelete: '.btn-delete',
+            btnUpdate: 'btn-update',
+            btnDelete: 'btn-delete',
             listeners: {
                 
             }
         }, configs);
+
+        this.rows = [...document.querySelectorAll('table tbody tr')];
 
         this.initForms();
         this.initButtons();
@@ -63,25 +65,24 @@ class HcodeGrid {
 
         let formCreate = document.querySelector(this.options.formCreate);
 
-            formCreate.save().then(json=>{
-
-                this.fireEvent('afterFormCreate');
-
-        }).catch(err=>{
-
-            this.fireEvent('afterFormCreateError');
-
+        formCreate.save({
+            success: ()=>{
+                this.fireEvent("afterFormCreate");
+            },
+            failure: ()=>{
+                this.fireEvent("afterFormCreateError");
+            }
         });
 
         let formUpdate = document.querySelector(this.options.formUpdate);
 
-            formUpdate.save().then(json=>{
-
-                this.fireEvent('afterFormUpdate');
-
-        }).catch(err=>{
-            this.fireEvent('afterFormUpdateError');
-            
+        formUpdate.save({
+            success: ()=>{
+                this.fireEvent("afterFormUpdate");
+            },
+            failure: ()=>{
+                this.fireEvent("afterFormUpdateError");
+            }
         });
 
 
@@ -97,89 +98,74 @@ class HcodeGrid {
 
     }
 
+    btnUpdateClick(e){
+
+        this.fireEvent("beforeUpdateClick", [e]);
+
+        let data = this.getTrData(e);
+
+        for (let name in data) {
+
+            this.options.onUpdateLoad(this.formUpdate, name, data);
+
+        }
+
+        this.fireEvent('afterUpdateClick', [e]);
+
+    }
+
+    btnDeleteClick(e){
+
+        this.fireEvent("beforeDeleteClick", []);
+
+        e.preventDefault();
+
+        if (confirm("Deseja realmente excluir?")){
+
+
+
+            let data = this.getTrData(e);
+            fetch(eval( '`' + this.options.deleteUrl + '`' ),
+            {
+                method: 'DELETE'
+            }).then(response => response.json())
+                .then(json=>{
+                    
+                    this.fireEvent("afterDeleteClick", []);
+
+            });
+        }
+
+
+    }
+
     initButtons(){
 
-        [...document.querySelectorAll(this.options.btnUpdate)].forEach(btn=>{
+        this.rows.forEach(row=>{
 
+            [...row.querySelectorAll(`.btn`)].forEach(btn=>{
 
-            btn.addEventListener('click', e=>{
-                    
-        
-                e.preventDefault();
-
-                let data = this.getTrData(e);
-        
-                let formUpdate = document.querySelector(this.options.formUpdate);
-
-                for (let name in data ){
-        
-                    let input = formUpdate.querySelector(`[name=${name}]`);
-        
-                    switch(name){
-                    case 'date':
-                        
-                        if (input) input.value = moment(data[name]).format("YYYY-MM-DD")
-                    break;        
-                    case 'photo':
-                        formUpdate.querySelector('img').src = '/'+data[name]
-                    break;
-        
-                    default:
-                        
-                        if (input) input.value = data[name]
-                    break;
-        
-                    } 
-        
-                }
-                
-                this.fireEvent('afterUpdateClick', []);
-               
-            });
-
-    
-            });
-    
-            [...document.querySelectorAll(this.options.btnDelete)].forEach(btn=>{
-    
-    
                 btn.addEventListener('click', e=>{
-        
-                    this.fireEvent("beforeDeleteClick", []);
 
-                    e.preventDefault();
-            
-                    if (confirm("Deseja realmente excluir?")){
-            
-            
+                    if (e.target.classList.contains(this.options.btnUpdate)) {
 
-                        let data = this.getTrData(e);
-                        fetch(eval( '`' + this.options.deleteUrl + '`' ),
-                        {
-                            method: 'DELETE'
-                        }).then(response => response.json())
-                            .then(json=>{
-                                
-                                this.fireEvent("afterDeleteClick", []);
-            
-                        });
+                        this.btnUpdateClick(e);
+
+                    }else if (e.target.classList.contains(this.options.btnDelete)) {
+                        this.btnDeleteClick(e);
+                    }else{
+
+                        this.fireEvent('buttonClick', [e.target, this.getTrData(e), e]);
+
                     }
-                });
-    
+
+
+                })
+
             });
 
+        });
 
     }
-
-    init(){
-
-
-
-
-        
-
-
-    }
-
 
 }
