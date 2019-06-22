@@ -65,27 +65,30 @@ class HcodeGrid {
 
         let formCreate = document.querySelector(this.options.formCreate);
 
-        formCreate.save({
-            success: ()=>{
-                this.fireEvent("afterFormCreate");
-            },
-            failure: ()=>{
-                this.fireEvent("afterFormCreateError");
-            }
-        });
+        if(formCreate){
+            formCreate.save({
+                success: ()=>{
+                    this.fireEvent("afterFormCreate");
+                },
+                failure: ()=>{
+                    this.fireEvent("afterFormCreateError");
+                }
+            });
+        }
+
 
         let formUpdate = document.querySelector(this.options.formUpdate);
 
-        formUpdate.save({
-            success: ()=>{
-                this.fireEvent("afterFormUpdate");
-            },
-            failure: ()=>{
-                this.fireEvent("afterFormUpdateError");
-            }
-        });
-
-
+        if(formUpdate){
+            formUpdate.save({
+                success: ()=>{
+                    this.fireEvent("afterFormUpdate");
+                },
+                failure: ()=>{
+                    this.fireEvent("afterFormUpdateError");
+                }
+            });
+        }
     }
 
     getTrData(e){
