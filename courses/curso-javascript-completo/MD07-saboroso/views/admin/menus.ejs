@@ -143,15 +143,17 @@
 
 <%- include("./../admin/includes/footer") -%>
 
+<script src="/js/hcode-grid.js"></script>
 <script src="/js/hcode-fileheader.js"></script>
 <script src="/js/hcode-formsave.js"></script>
-<script src="/js/hcode-grid.js"></script>
 
 <script>
 
-new HcodeGrid({
-    deleteUrl: '/admin/menus/${data.id}'
-  });
+new HcodeFileReader("#modal-create [type=file]", "#modal-create img" );
+new HcodeFileReader("#modal-update [type=file]", "#modal-update img" );
 
+new HcodeGrid({
+    deleteUrl: '/admin/reservations/${data.id}'
+});
 
 </script>

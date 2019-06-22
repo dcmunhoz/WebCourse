@@ -119,6 +119,9 @@ class HcodeGrid {
                     case 'date':
                         
                         if (input) input.value = moment(data[name]).format("YYYY-MM-DD")
+                    break;        
+                    case 'photo':
+                        formUpdate.querySelector('img').src = '/'+data[name]
                     break;
         
                     default:
