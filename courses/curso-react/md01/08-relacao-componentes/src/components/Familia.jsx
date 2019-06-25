@@ -6,7 +6,9 @@ export default (props) => (
             <h1>Familia { props.sobrenome}</h1>
         </header>
         <section>
-            {props.children}
+            {React.cloneElement(props.children, { ...props })}
+            {/* {React.cloneElement(props.children, props)} */}
+            {/* {props.children} */}
         </section>
     </div>
 )
