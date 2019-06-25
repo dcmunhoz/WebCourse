@@ -1,4 +1,5 @@
 import React from 'react';
+import { childProps } from './utils/util';
 
 export default (props) => (
     <div>
@@ -6,7 +7,14 @@ export default (props) => (
             <h1>Familia { props.sobrenome}</h1>
         </header>
         <section>
-            {React.cloneElement(props.children, { ...props })}
+
+            {childProps(props)}
+
+            {/* {React.Children.map(props.children, child=>{
+                return React.cloneElement(child, { ...props })
+            })} */}
+
+            {/* {React.cloneElement(props.children, { ...props })} */}
             {/* {React.cloneElement(props.children, props)} */}
             {/* {props.children} */}
         </section>
