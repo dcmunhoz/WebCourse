@@ -1,4 +1,4 @@
-const port = 3000;
+const port = 3003;
 
 const bodyParser = require('body-parser');
 const express    = require('express');
@@ -13,3 +13,4 @@ server.listen(port, function(){
 
 });
 
+module.exports = server; 
