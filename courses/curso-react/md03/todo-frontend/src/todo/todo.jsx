@@ -16,12 +16,13 @@ export default class Todo extends React.Component {
             list: []
         }
 
-        this.handleAdd = this.handleAdd.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSearch = this.handleSearch.bind(this);
-        this.handleRemove = this.handleRemove.bind(this);
-        this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
+        this.handleAdd           = this.handleAdd.bind(this);
+        this.handleChange        = this.handleChange.bind(this);
+        this.handleSearch        = this.handleSearch.bind(this);
+        this.handleRemove        = this.handleRemove.bind(this);
+        this.handleMarkAsDone    = this.handleMarkAsDone.bind(this);
         this.handleMArkAsPending = this.handleMArkAsPending.bind(this);
+        this.handleClear         = this.handleClear.bind(this);
 
         this.refresh();
     }
@@ -72,12 +73,17 @@ export default class Todo extends React.Component {
             .then(resp => this.refresh(this.state.description))
     }
 
+    handleClear(){
+
+        this.refresh();
+    }
+
     render(){
         return(
 
             <div>
                 <PageHeader name="Tarefas" small="Cadastro" />
-                <TodoForm description={this.state.description} handleChange={this.handleChange} handleAdd={this.handleAdd} handleSearch={this.handleSearch} />
+                <TodoForm description={this.state.description} handleChange={this.handleChange} handleAdd={this.handleAdd} handleSearch={this.handleSearch} handleClear={this.handleClear} />
                 <TodoList list={this.state.list} handleRemove={this.handleRemove} handleMarkAsDone={this.handleMarkAsDone} handleMarkAsPending={this.handleMarkAsPending} />
             </div>
 
