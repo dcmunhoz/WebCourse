@@ -1,44 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './InputForm.css';
 
-export default class InputForm extends React.Component {
-
-    constructor(props){
-        super(props);
-
-        this.state = {
-
-            value: props.initialValue
-    
-        }
-
-        this.handleChange = this.handleChange.bind(this);
-
-    }
-
-    handleChange(e){
-        let value = "";
-
-        if(e.target.value.length === 0){
-            value = this.props.initialValue;
-        }else{
-            value = e.target.value
-        }
-
-
-        this.setState({
-            value
-        });
-
-
-
-    }
+class InputForm extends React.Component {
 
     render(){
 
         return(
             <div className="form-group">
-                <label htmlFor="input-text">Valor: <span id="value-type">{this.state.value}</span></label>
+                <label htmlFor="input-text">Valor: <span id="value-type">{this.props.value}</span></label>
                 <input type="text" id="input-text" name="input-text" onChange={this.handleChange} />
             </div>
         )
@@ -46,3 +16,11 @@ export default class InputForm extends React.Component {
     }
 
 } 
+
+function mapStateToProps(state){
+    return {
+        value: state.field.value
+    }
+}
+
+export default connect(mapStateToProps)(InputForm);
