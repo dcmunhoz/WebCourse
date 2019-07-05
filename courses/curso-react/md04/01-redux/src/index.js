@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import reducer from './reducer';
+
 
 import InputForm from './components/InputForm';
 import './index.css';
 
 const reducers = combineReducers({
-    field: () => ({value: 'Opa'})
+    field: reducer
 });
 
 ReactDOM.render(
